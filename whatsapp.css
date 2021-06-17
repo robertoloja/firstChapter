@@ -1,0 +1,61 @@
+body {
+	background: #222;
+	max-width: 400px;
+	margin-left: auto;
+	margin-right: 0;
+}
+
+.msgNav {
+	color: white;
+	margin: 0;
+	padding: 0;
+	font-family: Arial;
+	font-size: 90%;
+}
+
+.msgNav p {
+	margin: 5px;
+	padding: 5px;
+}
+
+.msg {
+	margin: 5px;
+	font-family: Arial;
+	font-size: 90%;
+}
+
+.msg sub {
+	font-size: 60%;
+	padding-left: 10px;
+	margin-top: 5px;
+	padding-top: auto;
+	float:  right;
+}
+
+.msg p {
+	display: table;
+	margin: 2px;
+	padding: 7px 10px;
+}
+
+.msg.received :first-child {
+	border-radius: 0px 10px 10px 10px;
+}
+
+.msg.sent :first-child {
+	border-radius: 10px 0px 10px 10px;
+}
+
+.received p {
+	border-radius: 10px 10px 10px 10px;
+	background: #404040;
+	color: #f0f0f0;
+}
+
+.sent p {
+	border-radius: 10px 10px 10px 10px;
+	background: #056162;
+	color: #e5e5e5;
+	margin-left: auto;
+	margin-right: 0;
+}
