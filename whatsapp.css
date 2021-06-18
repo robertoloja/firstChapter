@@ -6,13 +6,29 @@ body {
 }
 
 .contacts {
-	float: left;
+	position: fixed;
 	width: 50%;
+
 	height: 100%;
+	top: 0;
+	left: 0;
+}
+
+.messages {
+	margin-left: 50%;
+	margin-top: 100px;
 }
 
 table {
 	color: #f0f0f0;
+	margin: 5px;
+	border-collapse: collapse;
+	border-spacing: 10px;
+}
+
+table p {
+	margin: 0;
+	padding: 0;
 }
 
 .msgNav {
@@ -34,22 +50,12 @@ table {
 	margin-top: 60px;
 }
 
-.navInfo {
-	margin: 0;
-}
-
 .circle {
 	border-radius: 50%;
 	background: white;
-	min-width: 40px;
-	min-height: 40px;
+	min-width: 35px;
+	min-height: 35px;
 }
-
-/*
-.msgNav p, .msgNav sub {
-	display: table-row;
-}
-*/
 
 .msgNav sub {
 	color: #c0c0c0;
