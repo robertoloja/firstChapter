@@ -1,22 +1,31 @@
+@font-face {
+    font-family: "NimbusSans";
+    src: url("Nimbus-Sans-D-OT-Light_32752.ttf");
+}
+
 body {
 	background: #222;
 	margin-left: auto;
 	margin-right: 0;
 	margin-top: 0;
+	scrollbar-color: hsla(0,0%,100%,.16) transparent;
+	scrollbar-width: thin;
+	font-family: "NimbusSans";
 }
 
 .contacts {
 	position: fixed;
-	width: 50%;
-
+	width: 40%;
+	min-width: 300px;
 	height: 100%;
 	top: 0;
 	left: 0;
 }
 
 .messages {
-	margin-left: 50%;
-	margin-top: 100px;
+	background: #0D1418;
+	margin-left: 40%;
+	padding-top: 60px;
 }
 
 table {
@@ -32,7 +41,7 @@ table p {
 }
 
 .msgNav {
-	background: #303030;
+	background: #2A2F32;
 	color: #f0f0f0;
 	margin: 0;
 	padding: 0;
@@ -40,16 +49,15 @@ table p {
 	font-family: Arial;
 	font-size: 85%;
 	position: fixed;
-	width: 50%;
+	width: 60%;
 	margin: 0;
 	top: 0;
-	left: 50%;
+	left: 40%;
 }
 
 .msgArea {
-	margin-top: 60px;
+	background: #0D1418;
 }
-
 .circle {
 	border-radius: 50%;
 	background: white;
@@ -63,7 +71,6 @@ table p {
 
 .msg {
 	margin: 5px;
-	font-family: Arial;
 	font-size: 90%;
 }
 
@@ -81,7 +88,7 @@ table p {
 	padding: 7px 10px;
 }
 
-.msg.received :first-child {
+.msg.received :second-child {
 	border-radius: 0px 10px 10px 10px;
 }
 
@@ -91,7 +98,7 @@ table p {
 
 .received p {
 	border-radius: 10px 10px 10px 10px;
-	background: #3a3a3a;
+	background: #262D31;
 	color: #f0f0f0;
 }
 
