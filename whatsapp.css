@@ -1,21 +1,58 @@
 body {
 	background: #222;
-	max-width: 400px;
 	margin-left: auto;
 	margin-right: 0;
+	margin-top: 0;
+}
+
+.contacts {
+	float: left;
+	width: 50%;
+	height: 100%;
+}
+
+table {
+	color: #f0f0f0;
 }
 
 .msgNav {
-	color: white;
+	background: #303030;
+	color: #f0f0f0;
 	margin: 0;
 	padding: 0;
+	padding-left: 10px;
 	font-family: Arial;
-	font-size: 90%;
+	font-size: 85%;
+	position: fixed;
+	width: 50%;
+	margin: 0;
+	top: 0;
+	left: 50%;
 }
 
-.msgNav p {
-	margin: 5px;
-	padding: 5px;
+.msgArea {
+	margin-top: 60px;
+}
+
+.navInfo {
+	margin: 0;
+}
+
+.circle {
+	border-radius: 50%;
+	background: white;
+	min-width: 40px;
+	min-height: 40px;
+}
+
+/*
+.msgNav p, .msgNav sub {
+	display: table-row;
+}
+*/
+
+.msgNav sub {
+	color: #c0c0c0;
 }
 
 .msg {
@@ -48,7 +85,7 @@ body {
 
 .received p {
 	border-radius: 10px 10px 10px 10px;
-	background: #404040;
+	background: #3a3a3a;
 	color: #f0f0f0;
 }
 
