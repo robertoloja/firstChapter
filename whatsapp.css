@@ -8,18 +8,61 @@ body {
 	margin-left: auto;
 	margin-right: 0;
 	margin-top: 0;
-	scrollbar-color: hsla(0,0%,100%,.16) transparent;
-	scrollbar-width: thin;
 	font-family: "NimbusSans";
 }
 
 .contacts {
 	position: fixed;
 	width: 40%;
-	min-width: 300px;
 	height: 100%;
+	border: 1px solid #282F32;
+	border-style: none solid none none;
+	z-index: 1;
+	margin-top: 60px;
+	background: #131C21;
+}
+
+.contact {
+	width: 100%;
+	background: #323739;
+}
+
+.contactInfo {
+	padding-top: 12px;
+	padding-left: 12px;
+	padding-bottom: 12px;
+	color: #f0f0f0;
+	padding-left: 10px;
+	font-family: "NimbusSans";
+}
+
+.contactInfo .circle {
+	height: 50px;
+	width: 50px;
+	margin: 10px;
+}
+
+.userNav {
+	background: #2A2F32;
+	color: #f0f0f0;
+	margin: 0;
+	padding: 0;
+	font-family: "NimbusSans";
+	font-size: 85%;
+	position: fixed;
+	width: 40%;
+	margin: 0;
 	top: 0;
 	left: 0;
+	border: 1px solid #3F4448;
+	border-style: none solid none none;
+	padding-bottom: 2px;
+}
+
+.userInfo {
+	padding-top: 12px;
+	padding-left: 12px;
+	padding-bottom: 12px;
 }
 
 .messages {
@@ -46,7 +89,7 @@ table p {
 	margin: 0;
 	padding: 0;
 	padding-left: 10px;
-	font-family: Arial;
+	font-family: "NimbusSans";
 	font-size: 85%;
 	position: fixed;
 	width: 60%;
@@ -57,12 +100,14 @@ table p {
 
 .msgArea {
 	background: #0D1418;
+	margin-left: 10px;
+	margin-right: 10px;
 }
 .circle {
 	border-radius: 50%;
 	background: white;
-	min-width: 35px;
-	min-height: 35px;
+	width: 35px;
+	height: 35px;
 }
 
 .msgNav sub {
