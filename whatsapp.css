@@ -88,7 +88,7 @@ table p {
 	padding: 7px 10px;
 }
 
-.msg.received :second-child {
+.msg.received :first-child {
 	border-radius: 0px 10px 10px 10px;
 }
 
