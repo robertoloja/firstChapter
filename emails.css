@@ -1,0 +1,41 @@
+.email h4 {
+	font-size: 90%;
+	margin: 0;
+	padding: 0;
+}
+
+.email p {
+	margin: 0;
+	padding: 0;
+	font-size: 90%;
+}
+
+.email::before {
+	background: green;
+	content: "";
+	display: table-cell;
+	height: 50px;
+	width: 50px;
+	margin: 10px;
+}
+
+.email {
+	background: white;
+	width: 150px;
+	padding: 20px;
+	line-height: 0;
+	display: table-row;
+	max-width:  200px;
+}
+
+.emails {
+	display: table;
+	border: 1px solid grey;
+	border-spacing: 2px;
+	background: white;
+}
+
+.info {
+	padding: 7px;
+	display: table-cell;
+}
