@@ -1,3 +1,16 @@
+.ribbon {
+	padding: 0;
+	border-collapse: collapse;
+	margin-bottom: 3px;
+	text-align: center;
+}
+
+.ribbon td {
+	width:  60px;
+	height: 70px;
+	border:  1px solid grey;
+}
+
 .email h4 {
 	font-size: 90%;
 	margin: 0;
@@ -10,32 +23,43 @@
 	font-size: 90%;
 }
 
-.email::before {
-	background: green;
-	content: "";
-	display: table-cell;
-	height: 50px;
-	width: 50px;
-	margin: 10px;
-}
-
 .email {
 	background: white;
 	width: 150px;
-	padding: 20px;
+	padding: 0px;
 	line-height: 0;
 	display: table-row;
 	max-width:  200px;
+	margin: 0;
+	cursor: pointer;
+}
+
+.email:hover {
+	background: lightblue;
+}
+
+.email img {
+	filter: invert(42%) sepia(94%) saturate(758%) hue-rotate(157deg) brightness(97%) contrast(103%);
+	width: 25px;
+	padding: 10px;
 }
 
 .emails {
 	display: table;
 	border: 1px solid grey;
-	border-spacing: 2px;
+	border-collapse: collapse;
 	background: white;
+	overflow-y: scroll;
 }
 
 .info {
 	padding: 7px;
 	display: table-cell;
+}
+
+.emailbody {
+	overflow-y: scroll;
+	background: white;
+	border: 1px solid grey;
+	max-height: 200px;
 }
