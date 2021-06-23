@@ -24,14 +24,14 @@
 }
 
 .email {
+	display: block;
 	background: white;
-	width: 150px;
-	padding: 0px;
+	padding: 0;
 	line-height: 0;
-	display: table-row;
-	max-width:  200px;
 	margin: 0;
 	cursor: pointer;
+	border-collapse: collapse;
+	border-spacing: 0;
 }
 
 .email:hover {
@@ -45,11 +45,13 @@
 }
 
 .emails {
-	display: table;
 	border: 1px solid grey;
 	border-collapse: collapse;
 	background: white;
-	overflow-y: scroll;
+	min-width: 280px;
+	padding: 0;
+	margin: 0;
+	border-spacing: 0;
 }
 
 .info {
@@ -61,5 +63,13 @@
 	overflow-y: scroll;
 	background: white;
 	border: 1px solid grey;
-	max-height: 200px;
+	min-height: 300px;
+	margin: 0;
+	padding: 0;
+}
+
+.email-area {
+	display: flex;
+	margin: 0;
+	padding: 0;
 }
