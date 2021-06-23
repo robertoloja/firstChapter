@@ -22,13 +22,24 @@
       </div>
 
     <div class="window-body">
-    	<div class="ribbon">
-    		<button>Compose</button>
-    		<button>Delete</button>
-    		<button>Reply</button>
-    		<button>Reply All</button>
-    		<button>Forward</button>
-    	</div>
+    	<section class="tabs">
+    		<menu role="tablist" aria-label="File menu">
+    			<button role="tab" aria-controls="tab-file">File</button>
+    			<button role="tab" aria-controls="tab-edit" aria-selected="true">Emails</button>
+    			<button role="tab" aria-controls="tab-calendar">Calendar</button>
+    			<button role="tab" aria-controls="tab-search">Search</button>
+    		</menu>
+
+    		<article role="tabpanel" id="tab-file">
+		    	<div class="ribbon">
+		    		<button>Compose</button>
+		    		<button>Delete</button>
+		    		<button>Reply</button>
+		    		<button>Reply All</button>
+		    		<button>Forward</button>
+		    	</div>
+		    </article>
+		    <article role="tabpanel" id="tab-edit" hidden></article>
 
     	<div class="email-area">
       	<table class="emails">
@@ -115,5 +126,10 @@ Aut similique nemo voluptas. Est laudantium sequi laudantium quas rerum in. Quid
 Aut similique nemo voluptas. Est laudantium sequi laudantium quas rerum in. Quidem dolorem sed ad rerum dolor ipsam. Aut similique nemo voluptas. Est laudantium sequi laudantium quas rerum in. Quidem dolorem sed ad rerum dolor ipsam. Aut similique nemo voluptas. Est laudantium sequi laudantium quas rerum in. Quidem dolorem sed ad rerum dolor ipsam. Aut similique nemo voluptas. Est laudantium sequi laudantium quas rerum in. Quidem dolorem sed ad rerum dolor ipsam. Aut similique nemo voluptas. Est laudantium sequi laudantium quas rerum in. Quidem dolorem sed ad rerum dolor ipsam.Aut similique nemo voluptas. Est laudantium sequi laudantium quas rerum in. Quidem dolorem sed ad rerum dolor ipsam. Aut similique nemo voluptas. Est laudantium sequi laudantium quas rerum in. Quidem dolorem sed ad rerum dolor ipsam. Aut similique nemo voluptas. Est laudantium sequi laudantium quas rerum in. Quidem dolorem sed ad rerum dolor ipsam. Aut similique nemo voluptas. Est laudantium sequi laudantium quas rerum in. Quidem dolorem sed ad rerum dolor ipsam. Aut similique nemo voluptas. Est laudantium sequi laudantium quas rerum in. Quidem dolorem sed ad rerum dolor ipsam.
 		</p>
 	</div>
+	<div class="status-bar">
+    <p class="status-bar-field">Read-only Mode</p>
+    <p class="status-bar-field">----</p>
+    <p class="status-bar-field">CPU Usage: 14%</p>
+  </div>
 	</div>
 </body>
