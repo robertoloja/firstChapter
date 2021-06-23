@@ -104,3 +104,9 @@ menu {
 	margin: 0;
 	margin-top: 5px;
 }
+
+hr {
+	color: lightgray;
+	margin: 5px;
+	margin-bottom: 10px;
+}
