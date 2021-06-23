@@ -3,12 +3,13 @@
 	border-collapse: collapse;
 	margin-bottom: 3px;
 	text-align: center;
+	display: inline-block;
 }
 
-.ribbon td {
-	width:  60px;
+.ribbon button {
 	height: 70px;
-	border:  1px solid grey;
+	width: 60px;
+	vertical-align: bottom;
 }
 
 .email h4 {
@@ -26,12 +27,13 @@
 .email {
 	display: block;
 	background: white;
-	padding: 0;
+	padding: 10px;
 	line-height: 0;
 	margin: 0;
 	cursor: pointer;
 	border-collapse: collapse;
 	border-spacing: 0;
+	height: 100%;
 }
 
 .email:hover {
@@ -48,10 +50,20 @@
 	border: 1px solid grey;
 	border-collapse: collapse;
 	background: white;
-	min-width: 280px;
+	min-width: 290px;
 	padding: 0;
 	margin: 0;
 	border-spacing: 0;
+}
+
+.emails tr {
+	padding: 0;
+	margin: 0;
+}
+
+.emails td {
+	padding: 0;
+	margin: 0;
 }
 
 .info {
@@ -63,9 +75,10 @@
 	overflow-y: scroll;
 	background: white;
 	border: 1px solid grey;
-	min-height: 300px;
+	max-height: 260px;
 	margin: 0;
-	padding: 0;
+	padding: 20px;
+	font-family: monospace;
 }
 
 .email-area {
