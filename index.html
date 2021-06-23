@@ -1,28 +1,30 @@
 <html>
-	<head>
-		<link rel="stylesheet" href="index.css">
-		<meta charset="UTF-8">
+<head>
+	<link rel="stylesheet" href="index.css">
+	<meta charset="UTF-8">
 
-		<script>
-		function newSrc() {
-			var comboBox = document.getElementById("part-select")
-			var newSrc = comboBox.options[comboBox.selectedIndex].value
-			document.getElementById('frame').src = newSrc
-		}
-		</script>
-	</head>
+	<script>
+	function newSrc() {
+		var comboBox = document.getElementById("part-select")
+		var arrows = document.getElementById("arrows")
+
+		var newSrc = comboBox.options[comboBox.selectedIndex].value
+		document.getElementById('frame').src = newSrc
+	}
+	</script>
+</head>
 
 <body>
 	<select name="parts" id="part-select">
 	    <option onClick="newSrc()" value="Stories/End.html" selected>An End</option>
 	    <option onClick="newSrc()" value="email.html">A Middle</option>
-	    <option onClick="newSrc()" value="whatsapp.html">A Beginning</option>
+	    <option onClick="newSrc()" value="twitter.html">A Beginning</option>
 	</select>
 
 	<iframe width="800" height="600" src="Stories/End.html" id="frame">
 	</iframe>
 
-	<p><a href="second.html">→</a></p>
+	<p><a href="second.html" id="arrows">→</a></p>
 
 </body>
 </html>
