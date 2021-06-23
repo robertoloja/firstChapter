@@ -1,3 +1,15 @@
 body {
-	padding: 70px;
+	padding: 40px;
+}
+
+h3 {
+	font-size: 95%;
+	padding-left: 10px;
+	font-family: 'Arial';
+}
+
+h4 {
+	font-size: 70%;
+	padding-left: 10px;
+	font-family: 'Arial';
 }
