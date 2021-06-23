@@ -1,0 +1,19 @@
+iframe {
+	width: 70%;
+	margin-left: 100px;
+	margin-right: auto;
+}
+
+p {
+	text-align: center;
+	width: 70%;
+	margin-left: 100px;
+}
+
+select {
+	text-align: center;
+	width: 20%;
+	margin-left: 100px;
+	margin-bottom: 20px;
+	margin-top: 20px;
+}
