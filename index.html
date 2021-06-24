@@ -17,11 +17,13 @@
 </head>
 
 <body>
-	<select name="parts" id="part-select">
-	    <option onClick="newSrc()" value="Stories/End.html" label="An End" selected>ms-whatsapp.html</option>
-	    <option onClick="newSrc()" value="email.html" label="A Middle">pm-whatsapp.html</option>
-	    <option onClick="newSrc()" value="twitter.html" label="A Beginning">jd-whatsapp.html</option>
-	</select>
+	<div class="select">
+		<select name="parts" id="part-select">
+		    <option onClick="newSrc()" value="Stories/End.html" label="An End" selected>ms-whatsapp.html</option>
+		    <option onClick="newSrc()" value="email.html" label="A Middle">pm-whatsapp.html</option>
+		    <option onClick="newSrc()" value="twitter.html" label="A Beginning">jd-whatsapp.html</option>
+		</select>
+	</div>
 
 	<iframe width="800" height="600" src="Stories/End.html" id="proscenium">
 	</iframe>

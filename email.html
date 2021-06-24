@@ -1,151 +1,227 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="https://unpkg.com/7.css">
-<link rel="stylesheet" href="emails.css">
-<link rel="stylesheet" href="7.css">
-<meta charset="UTF-8">
+	<link rel="stylesheet" href="https://unpkg.com/7.css">
+	<link rel="stylesheet" href="emails.css">
+	<link rel="stylesheet" href="7.css">
+	<meta charset="UTF-8">
 </head>
 
 <body>
-	<div class="window" style="margin: 32px; width: 90%">
-      <div class="title-bar">
-        <div class="title-bar-text">
-          Simpl-eMail
-        </div>
+  <div class="window">
+  	<div class="title-bar">
+  		<div class="title-bar-text">
+  			Simpl-eMail
+  		</div>
 
-        <div class="title-bar-controls">
-          <button aria-label="Minimize"></button>
-          <button aria-label="Maximize"></button>
-          <button aria-label="Close"></button>
-        </div>
-      </div>
+  		<div class="title-bar-controls">
+  			<button aria-label="Minimize"></button>
+  			<button aria-label="Maximize"></button>
+  			<button aria-label="Close"></button>
+  		</div>
+  	</div>
 
-    <div class="window-body">
-    	<section class="tabs">
-    		<menu role="tablist" aria-label="File menu">
-    			<button role="tab" aria-controls="tab-file">File</button>
-    			<button role="tab" aria-controls="tab-edit" aria-selected="true">Emails</button>
-    			<button role="tab" aria-controls="tab-calendar">Calendar</button>
-    			<button role="tab" aria-controls="tab-search">Search</button>
-    		</menu>
+  	<div class="window-body">
+  		<section class="tabs">
+  			<menu role="tablist" aria-label="File menu">
+  				<button role="tab" aria-controls="tab-file">
+  					File
+  				</button>
 
-    		<article role="tabpanel" id="tab-file">
-		    	<div class="ribbon">
-		    		<button><img src="svg/envelope-closed.svg" style="width: 40px; padding: 0; margin: 0" />Compose</button>
-		    		<button><img src="svg/envelope-closed.svg" style="width: 40px; padding: 0; margin: 0" />Delete</button>
-		    		<button><img src="svg/envelope-closed.svg" style="width: 40px; padding: 0; margin: 0" />Reply</button>
-		    		<button><img src="svg/envelope-closed.svg" style="width: 40px; padding: 0; margin: 0" />Reply All</button>
-		    		<button><img src="svg/envelope-closed.svg" style="width: 40px; padding: 0; margin: 0" />Forward</button>
-		    	</div>
-		    </article>
-		    <article role="tabpanel" id="tab-edit" hidden></article>
+  				<button role="tab" 
+  								aria-controls="tab-edit" 
+  								aria-selected="true">
+  					Emails
+  				</button>
+  				
+  				<button role="tab" aria-controls="tab-calendar">
+  					Calendar
+  				</button>
 
-		    	<hr>
-    	<div class="email-area">
-      	<table class="emails">
-      		<tr>
-      			<td>
-	      			<table class="email">
-		      			<tr>
-		      				<td>
-		      					<img src="svg/envelope-open.svg">
-		      				</td>
-		      				<td rowspan="2">
-				      			<div class="info">
-					      			<h4>Re: Yes, we definitely need that data</h4>
-					      			<h5>Some asshole</h5>
-					      			<p>All, As I understand it, the reports can...</p>
-					      		</div>
-					      	</td>
-					    </tr>
-				    </table>
-				</td>
-			</tr>
+  				<button role="tab" aria-controls="tab-search">
+  					Search
+  				</button>
+  			</menu>
+  		</section>
 
-			<tr>
-      			<td>
-	      			<table class="email">
-		      			<tr>
-		      				<td>
-		      					<img src="svg/envelope-closed.svg">
-		      				</td>
-		      				<td rowspan="2">
-				      			<div class="info">
-					      			<h4>What's the current timeline?</h4>
-					      			<h5>More assholes</h5>
-					      			<p>Do we know what is going on with the d...</p>
-					      		</div>
-					      	</td>
-					    </tr>
-				    </table>
-				</td>
-			</tr>
+			<article role="tabpanel" id="tab-file">
+				<div class="ribbon">
+					<button>
+						<img src="svg/envelope-closed.svg" 
+								 style="width: 40px; padding: 0; margin: 0" />
+						Compose
+					</button>
 
-			<tr>
-      			<td>
-	      			<table class="email">
-		      			<tr>
-		      				<td>
-		      					<img src="svg/envelope-closed.svg">
-		      				</td>
-		      				<td rowspan="2">
-				      			<div class="info">
-					      			<h4>Yes, we definitely need that data</h4>
-					      			<h5>Sender</h5>
-					      			<p>All, I'm worried about the amount of spe...</p>
-					      		</div>
-					      	</td>
-					    </tr>
-				    </table>
-				</td>
-			</tr>
+					<button>
+						<img src="svg/envelope-closed.svg" 
+								 style="width: 40px; padding: 0; margin: 0" />
+						Delete
+					</button>
 
-			<tr>
-      			<td>
-	      			<table class="email">
-		      			<tr>
-		      				<td>
-		      					<img src="svg/envelope-closed.svg">
-		      				</td>
-		      				<td rowspan="2">
-				      			<div class="info">
-					      			<h4>Let's be clear everyone</h4>
-					      			<h5>Some other asshole</h5>
-					      			<p>Ok, I really need to make this completel...</p>
-					      		</div>
-					      	</td>
-					    </tr>
-				    </table>
-				</td>
-			</tr>
-		</table>
+					<button>
+						<img src="svg/envelope-closed.svg" 
+								 style="width: 40px; padding: 0; margin: 0" />
+						Reply
+					</button>
 
-		<p class="emailbody">
-			<b>Subject: </b> Re: Yes, we definitely need that data <br>
-			<b>From: </b> Some asshole <br><br>
+					<button>
+						<img src="svg/envelope-closed.svg" 
+								 style="width: 40px; padding: 0; margin: 0" />
+						Reply All
+					</button>
 
-			-----------------------------------------------------------<br><br>
-			
-			All, As I understand it, the reports cannot be generated on time until
-			this data is located and processed. Can I get an update from each department
-			about status? <br><br>
+					<button>
+						<img src="svg/envelope-closed.svg" 
+								 style="width: 40px; padding: 0; margin: 0" />
+						Forward
+					</button>
+				</div>
+			</article>
 
-			Ops - Have we contacted MoH MCEDT to ask about special circumstances access? <br><br>
+			<article role="tabpanel" id="tab-edit" hidden></article>
 
-			Tech - Do we have any backups?<br><br>
+      <hr>
 
-			Similique repudiandae dolorem perferendis quis in sed ab nesciunt. Enim quia officia quibusdam voluptas soluta. Aliquid perspiciatis quod magnam velit dolorem. Quos officiis cumque tenetur est ipsam.<br><br>
-			Similique repudiandae dolorem perferendis quis in sed ab nesciunt. Enim quia officia quibusdam voluptas soluta. Aliquid perspiciatis quod magnam velit dolorem. Quos officiis cumque tenetur est ipsam.<br><br>
-			Similique repudiandae dolorem perferendis quis in sed ab nesciunt. Enim quia officia quibusdam voluptas soluta. Aliquid perspiciatis quod magnam velit dolorem. Quos officiis cumque tenetur est ipsam.
-		</p>
-	</div>
-	<div class="status-bar">
-    <p class="status-bar-field">Read-only Mode</p>
-    	<div role="progressbar" class="status-bar-field error">
-  <div style="width: 87%"></div>
-</div>
-    <p class="status-bar-field">Inbox 87% full</p>
-  </div>
+			<div class="email-area">
+
+				<!--- LEFT EMAIL PANEL -->
+				<div class="emails">
+					<table class="email">
+						<tr>
+							<td>
+								<img src="svg/envelope-open.svg">
+							</td>
+							<td rowspan="2">
+								<div class="info">
+									<h4>Re: Yes, we definitely need the data</h4>
+									<h5>Some asshole</h5>
+									<p>All, As I understand it, the reports...</p>
+								</div>
+							</td>
+						</tr>
+					</table>
+
+					<table class="email">
+						<tr>
+							<td>
+								<img src="svg/envelope-closed.svg">
+							</td>
+							<td rowspan="2">
+								<div class="info">
+									<h4>What's the current timeline?</h4>
+									<h5>More assholes</h5>
+									<p>Do we know what is going on with the d...</p>
+								</div>
+							</td>
+						</tr>
+					</table>
+
+					<table class="email">
+						<tr>
+							<td>
+								<img src="svg/envelope-closed.svg">
+							</td>
+							<td rowspan="2">
+								<div class="info">
+									<h4>Yes, we definitely need that data</h4>
+									<h5>Sender</h5>
+									<p>All, I'm worried about the amount of spe...</p>
+								</div>
+							</td>
+						</tr>
+					</table>
+
+					<table class="email">
+						<tr>
+							<td>
+								<img src="svg/envelope-closed.svg">
+							</td>
+							<td rowspan="2">
+								<div class="info">
+									<h4>Yes, we definitely need that data</h4>
+									<h5>Sender</h5>
+									<p>All, I'm worried about the amount of spe...</p>
+								</div>
+							</td>
+						</tr>
+					</table>
+
+					<table class="email">
+						<tr>
+							<td>
+								<img src="svg/envelope-closed.svg">
+							</td>
+							<td rowspan="2">
+								<div class="info">
+									<h4>Let's be clear everyone</h4>
+									<h5>Some other asshole</h5>
+									<p>Ok, I really need to make this completel...</p>
+								</div>
+							</td>
+						</tr>
+					</table>
+
+					<table class="email">
+						<tr>
+							<td>
+								<img src="svg/envelope-closed.svg">
+							</td>
+							<td rowspan="2">
+								<div class="info">
+									<h4>Let's be clear everyone</h4>
+									<h5>Some other asshole</h5>
+									<p>Ok, I really need to make this completel...</p>
+								</div>
+							</td>
+						</tr>
+					</table>
+
+					<table class="email">
+						<tr>
+							<td>
+								<img src="svg/envelope-closed.svg">
+							</td>
+							<td rowspan="2">
+								<div class="info">
+									<h4>Let's be clear everyone</h4>
+									<h5>Some other asshole</h5>
+									<p>Ok, I really need to make this completel...</p>
+								</div>
+							</td>
+						</tr>
+					</table>
+
+				</div>
+
+				<p class="emailbody">
+					<b>Subject: </b> Re: Yes, we definitely need that data <br>
+					<b>From: </b> Some asshole <br><br>
+
+					-----------------------------------------------------------<br><br>
+
+					All, As I understand it, the reports cannot be generated on time until
+					this data is located and processed. Can I get an update from each department
+					about status? <br><br>
+
+					Ops - Have we contacted MoH MCEDT to ask about special circumstances access? <br><br>
+
+					Tech - Do we have any backups?<br><br>
+
+					Similique repudiandae dolorem perferendis quis in sed ab nesciunt. Enim quia officia quibusdam voluptas soluta. Aliquid perspiciatis quod magnam velit dolorem. Quos officiis cumque tenetur est ipsam.<br><br>
+					Similique repudiandae dolorem perferendis quis in sed ab nesciunt. Enim quia officia quibusdam voluptas soluta. Aliquid perspiciatis quod magnam velit dolorem. Quos officiis cumque tenetur est ipsam.<br><br>
+					Similique repudiandae dolorem perferendis quis in sed ab nesciunt. Enim quia officia quibusdam voluptas soluta. Aliquid perspiciatis quod magnam velit dolorem. Quos officiis cumque tenetur est ipsam.
+				</p>
+			</div>
+
+			<div class="status-bar">
+				<p class="status-bar-field">Read-only Mode</p>
+				<div role="progressbar" 
+						 class="status-bar-field error">
+					<div style="width: 87%"></div>
+				</div>
+				<p class="status-bar-field">Inbox 87% full</p>
+			</div>
+		</div>
 	</div>
 </body>
+</html>

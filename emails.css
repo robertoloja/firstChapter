@@ -1,5 +1,8 @@
 .window {
-	min-width: 500px;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	height: 100%;
 }
 
 .ribbon {
@@ -44,13 +47,13 @@ menu {
 .email {
 	display: block;
 	background: white;
-	padding: 10px;
 	line-height: 0;
 	margin: 0;
 	cursor: pointer;
 	border-collapse: collapse;
 	border-spacing: 0;
-	height: 100%;
+	padding-top: 5px;
+	padding-bottom: 5px;
 }
 
 .email:hover {
@@ -59,7 +62,7 @@ menu {
 
 .email img {
 	filter: invert(42%) sepia(94%) saturate(758%) hue-rotate(157deg) brightness(97%) contrast(103%);
-	width: 25px;
+	width: 30px;
 	padding: 10px;
 }
 
@@ -67,10 +70,11 @@ menu {
 	border: 1px solid grey;
 	border-collapse: collapse;
 	background: white;
-	min-width: 290px;
+	min-width: 280px;
 	padding: 0;
 	margin: 0;
 	border-spacing: 0;
+	overflow-y: scroll;
 }
 
 .emails tr {
@@ -83,25 +87,21 @@ menu {
 	margin: 0;
 }
 
-.info {
-	padding: 7px;
-	display: table-cell;
-}
-
 .emailbody {
 	overflow-y: scroll;
 	background: white;
 	border: 1px solid grey;
-	max-height: 260px;
 	margin: 0;
 	padding: 20px;
 	font-family: monospace;
+	width: 100%;
 }
 
 .email-area {
 	display: flex;
 	margin: 0;
 	padding: 0;
+	max-height: 395px;
 }
 
 .status-bar {
