@@ -2,9 +2,30 @@ body {
 	background: black;
 }
 
+.header {
+	display: flex;
+	color: white;
+	font-family: "Arial";
+	font-weight: bold;
+	padding-bottom: 10px;
+}
+
+.header-name {
+	color: white;
+	font-family: "Arial";
+	font-weight: bold;
+	padding-left: 15px;
+}
+
+.back-arrow {
+	filter: invert(42%) sepia(94%) saturate(758%) hue-rotate(157deg) brightness(97%) contrast(103%);
+	width: 22px;
+	padding: 15px;	
+}
+
 .body {
-	margin-top: 50px;
-	margin-left: 100px;
+	margin-top: 70px;
+	margin-left: 110px;
 	color: white;
 	border: 1px solid darkslategray;
 	border-style: none solid none none;
@@ -22,17 +43,23 @@ body {
 	padding-left: 35px;
 	padding-top: 15px;
 	padding-right: 20px;
+	z-index: 1;
+	width: 45px;
 }
 
-img {
+.icon {
 	filter: invert(100%);
-	width: 45px;
-	height: 45px;
+	width: 40px;
+	height: 40px;
 	padding: 0;
 	margin: 0;
 }
 
 img.logo {
+	width: 45px;
+	height: 45px;
+	padding: 0;
+	margin: 0;
 	transform: scaleX(-1);
 }
 
