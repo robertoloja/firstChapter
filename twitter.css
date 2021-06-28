@@ -1,6 +1,9 @@
 body {
 	background: black;
+}
 
+.main {
+	max-width: 700px;
 }
 
 .header {
@@ -18,6 +21,7 @@ body {
 	height: 50px;
 	display: flex;
 	z-index: 1;
+	max-width: 606px;
 }
 
 .header .text {
@@ -109,15 +113,16 @@ img.logo {
 	font-family: "Arial";
 	font-size: 95%;
 	padding: 0;
-	padding-left: 20px;
 	margin: 0;
 	border: 1px solid #2F3336;
-	border-style: solid none none none;
+	border-style: solid none solid none;
+	display: inline-block;
+	width: 100%;
 }
 
-.tweet span {
-	display: block;
-	padding-left: 5px;
+.tweet-heading {
+	display: inline-block;
+	margin-left: 15px;
 	width: 100%;
 }
 
@@ -125,7 +130,7 @@ img.logo {
 	display: inline-block;
 }
 
-.tweet span p {
+.tweet .tweet-heading p {
 	display: inline-block;
 	padding: 0;
 	padding-left: 5px;
@@ -137,22 +142,23 @@ img.logo {
 	display: block;
 	margin: 0;
 	margin-top: -15px;
-	margin-left: 5px;
+	margin-left: 91px;
+	margin-bottom: 5px;
 	color: white;
 	font-size: 90%;
 }
 
 .tweet-icons {
+	display: inline-block;
 	width: 100%;
-	margin-left: auto;
-	margin-right: auto;
+	padding-left: 20px;
 }
 
 .tweet-icons svg {
 	display: inline-block;
 	width: 20px;
 	height: 20px;
-	margin-left: 5px;
+	padding-left: 65px;
 	margin-bottom: 10px;
 	filter: invert(42%) saturate(758%) brightness(97%) contrast(103%);
 }
@@ -269,4 +275,18 @@ img.logo {
 	margin: 15px;
 	border-radius: 30px;
 	font-weight: bolder;
+}
+
+.tweet-avatar {
+	height: 50px;
+	width: 50px;
+	display: inline-block;
+	border: 2px solid black;
+	margin: 0;
+	padding: 0;
+	background: white;
+	border-radius: 50%;
+	margin-bottom: -35px;
+	margin-right: 10px;
+	margin-left: 10px;
 }
