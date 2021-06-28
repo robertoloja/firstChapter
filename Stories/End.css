@@ -2,6 +2,11 @@ body {
 	padding: 40px;
 }
 
+p {
+	font-family: 'Arial';
+	font-size: 90%;
+}
+
 h3 {
 	font-size: 95%;
 	padding-left: 10px;
