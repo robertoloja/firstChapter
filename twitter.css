@@ -51,7 +51,7 @@ body {
 	filter: invert(42%) sepia(94%) saturate(758%) hue-rotate(157deg) brightness(97%) contrast(103%);
 	width: 22px;
 	height: 22px;
-	padding: 15px;	
+	padding: 15px;
 	display: inline-block;
 }
 
@@ -61,7 +61,6 @@ body {
 	color: white;
 	border: 1px solid #2F3336;
 	border-style: none solid none none;
-	padding-top: 30px;
 }
 
 .navBar {
@@ -160,20 +159,21 @@ img.logo {
 
 .profile {
 	font-family: 'Arial';
-	margin-left: 20px;
-	margin-top: 10px;
-	margin-bottom: 0;
+	padding: 0;
+	margin: 0;
 }
 
 .profile h3 {
 	margin: 0;
 	padding: 0;
 	font-weight: bolder;
+	padding-left: 20px;
 }
 
 .profile p {
 	margin: 0;
 	padding: 0;
+	padding-left: 20px;
 }
 
 .profile .handle {
@@ -188,6 +188,7 @@ img.logo {
 .profile .location {
 	color: gray;
 	display: inline-block;
+	padding-left: 20px;
 }
 
 .profile .location p {
@@ -209,6 +210,8 @@ img.logo {
 .links {
 	display: inline-block;
 	width: 100%;
+	padding: 0;
+	margin: 0;
 	padding-top: 30px;
 }
 
@@ -216,6 +219,7 @@ img.logo {
 	display: inline-block;
 	margin-left: 10%;
 	padding-bottom: 20px;
+	padding-left: 0;
 }
 
 .links .selected {
@@ -226,6 +230,7 @@ img.logo {
 
 .followers {
 	display: block;
+	padding-left: 20px;
 }
 
 .followers p {
@@ -234,4 +239,34 @@ img.logo {
 	font-size: 95%;
 	color: gray;
 	padding-left: 2px;
+}
+
+.banner {
+	width: 100%;
+	background: gray;
+	height: 200px;
+	margin: 0;
+	padding: 0;
+}
+
+.avatar {
+	width: 150px;
+	height: 150px;
+	border-radius: 50%;
+	background: white;
+	margin-top: -75px;
+	margin-left: 10px;
+	border: 4px solid black;
+}
+
+.edit-profile {
+	background: black;
+	display: block;
+	color: #1A91DA;
+	padding: 13px;
+	border: 2px solid #1A91DA;
+	float: right;
+	margin: 15px;
+	border-radius: 30px;
+	font-weight: bolder;
 }
