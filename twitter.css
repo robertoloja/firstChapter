@@ -1,13 +1,23 @@
 body {
 	background: black;
+
 }
 
 .header {
-	display: flex;
 	color: white;
 	font-family: "Arial";
 	font-weight: bold;
 	padding-bottom: 10px;
+	background:  black;
+	position: fixed;
+	top: 0;
+	left: 100px;
+	border: 1px solid #2F3336;
+	border-style: none solid solid solid;
+	width: 100%;
+	height: 50px;
+	display: flex;
+	z-index: 1;
 }
 
 .header-name {
@@ -18,19 +28,25 @@ body {
 	font-size: 110%;
 }
 
+.header-sub {
+	display: block;
+}
+
 .back-arrow {
 	filter: invert(42%) sepia(94%) saturate(758%) hue-rotate(157deg) brightness(97%) contrast(103%);
 	width: 22px;
 	height: 22px;
 	padding: 15px;	
+	display: inline-block;
 }
 
 .body {
-	margin-top: 70px;
-	margin-left: 110px;
+	margin-top: 35px;
+	margin-left: 92px;
 	color: white;
 	border: 1px solid #2F3336;
 	border-style: none solid none none;
+	padding-top: 30px;
 }
 
 .navBar {
@@ -75,13 +91,53 @@ img.logo {
 	transform: scaleX(-1);
 }
 
-.header {
-	background:  black;
-	position: fixed;
-	top: 0;
-	left: 100px;
+.tweet {
+	font-family: "Arial";
+	font-size: 95%;
+	padding: 0;
+	margin: 0;
 	border: 1px solid #2F3336;
-	border-style: none solid solid solid;
+	border-style: solid none none none;
+}
+
+.tweet span {
+	display: block;
+	padding-left: 5px;
 	width: 100%;
-	height: 50px;
+}
+
+.tweet h4 {
+	display: inline-block;
+}
+
+.tweet span p {
+	display: inline-block;
+	padding: 0;
+	padding-left: 5px;
+	color: #6E767D;
+	margin: 0;
+}
+
+.tweet-text {
+	display: block;
+	margin: 0;
+	margin-top: -15px;
+	margin-left: 5px;
+	color: white;
+	font-size: 90%;
+}
+
+.tweet-icons {
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.tweet-icons svg {
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	margin-left: 5px;
+	margin-bottom: 10px;
+	filter: invert(42%) saturate(758%) brightness(97%) contrast(103%);
 }
