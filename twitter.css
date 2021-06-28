@@ -13,13 +13,15 @@ body {
 .header-name {
 	color: white;
 	font-family: "Arial";
-	font-weight: bold;
+	font-weight: bolder;
 	padding-left: 15px;
+	font-size: 110%;
 }
 
 .back-arrow {
 	filter: invert(42%) sepia(94%) saturate(758%) hue-rotate(157deg) brightness(97%) contrast(103%);
 	width: 22px;
+	height: 22px;
 	padding: 15px;	
 }
 
@@ -27,7 +29,7 @@ body {
 	margin-top: 70px;
 	margin-left: 110px;
 	color: white;
-	border: 1px solid darkslategray;
+	border: 1px solid #2F3336;
 	border-style: none solid none none;
 }
 
@@ -35,7 +37,7 @@ body {
 	position: fixed;
 	top: 0;
 	left: 0;
-	border: 1px solid darkslategray;
+	border: 1px solid #2F3336;
 	border-style: none solid none none;
 	margin: 0;
 	padding: 0;
@@ -49,10 +51,20 @@ body {
 
 .icon {
 	filter: invert(100%);
-	width: 40px;
-	height: 40px;
-	padding: 0;
-	margin: 0;
+	width: 25px;
+	height: 25px;
+	padding: 10px;
+	margin-top: 4px;
+}
+
+.icon.selected {
+	filter: invert(42%) sepia(94%) saturate(758%) hue-rotate(157deg) brightness(97%) contrast(103%);
+}
+
+.icon.compose {
+	border: 1px solid #e56e25;
+	background: #e56e25;
+	border-radius: 50%;
 }
 
 img.logo {
@@ -68,7 +80,7 @@ img.logo {
 	position: fixed;
 	top: 0;
 	left: 100px;
-	border: 1px solid darkslategray;
+	border: 1px solid #2F3336;
 	border-style: none solid solid solid;
 	width: 100%;
 	height: 50px;
