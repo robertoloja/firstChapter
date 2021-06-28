@@ -95,6 +95,7 @@ img.logo {
 	font-family: "Arial";
 	font-size: 95%;
 	padding: 0;
+	padding-left: 20px;
 	margin: 0;
 	border: 1px solid #2F3336;
 	border-style: solid none none none;
@@ -140,4 +141,82 @@ img.logo {
 	margin-left: 5px;
 	margin-bottom: 10px;
 	filter: invert(42%) saturate(758%) brightness(97%) contrast(103%);
+}
+
+.profile {
+	font-family: 'Arial';
+	margin-left: 20px;
+	margin-top: 10px;
+	margin-bottom: 0;
+}
+
+.profile h3 {
+	margin: 0;
+	padding: 0;
+	font-weight: bolder;
+}
+
+.profile p {
+	margin: 0;
+	padding: 0;
+}
+
+.profile .handle {
+	color: gray;
+	font-size: 90%;
+}
+
+.profile .profile-sentence {
+	padding-top: 15px;
+}
+
+.profile .location {
+	color: gray;
+	display: inline-block;
+}
+
+.profile .location p {
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+	padding-right: 20px;
+}
+
+.profile .location svg {
+	width: 15px;
+	height: 15px;
+	display: inline-block;
+	padding: 0;
+	padding-top: 15px;
+	filter: invert(70%);
+}
+
+.links {
+	display: inline-block;
+	width: 100%;
+	padding-top: 30px;
+}
+
+.links p {
+	display: inline-block;
+	margin-left: 10%;
+	padding-bottom: 20px;
+}
+
+.links .selected {
+	color: #1A91DA;
+	border: 4px solid #1A91DA;
+	border-style: none none solid none;
+}
+
+.followers {
+	display: block;
+}
+
+.followers p {
+	display:  inline-block;
+	padding-top: 20px;
+	font-size: 95%;
+	color: gray;
+	padding-left: 2px;
 }
