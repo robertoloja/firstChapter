@@ -2,6 +2,11 @@ body {
 	background: black;
 }
 
+a {
+	color: #1A91DA;
+	text-decoration: none;
+}
+
 .main {
 	max-width: 700px;
 }
@@ -118,6 +123,22 @@ img.logo {
 	border-style: solid none solid none;
 	display: inline-block;
 	width: 100%;
+}
+
+.tweet.first {
+	border-style: solid none none none;
+}
+
+.tweet.last {
+	border-style: none solid none none;
+}
+
+.tweet .tweet-avatar.blue {
+	background: lightgreen;
+}
+
+.tweet.reply {
+	border-style: none none none none;
 }
 
 .tweet-heading {
@@ -289,4 +310,33 @@ img.logo {
 	margin-bottom: -35px;
 	margin-right: 10px;
 	margin-left: 10px;
+}
+
+.line {
+	color: #555555;
+	width: 150px;
+	transform: rotate(90deg);
+	position: relative;
+	left: -250px;
+	top: 0;
+	z-index: -1;
+}
+
+.red {
+	background: red;
+}
+
+video {
+	display: block;
+	margin: 30px;
+	margin: 10px auto
+}
+
+.long {
+	width: 300px;
+	top: -100px;
+}
+
+.orange {
+	background: orange;
 }
