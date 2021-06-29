@@ -7,6 +7,16 @@ a {
 	text-decoration: none;
 }
 
+button:hover {
+	background: rgba(3, 16, 25, 1);
+	cursor: pointer;
+	transition: background 0.2s;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
 .main {
 	max-width: 700px;
 }
@@ -64,6 +74,11 @@ a {
 	display: inline-block;
 }
 
+.back-arrow:hover {
+	filter: invert(42%) sepia(94%) saturate(758%) hue-rotate(157deg) brightness(97%) contrast(103%);
+	cursor: pointer;
+}
+
 .body {
 	margin-top: 35px;
 	margin-left: 92px;
@@ -94,6 +109,14 @@ a {
 	height: 25px;
 	padding: 10px;
 	margin-top: 4px;
+}
+
+.icon:not(.logo):hover {
+	filter: invert(42%) sepia(94%) saturate(758%) hue-rotate(157deg) brightness(97%) contrast(103%);
+	background: rgba(3, 16, 25, 0.1);
+	border-radius: 50%;
+	cursor: pointer;
+	transition: background 0.2s;
 }
 
 .icon.selected {
@@ -254,6 +277,10 @@ img.logo {
 	color: #1A91DA;
 	border: 4px solid #1A91DA;
 	border-style: none none solid none;
+}
+
+.links p:hover {
+	cursor: pointer;
 }
 
 .followers {
