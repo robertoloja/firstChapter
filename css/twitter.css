@@ -207,6 +207,10 @@ img.logo {
 	filter: invert(42%) saturate(758%) brightness(97%) contrast(103%);
 }
 
+.tweet-icons svg.icon:hover {
+
+}
+
 .profile {
 	font-family: 'Arial';
 	padding: 0;

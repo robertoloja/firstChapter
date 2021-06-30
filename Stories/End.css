@@ -1,20 +1,102 @@
 body {
-	padding: 40px;
+	padding: 0;
+	margin: 0;
+}
+
+h1, h2, h3, h4, p {
+	font-family: 'Arial';
 }
 
 p {
-	font-family: 'Arial';
 	font-size: 90%;
 }
 
-h3 {
-	font-size: 95%;
-	padding-left: 10px;
-	font-family: 'Arial';
+a {
+	color: rgba(79, 138, 226, 1);
+	text-decoration: none;
 }
 
-h4 {
-	font-size: 70%;
+a:hover {
+	text-decoration: underline;
+}
+
+.heading {
+	margin-left: 10cpx;
+	margin-top: 0;
+	margin-bottom: 10px;
+	color: rgba(76, 108, 155, 1);
+}
+
+.subheading {
+	margin-top: -5px;
+	margin-left: 15px;
+	font-size: 80%;
+	font-weight: 300;
+}
+
+.date {
+	margin-top: -10px;
+	margin-left: 3px;
+	font-size: 75%;
+	font-weight: 200;
+}
+
+.post-body {
+	display: inline-block;
+	max-width: 75%;
+	margin: 0;
+	border: 1px solid gray;
+	border-radius: 10px;
+	box-shadow: -1px 1px 4px gray;
+	padding: 40px 60px;
+	text-align: justify;
+	margin-bottom: 20px;
+}
+
+.post-heading {
+	padding-left: 20px;
+	padding-bottom: 5px;
+}
+
+.archive {
+	display: inline-block;
+	width: 8%;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	top: 250px;
+	border: 1px solid gray;
+	border-style: none none none solid;
+	padding-top: 50px;
 	padding-left: 10px;
-	font-family: 'Arial';
+	margin-left: 10px;
+	height: 200px;
+}
+
+.blog-bar {
+	background: yellow;
+	width: 100%;
+	height: 40px;
+	border: 1px solid orange;
+	border-style: solid none solid none;
+	margin: 0;
+	padding: 0;
+}
+
+.body {
+	display: inline-block;
+	padding: 30px 5%;
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	list-style-type: none;
+	color: rgba(79, 138, 226, 1);
+}
+
+ul ul {
+	padding-left: 10px;
+	padding-bottom: 10px;
 }

@@ -11,11 +11,38 @@
 	margin-bottom: 3px;
 	text-align: center;
 	display: inline-block;
+	width: fit-content;
+	border: 1px solid gray;
+	box-shadow: 1px 1px 1px gray;
 }
 
-.ribbon button {
+.ribbon-button {
+	display: inline-block;
 	height: 70px;
-	width: 80px;
+	width: 50px;
+	margin: 0 auto;
+	padding: 0 10px;
+	padding-bottom: 5px;
+	border: 1px solid #F0F0F0;
+}
+
+.ribbon-button:hover {
+	cursor: pointer;
+	background: linear-gradient(180deg,#e5f4fd 45%,#b3e0f9 0);
+	border: 1px solid #72a2c5;
+}
+
+.ribbon-button img {
+	display: block;
+	height: 40px;
+	margin: 0 auto;
+	padding-top: 10px;
+}
+
+.ribbon-button p {
+	display: block;
+	padding: 0;
+	margin: 0;
 }
 
 .email h4 {
