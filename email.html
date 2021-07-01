@@ -9,13 +9,13 @@
 <body>
     <script>
     	function openEmail(evt, cityName) {
+    		console.log(evt)
   // Declare all variables
   var i, tabcontent, tablinks;
 
   // Get all elements with class="tabcontent" and hide them
   tabcontent = document.getElementsByClassName("emailbody");
   for (i = 0; i < tabcontent.length; i++) {
-  	console.log(tabcontent)
     tabcontent[i].style.display = "none";
   }
 
@@ -23,11 +23,13 @@
   tablinks = document.getElementsByClassName("emaillink");
   for (i = 0; i < tablinks.length; i++) {
     tablinks[i].className = tablinks[i].className.replace(" active", "");
+    tablinks[i].firstElementChild.src = "svg/envelope-closed.svg"
   }
 
   // Show the current tab, and add an "active" class to the button that opened the tab
   document.getElementById(cityName).style.display = "block";
   evt.currentTarget.className += " active";
+  evt.currentTarget.firstElementChild.src = "svg/envelope-open.svg"
 } 
     </script>
 	<script>
@@ -107,7 +109,7 @@
 					<table class="email">
 						<tr>
 							<td>
-							<button class="nostyle disabled emaillink" onclick="openEmail(event, 'email1')">
+							<button class="nostyle disabled emaillink active" onclick="openEmail(event, 'email1')">
 								<img src="svg/envelope-open.svg">
 							
 								<div class="info">
