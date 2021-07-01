@@ -1,6 +1,7 @@
 body {
 	padding: 0;
 	margin: 0;
+	background: whitesmoke;
 }
 
 h1, h2, h3, h4, p {
@@ -51,6 +52,7 @@ a:hover {
 	padding: 40px 60px;
 	text-align: justify;
 	margin-bottom: 20px;
+	background: white;
 }
 
 .post-heading {
@@ -81,6 +83,10 @@ a:hover {
 	border-style: solid none solid none;
 	margin: 0;
 	padding: 0;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 1;
 }
 
 .body {
@@ -102,6 +108,65 @@ ul ul {
 }
 
 .post-footer {
-
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	margin-top: 40px;
+	padding-left: 10px;
+	padding-top: 20px;
+	border: 1px solid gray;
+	border-style: solid none none none;
 }
 
+.comment {
+	margin: 15px 0;
+	border: 1px solid gray;
+	border-radius: 5px;
+	padding: 20px;
+	box-shadow: -1px 1px 3px gray;
+	background: whitesmoke;
+}
+
+.post-footer img {
+	width: 30px;
+	height: 30px;
+	background: red;
+	border-radius: 50%;
+	display: inline-block;
+	margin-right: 20px;
+	vertical-align: middle;
+	border: 2px solid gray;
+	border-radius: 50%;
+}
+
+.post-footer img.red {
+	background: red;
+}
+
+.post-footer img.white {
+	background: white;
+}
+
+.post-footer .comment-text {
+	display: inline-block;
+	background: white;
+	padding: 10px;
+	border-radius: 10px;
+}
+
+.post-footer .subcomment {
+	display: block;
+	margin: 0;
+	padding: 0;
+	padding-left: 7px;
+	font-size: 70%;
+	font-weight: 100;
+	color: #606060;
+}
+
+.post-footer .subcomment a {
+	padding: 0;
+	margin: 0;
+	padding-right: 20px;
+	font-size: 130%;
+}
