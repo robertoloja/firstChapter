@@ -104,14 +104,17 @@ menu {
 	overflow-y: scroll;
 }
 
+tbody {
+	display: inline-block;
+	width: 100%;
+}
+
 .emails tr {
-	padding: 0;
-	margin: 0;
+	display: block;
 }
 
 .emails td {
-	padding: 0;
-	margin: 0;
+	display: block;
 }
 
 .emailbody {
@@ -122,6 +125,7 @@ menu {
 	padding: 20px;
 	font-family: monospace;
 	width: 100%;
+	display: none;
 }
 
 .email-area {
@@ -129,6 +133,7 @@ menu {
 	margin: 0;
 	padding: 0;
 	max-height: 395px;
+	margin-bottom: 10px;
 }
 
 .status-bar {
@@ -139,5 +144,33 @@ menu {
 hr {
 	color: lightgray;
 	margin: 5px;
+	margin-bottom: 10px;
+}
+
+button.nostyle {
+	all: unset;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+button.nostyle.disabled:hover {
+	all: unset;
+	background: lightblue;
+}
+
+button.nostyle img {
+	padding: 0;
+	margin: 0;
+	position: relative;
+	top: 10px;
+	left: 10px;
+}
+
+button.nostyle .info {
+	padding: 0;
+	margin: 0;
+	margin-top: -20px;
+	margin-left: 50px;
 	margin-bottom: 10px;
 }
