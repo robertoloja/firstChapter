@@ -76,11 +76,10 @@ menu {
 	background: white;
 	line-height: 0;
 	margin: 0;
+	padding: 0;
 	cursor: pointer;
 	border-collapse: collapse;
 	border-spacing: 0;
-	padding-top: 5px;
-	padding-bottom: 5px;
 }
 
 .email:hover {
