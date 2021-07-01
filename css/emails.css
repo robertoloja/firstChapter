@@ -159,7 +159,8 @@ button.nostyle {
 
 button.nostyle.disabled:hover {
 	all: unset;
-	background: lightblue;
+	background: linear-gradient(180deg,#cee9f8 45%,#86c6e8 0);
+	width: 100%;
 }
 
 button.nostyle img {
