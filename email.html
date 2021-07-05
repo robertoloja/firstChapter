@@ -6,7 +6,13 @@
 	<meta charset="UTF-8">
 </head>
 
-<body>
+<body onload='var elems = document.getElementsByClassName("blacked-out")
+
+    	for (var e of elems) {
+    		console.log(e)
+    		e.onselectstart = 
+    		() => { alert("obv i took out the names dude") }
+    	}'>
     <script>
     	function openEmail(evt, cityName) {
     		this.classList.add("unread")
@@ -71,10 +77,27 @@
   				</button>
   			</menu>
   		</section>
+<script>
+	function openCompose(evt) {
+		document.getElementById('compose').style.display = 'inline-block'
+		document.getElementById('inbox').style.display = 'none'
+		console.log('foo')
+	}
 
+	function openInbox(evt) {
+		document.getElementById('inbox').style.display = 'flex'
+		document.getElementById('compose').style.display = 'none'
+		console.log('foo')
+	}
+</script>
 			<article role="tabpanel" id="tab-file">
 				<div class="ribbon">
-					<div class="ribbon-button">
+					<div class="ribbon-button click" onclick="openInbox(event)">
+						<img src="svg/envelope-closed.svg">
+						<p>Inbox</p>
+					</div>
+
+					<div class="ribbon-button click" onclick="openCompose(event)">
 						<img src="svg/envelope-closed.svg">
 						<p>Compose</p>
 					</div>
@@ -103,7 +126,13 @@
 
 			<article role="tabpanel" id="tab-edit" hidden></article>
 
-			<div class="email-area">
+			<div class="email-area" id="compose" style="display: none;">
+				<div class="emails" style="width: 100%;">
+					foo
+				</div>
+			</div>
+
+			<div class="email-area" id="inbox">
 
 				<!--- LEFT EMAIL PANEL -->
 				<div class="emails">
@@ -117,8 +146,8 @@
 									<h4 class="unread">
 										Re: Yes, we definitely need the data
 									</h4>
-									<h5>Senior Director of Growth Analytics</h5>
-									<p>All, As I understand it, the reports...</p>
+									<h5>Dr. <span class="blacked-out">lol this was a name</span> Senior Director, Growth Analytics</h5>
+									<p>All, As I understand it, the reports asda sd asda asdasdasdasd</p>
 								</div>
 							</button>
 							</td>
@@ -245,7 +274,7 @@
 				<!-- MAIN EMAIL BODY -->
 				<p class="emailbody" id="email1">
 					<b>Subject: </b> Re: Yes, we definitely need that data <br>
-					<b>From: </b>Senior Director of Growth Analytics <br>
+					<b>From: </b> Dr. <span class="blacked-out">lol this was a name</span> Senior Director, Growth Analytics <br>
 					<b>Date: </b>May 20th, 2020, 9:03 AM<br><br>
 
 					--------------------------------------------------<br><br>
