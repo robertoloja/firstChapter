@@ -178,3 +178,29 @@ button.nostyle .info {
 	margin-left: 50px;
 	margin-bottom: 10px;
 }
+
+.blacked-out {
+	background: black;
+}
+
+.blacked-out::selection {
+	color: black;
+	background: black;
+}
+
+.reply {
+	display: block;
+	margin: 15px;
+	padding: 10px;
+	padding-bottom: 1px;
+	border: 1px solid gray;
+	border-style: none none none solid;
+}
+
+.unread h4 {
+	font-weight: 500;
+}
+
+.unread h5 {
+	font-weight: 400;
+}
