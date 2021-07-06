@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <head>
 	<link rel="stylesheet" href="css/index.css">
@@ -5,29 +6,34 @@
 
 	<script>
 		function newSrc() {
-			var comboBox = document.getElementById("part-select")
+			const urls = {
+				"Stories/End.html": "ms-whatsapp.html",
+				"email.html": "pm-whatsapp.html",
+				"twitter.html": "jd-whatsapp.html"
+			}
+
 			var arrows = document.getElementById("arrows")
+			var newSrc = this.options[this.selectedIndex].id
 
-			var newSrc = comboBox.options[comboBox.selectedIndex].value
 			document.getElementById('proscenium').src = newSrc
-
-			arrows.href = comboBox.options[comboBox.selectedIndex].firstChild.data
+			arrows.href = urls[newSrc]
 		}
 	</script>
 </head>
 
 <body>
 	<div class="select">
-		<select name="parts" id="part-select">
-			<option onClick="newSrc()" value="Stories/End.html" label="An End" selected>ms-whatsapp.html</option>
-			<option onClick="newSrc()" value="email.html" label="A Middle">pm-whatsapp.html</option>
-			<option onClick="newSrc()" value="twitter.html" label="A Beginning">jd-whatsapp.html</option>
+		<select name="parts" id="part-select" onchange="newSrc.call(this)">
+			<option id="Stories/End.html" selected>An End</option>
+			<option id="email.html">A Middle</option>
+			<option id="twitter.html">A Beginning</option>
 		</select>
 	</div>
 
 	<iframe width="800" height="600" src="Stories/End.html" id="proscenium"></iframe>
 
-	<p><a href="second.html" id="arrows">→</a></p>
-
+	<p>
+		<a href="ms-whatsapp.html" id="arrows">→</a>
+	</p>
 </body>
 </html>
