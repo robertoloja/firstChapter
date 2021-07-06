@@ -6,7 +6,7 @@
 	margin-right: auto;
 }
 
-@media screen and (max-width: 1000px){
+@media (orientation:  portrait) {
 	#proscenium {
 		width: 100%;
 	}
