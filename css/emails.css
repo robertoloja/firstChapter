@@ -193,6 +193,7 @@ button.nostyle .info {
 
 .blacked-out {
 	background: black;
+	color: black;
 }
 
 .blacked-out::selection {
@@ -209,10 +210,18 @@ button.nostyle .info {
 	border-style: none none none solid;
 }
 
-.unread h4 {
+.read h4 {
 	font-weight: 500;
 }
 
-.unread h5 {
+.read h5 {
 	font-weight: 400;
+}
+
+.email p {
+	font-weight: 600;
+}
+
+.read p {
+	font-weight: normal;
 }

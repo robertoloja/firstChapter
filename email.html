@@ -1,355 +1,309 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<script>
+		//setTimeout("location.reload(true);",1000);
+	</script>
+
 	<link rel="stylesheet" href="css/emails.css">
 	<link rel="stylesheet" href="css/win7.css">
+	<script src="js/email.js"></script>
 	<meta charset="UTF-8">
 </head>
 
-<body onload='var elems = document.getElementsByClassName("blacked-out")
+<body>
+<div class="window">
+	<div class="title-bar">
+		<div class="title-bar-text">Simpl-eMail</div>
 
-    	for (var e of elems) {
-    		console.log(e)
-    		e.onselectstart = 
-    		() => { alert("obv i took out the names dude") }
-    	}'>
-    <script>
-    	function openEmail(evt, cityName) {
-    		this.classList.add("unread")
-    		
-			  // Declare all variables
-			  var i, tabcontent, tablinks;
-
-			  // Get all elements with class="tabcontent" and hide them
-			  tabcontent = document.getElementsByClassName("emailbody");
-			  for (i = 0; i < tabcontent.length; i++) {
-			    tabcontent[i].style.display = "none";
-			  }
-
-			  // Get all elements with class="tablinks" and remove the class "active"
-			  tablinks = document.getElementsByClassName("emaillink");
-			  for (i = 0; i < tablinks.length; i++) {
-			    tablinks[i].className = tablinks[i].className.replace(" active", "");
-			  }
-
-			  // Show the current tab, and add an "active" class to the button that opened the tab
-			  document.getElementById(cityName).style.display = "block";
-			  evt.currentTarget.className += " active";
-			  evt.currentTarget.firstElementChild.src = "svg/envelope-open.svg"
-			}
-    </script>
-
-		<script>
-        //setTimeout("location.reload(true);",1000);
-    </script>
-  <div class="window">
-  	<div class="title-bar">
-  		<div class="title-bar-text">
-  			Simpl-eMail
-  		</div>
-
-  		<div class="title-bar-controls">
-  			<button aria-label="Minimize"></button>
-  			<button aria-label="Maximize"></button>
-  			<button aria-label="Close"></button>
-  		</div>
-  	</div>
-
-  	<div class="window-body">
-  		<section class="tabs">
-  			<menu role="tablist" aria-label="File menu">
-  				<button role="tab" aria-controls="tab-file">
-  					File
-  				</button>
-
-  				<button role="tab" 
-  								aria-controls="tab-edit" 
-  								aria-selected="true">
-  					Emails
-  				</button>
-  				
-  				<button role="tab" aria-controls="tab-calendar">
-  					Calendar
-  				</button>
-
-  				<button role="tab" aria-controls="tab-search">
-  					Search
-  				</button>
-  			</menu>
-  		</section>
-<script>
-	function openCompose(evt) {
-		document.getElementById('compose').style.display = 'inline-block'
-		document.getElementById('inbox').style.display = 'none'
-		console.log('foo')
-	}
-
-	function openInbox(evt) {
-		document.getElementById('inbox').style.display = 'flex'
-		document.getElementById('compose').style.display = 'none'
-		console.log('foo')
-	}
-</script>
-			<article role="tabpanel" id="tab-file">
-				<div class="ribbon">
-					<div class="ribbon-button click" onclick="openInbox(event)">
-						<img src="svg/envelope-closed.svg">
-						<p>Inbox</p>
-					</div>
-
-					<div class="ribbon-button click" onclick="openCompose(event)">
-						<img src="svg/envelope-closed.svg">
-						<p>Compose</p>
-					</div>
-
-					<div class="ribbon-button">
-						<img src="svg/envelope-closed.svg">
-						<p>Delete</p>
-					</div>
-
-					<div class="ribbon-button">
-						<img src="svg/envelope-closed.svg">
-						<p>Reply</p>
-					</div>
-
-					<div class="ribbon-button">
-						<img src="svg/envelope-closed.svg">
-						<p>Reply All</p>
-					</div>
-
-					<div class="ribbon-button">
-						<img src="svg/envelope-closed.svg">
-						<p>Forward</p>
-					</div>
-				</div>
-			</article>
-
-			<article role="tabpanel" id="tab-edit" hidden></article>
-
-			<div class="email-area" id="compose" style="display: none;">
-				<div class="emails" style="width: 100%;">
-					foo
-				</div>
-			</div>
-
-			<div class="email-area" id="inbox">
-
-				<!--- LEFT EMAIL PANEL -->
-				<div class="emails">
-					<table class="email">
-						<tr>
-							<td>
-							<button id ="email1-button" class="nostyle disabled emaillink active unread" onclick="openEmail.call(this, event, 'email1')">
-								<img src="svg/envelope-open.svg">
-							
-								<div class="info">
-									<h4 class="unread">
-										Re: Yes, we definitely need the data
-									</h4>
-									<h5>Dr. <span class="blacked-out">lol this was a name</span> Senior Director, Growth Analytics</h5>
-									<p>All, As I understand it, the reports asda sd asda asdasdasdasd</p>
-								</div>
-							</button>
-							</td>
-						</tr>
-					</table>
-
-					<table class="email">
-						<tr>
-							<td>
-							<button class="nostyle disabled emaillink" onclick="openEmail.call(this, event, 'email2')">
-								<img src="svg/envelope-closed.svg">
-
-								<div class="info">
-									<h4>What's the current timeline?</h4>
-									<h5>More assholes</h5>
-									<p>Do we know what is going on with the d...</p>
-								</div>
-							</button>
-							</td>
-						</tr>
-					</table>
-
-					<table class="email">
-						<tr>
-							<td>
-							<button class="nostyle disabled emaillink" onclick="openEmail.call(this, event, 'email3')">
-								<img src="svg/envelope-closed.svg">
-							
-								<div class="info">
-									<h4>Yes, we definitely need that data</h4>
-									<h5>Sender</h5>
-									<p>All, I'm worried about the amount of spe...</p>
-								</div>
-							</button>
-							</td>
-						</tr>
-					</table>
-
-					<table class="email">
-						<tr>
-							<td>
-								<button class="nostyle disabled emaillink" onclick="openEmail.call(this, event, 'email4')">
-								<img src="svg/envelope-closed.svg">
-							
-								<div class="info">
-									<h4>Yes, we definitely need that data</h4>
-									<h5>Sender</h5>
-									<p>All, I'm worried about the amount of spe...</p>
-								</div>
-							</button>
-							</td>
-						</tr>
-					</table>
-
-					<table class="email">
-						<tr>
-							<td>
-							<button class="nostyle disabled emaillink" onclick="openEmail.call(this, event, 'email5')">
-								<img src="svg/envelope-closed.svg">
-							
-								<div class="info">
-									<h4>Let's be clear everyone</h4>
-									<h5>Some other asshole</h5>
-									<p>Ok, I really need to make this completel...</p>
-								</div>
-							</button>
-							</td>
-						</tr>
-					</table>
-
-					<table class="email">
-						<tr>
-							<td>
-							<button class="nostyle disabled emaillink" onclick="openEmail.call(this, event, 'email6')">
-								<img src="svg/envelope-closed.svg">
-							
-								<div class="info">
-									<h4>Let's be clear everyone</h4>
-									<h5>Some other asshole</h5>
-									<p>Ok, I really need to make this completel...</p>
-								</div>
-							</button>
-							</td>
-						</tr>
-					</table>
-
-					<table class="email">
-						<tr>
-							<td>
-							<button class="nostyle disabled emaillink" onclick="openEmail.call(this, event, 'email7')">
-								<img src="svg/envelope-closed.svg">
-							
-								<div class="info">
-									<h4>Let's be clear everyone</h4>
-									<h5>Some other asshole</h5>
-									<p>Ok, I really need to make this completel...</p>
-								</div>
-							</button>
-							</td>
-						</tr>
-					</table>
-
-					<table class="email">
-						<tr>
-							<td>
-							<button class="nostyle disabled emaillink" onclick="openEmail.call(this, event, 'email8')">
-								<img src="svg/envelope-closed.svg">
-							
-								<div class="info">
-									<h4>Let's be clear everyone</h4>
-									<h5>Some other asshole</h5>
-									<p>Ok, I really need to make this completel...</p>
-								</div>
-							</button>
-							</td>
-						</tr>
-					</table>
-
-					<p style="width: 100%; margin: 10px auto; text-align: center; font-weight: 100; color: black;">
-						881 e-mails archived
-					</p>
-				</div>
-
-				<!-- MAIN EMAIL BODY -->
-				<p class="emailbody" id="email1">
-					<b>Subject: </b> Re: Yes, we definitely need that data <br>
-					<b>From: </b> Dr. <span class="blacked-out">lol this was a name</span> Senior Director, Growth Analytics <br>
-					<b>Date: </b>May 20th, 2020, 9:03 AM<br><br>
-
-					--------------------------------------------------<br><br>
-
-					All, <br><br>
-
-					As I understand it, the reports cannot be generated on time until this data is located and processed. Naturally, since our delivery date is only 2 weeks away, we're all feeling the pressure.<br><br>
-
-					Can we get an update from each department about status? <br><br>
-
-					Ops - Have we contacted MoH MCEDT to ask about special circumstances access? <br><br>
-
-					Tech - Do we have any backups?<br><br>
-
-					Legal - Does this affect our data delegation? Do we have a responsibility to keep copies of this data? (reply privately)<br><br>
-
-					I know we're all stressed out team, but remember that we're all in this together. None of us would ever make any kind of threat, but prudent people will realize that causing this level of company-wide urgency has pretty serious consequences.<br><br><br>
-
-					Kind regards,<br><br>
-
-					Dr. <span class="blacked-out">lol this was a name</span> AAT, MFA, PhD (ABD)<br>
-					Senior Director of Growth Analytics
-
-					<br><br><br>
-
-					<span class="reply">foo 
-						<span class="reply">bar</span>
-					</span>					
-				</p>
-
-				<p class="emailbody" id="email2">
-					Similique repudiandae dolorem perferendis quis in sed ab nesciunt. Enim quia officia quibusdam voluptas soluta. Aliquid perspiciatis quod magnam velit dolorem. Quos officiis cumque tenetur est ipsam.<br><br>
-					Similique repudiandae dolorem perferendis quis in sed ab nesciunt. Enim quia officia quibusdam voluptas soluta. Aliquid perspiciatis quod magnam velit dolorem. Quos officiis cumque tenetur est ipsam.<br><br>
-					Similique repudiandae dolorem perferendis quis in sed ab nesciunt. Enim quia officia quibusdam voluptas soluta.<br><br>
-					Aliquid perspiciatis quod magnam velit dolorem. Quos officiis cumque tenetur est ipsam.<br><br>
-					Similique repudiandae dolorem perferendis quis in sed ab nesciunt. Enim quia officia quibusdam voluptas soluta. Aliquid perspiciatis quod magnam velit dolorem. Quos officiis cumque tenetur est ipsam.<br><br>
-					Similique repudiandae dolorem perferendis quis in sed ab nesciunt. Enim quia officia quibusdam voluptas soluta. Aliquid perspiciatis quod magnam velit dolorem. Quos officiis cumque tenetur est ipsam.<br><br>
-					Similique repudiandae dolorem perferendis quis in sed ab nesciunt. Enim quia officia quibusdam voluptas soluta.<br><br>
-					Aliquid perspiciatis quod magnam velit dolorem. Quos officiis cumque tenetur est ipsam.
-				</p>
-
-				<p class="emailbody" id="email3">
-					bar
-				</p>
-
-				<p class="emailbody" id="email4">
-					foo
-				</p>
-
-				<p class="emailbody" id="email5">
-					blablabla
-				</p>
-
-				<p class="emailbody" id="email6">
-					a bunch of stuff
-				</p>
-
-				<p class="emailbody" id="email7">
-					some other stuff
-				</p>
-
-				<p class="emailbody" id="email8">
-					the eighth email
-				</p>
-
-			</div>
-
-			<div class="status-bar">
-				<p class="status-bar-field">Read-only Mode</p>
-				<div role="progressbar" class="status-bar-field error">
-					<div style="width: 87%"></div>
-				</div>
-				<p class="status-bar-field">Inbox 87% full</p>
-			</div>
+		<div class="title-bar-controls">
+			<button aria-label="Minimize"></button>
+			<button aria-label="Maximize"></button>
+			<button aria-label="Close"></button>
 		</div>
 	</div>
+
+	<div class="window-body">
+		<section class="tabs">
+			<menu role="tablist" aria-label="File menu">
+				<button role="tab" aria-controls="tab-file">
+					File
+				</button>
+
+				<button role="tab" 
+								aria-controls="tab-edit" 
+								aria-selected="true">
+					Emails
+				</button>
+				
+				<button role="tab" aria-controls="tab-calendar">
+					Calendar
+				</button>
+
+				<button role="tab" aria-controls="tab-search">
+					Search
+				</button>
+			</menu>
+		</section>
+
+		<article role="tabpanel" id="tab-file">
+			<div class="ribbon">
+				<div class="ribbon-button click" onclick="openWindowFromRibbon.call(this, event)">
+					<img src="svg/envelope-closed.svg">
+					<p>Inbox</p>
+				</div>
+
+				<div class="ribbon-button click" onclick="openWindowFromRibbon.call(this, event)">
+					<img src="svg/envelope-closed.svg">
+					<p>Compose</p>
+				</div>
+
+				<div class="ribbon-button">
+					<img src="svg/envelope-closed.svg">
+					<p>Delete</p>
+				</div>
+
+				<div class="ribbon-button">
+					<img src="svg/envelope-closed.svg">
+					<p>Reply</p>
+				</div>
+
+				<div class="ribbon-button">
+					<img src="svg/envelope-closed.svg">
+					<p>Reply All</p>
+				</div>
+
+				<div class="ribbon-button">
+					<img src="svg/envelope-closed.svg">
+					<p>Forward</p>
+				</div>
+			</div>
+		</article>
+
+		<article role="tabpanel" id="tab-edit" hidden></article>
+
+		<div class="email-area" id="compose" style="display: none;">
+			<div class="emails" style="width: 100%;">
+				foo
+			</div>
+		</div>
+
+		<div class="email-area" id="inbox">
+		<!--- LEFT EMAIL PANEL -->
+			<div class="emails">
+				<table class="email">
+					<tr>
+						<td>
+						<button id ="email1-button" class="nostyle disabled emaillink active read" onclick="openEmail.call(this, event, 'email1')">
+							<img src="svg/envelope-open.svg">
+						
+							<div class="info">
+								<h4>
+									Re: Yes, we definitely need the data
+								</h4>
+								<h5>Dr. <span class="blacked-out" style="color: black;">lol this was a name</span> Senior Director, Growth Analytics</h5>
+								<p>All, As I understand it, the reports asda sd asda asdasdasdasd</p>
+							</div>
+						</button>
+						</td>
+					</tr>
+				</table>
+
+				<table class="email">
+					<tr>
+						<td>
+						<button class="nostyle disabled emaillink" onclick="openEmail.call(this, event, 'email2')">
+							<img src="svg/envelope-closed.svg">
+
+							<div class="info">
+								<h4>What's the current timeline?</h4>
+								<h5>More assholes</h5>
+								<p>Do we know what is going on with the d...</p>
+							</div>
+						</button>
+						</td>
+					</tr>
+				</table>
+
+				<table class="email">
+					<tr>
+						<td>
+						<button class="nostyle disabled emaillink" onclick="openEmail.call(this, event, 'email3')">
+							<img src="svg/envelope-closed.svg">
+						
+							<div class="info">
+								<h4>Yes, we definitely need that data</h4>
+								<h5>Sender</h5>
+								<p>All, I'm worried about the amount of spe...</p>
+							</div>
+						</button>
+						</td>
+					</tr>
+				</table>
+
+				<table class="email">
+					<tr>
+						<td>
+							<button class="nostyle disabled emaillink" onclick="openEmail.call(this, event, 'email4')">
+							<img src="svg/envelope-closed.svg">
+						
+							<div class="info">
+								<h4>Yes, we definitely need that data</h4>
+								<h5>Sender</h5>
+								<p>All, I'm worried about the amount of spe...</p>
+							</div>
+						</button>
+						</td>
+					</tr>
+				</table>
+
+				<table class="email">
+					<tr>
+						<td>
+						<button class="nostyle disabled emaillink" onclick="openEmail.call(this, event, 'email5')">
+							<img src="svg/envelope-closed.svg">
+						
+							<div class="info">
+								<h4>Let's be clear everyone</h4>
+								<h5>Some other asshole</h5>
+								<p>Ok, I really need to make this completel...</p>
+							</div>
+						</button>
+						</td>
+					</tr>
+				</table>
+
+				<table class="email">
+					<tr>
+						<td>
+						<button class="nostyle disabled emaillink" onclick="openEmail.call(this, event, 'email6')">
+							<img src="svg/envelope-closed.svg">
+						
+							<div class="info">
+								<h4>Let's be clear everyone</h4>
+								<h5>Some other asshole</h5>
+								<p>Ok, I really need to make this completel...</p>
+							</div>
+						</button>
+						</td>
+					</tr>
+				</table>
+
+				<table class="email">
+					<tr>
+						<td>
+						<button class="nostyle disabled emaillink" onclick="openEmail.call(this, event, 'email7')">
+							<img src="svg/envelope-closed.svg">
+						
+							<div class="info">
+								<h4>Let's be clear everyone</h4>
+								<h5>Some other asshole</h5>
+								<p>Ok, I really need to make this completel...</p>
+							</div>
+						</button>
+						</td>
+					</tr>
+				</table>
+
+				<table class="email">
+					<tr>
+						<td>
+						<button class="nostyle disabled emaillink" onclick="openEmail.call(this, event, 'email8')">
+							<img src="svg/envelope-closed.svg">
+						
+							<div class="info">
+								<h4>Let's be clear everyone</h4>
+								<h5>Some other asshole</h5>
+								<p>Ok, I really need to make this completel...</p>
+							</div>
+						</button>
+						</td>
+					</tr>
+				</table>
+
+				<p style="width: 100%; margin: 10px auto; text-align: center; font-weight: 100; color: black;">
+					881 e-mails archived
+				</p>
+			</div>
+
+		<!-- MAIN EMAIL BODY -->
+			<p class="emailbody" id="email1">
+				<b>Subject: </b> Re: Yes, we definitely need that data <br>
+				<b>From: </b> Dr. <span class="blacked-out">lol this was a name</span> Senior Director, Growth Analytics <br>
+				<b>Date: </b>May 20th, 2020, 9:03 AM<br><br>
+
+				--------------------------------------------------<br><br>
+
+				All, <br><br>
+
+				As I understand it, the reports cannot be generated on time until this data is located and processed. Naturally, since our delivery date is only 2 weeks away, we're all feeling the pressure.<br><br>
+
+				Can we get an update from each department about status? <br><br>
+
+				Ops - Have we contacted MoH MCEDT to ask about special circumstances access? <br><br>
+
+				Tech - Do we have any backups?<br><br>
+
+				Legal - Does this affect our data delegation? Do we have a responsibility to keep copies of this data? (reply privately)<br><br>
+
+				I know we're all stressed out team, but remember that we're all in this together. None of us would ever make any kind of threat, but prudent people will realize that causing this level of company-wide urgency has pretty serious consequences.<br><br><br>
+
+				Kind regards,<br><br>
+
+				Dr. <span class="blacked-out">lol this was a name</span> AAT, MFA, PhD (ABD)<br>
+				Senior Director of Growth Analytics
+
+				<br><br><br>
+
+				<span class="reply">foo 
+					<span class="reply">bar</span>
+				</span>					
+			</p>
+
+			<p class="emailbody" id="email2">
+				Similique repudiandae dolorem perferendis quis in sed ab nesciunt. Enim quia officia quibusdam voluptas soluta. Aliquid perspiciatis quod magnam velit dolorem. Quos officiis cumque tenetur est ipsam.<br><br>
+				Similique repudiandae dolorem perferendis quis in sed ab nesciunt. Enim quia officia quibusdam voluptas soluta. Aliquid perspiciatis quod magnam velit dolorem. Quos officiis cumque tenetur est ipsam.<br><br>
+				Similique repudiandae dolorem perferendis quis in sed ab nesciunt. Enim quia officia quibusdam voluptas soluta.<br><br>
+				Aliquid perspiciatis quod magnam velit dolorem. Quos officiis cumque tenetur est ipsam.<br><br>
+				Similique repudiandae dolorem perferendis quis in sed ab nesciunt. Enim quia officia quibusdam voluptas soluta. Aliquid perspiciatis quod magnam velit dolorem. Quos officiis cumque tenetur est ipsam.<br><br>
+				Similique repudiandae dolorem perferendis quis in sed ab nesciunt. Enim quia officia quibusdam voluptas soluta. Aliquid perspiciatis quod magnam velit dolorem. Quos officiis cumque tenetur est ipsam.<br><br>
+				Similique repudiandae dolorem perferendis quis in sed ab nesciunt. Enim quia officia quibusdam voluptas soluta.<br><br>
+				Aliquid perspiciatis quod magnam velit dolorem. Quos officiis cumque tenetur est ipsam.
+			</p>
+
+			<p class="emailbody" id="email3">
+				bar
+			</p>
+
+			<p class="emailbody" id="email4">
+				foo
+			</p>
+
+			<p class="emailbody" id="email5">
+				blablabla
+			</p>
+
+			<p class="emailbody" id="email6">
+				a bunch of stuff
+			</p>
+
+			<p class="emailbody" id="email7">
+				some other stuff
+			</p>
+
+			<p class="emailbody" id="email8">
+				the eighth email
+			</p>
+		</div>
+
+		<div class="status-bar">
+			<p class="status-bar-field">Read-only Mode</p>
+			<div role="progressbar" class="status-bar-field error">
+				<div style="width: 87%"></div>
+			</div>
+			<p class="status-bar-field">Inbox 87% full</p>
+		</div>
+	</div>
+</div>
 </body>
 </html>
