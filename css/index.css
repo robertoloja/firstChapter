@@ -6,11 +6,13 @@
 	margin-right: auto;
 }
 
-@media (orientation:  portrait) {
+@media screen and (orientation:  portrait) {
 	#proscenium {
 		width: 100%;
 		margin: 0;
+		padding: 0;
 		height: 90%;
+		overflow-x: hidden;
 	}
 }
 
