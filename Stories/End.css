@@ -2,6 +2,7 @@ body {
 	padding: 0;
 	margin: 0;
 	background: whitesmoke;
+	overflow-x: hidden;
 }
 
 h1, h2, h3, h4, p {
@@ -23,20 +24,19 @@ a:hover {
 
 .heading {
 	margin-top: 0;
-	margin-bottom: 10px;
+	margin-bottom: 1rem;
 	color: rgba(76, 108, 155, 1);
 }
 
 .subheading {
-	margin-top: -5px;
-	margin-left: 15px;
+	margin-left: 1rem;
+	margin-top: -0.5rem;
 	font-size: 80%;
 	font-weight: 300;
 }
 
 .date {
-	margin-top: -10px;
-	margin-left: 3px;
+	margin-top: -0.5rem;
 	font-size: 75%;
 	font-weight: 200;
 }
@@ -48,9 +48,9 @@ a:hover {
 	border: 1px solid gray;
 	border-radius: 5px;
 	box-shadow: -1px 1px 3px gray;
-	padding: 40px 60px;
+	padding: 3rem 4rem;
 	text-align: justify;
-	margin-bottom: 20px;
+	margin-bottom: 2rem;
 	background: white;
 }
 
@@ -71,9 +71,9 @@ a:hover {
 */
 
 .post-heading {
-	padding-left: 20px;
-	padding-bottom: 5px;
-	padding-top: 10px;
+	padding-left: 1rem;
+	padding-bottom: 0.1rem;
+	padding-top: 0.2rem;
 }
 
 .archive {
@@ -94,8 +94,8 @@ a:hover {
 .blog-bar {
 	background: #FF4500;
 	width: 100%;
-	height: 35px;
-	border: 3px solid orange;
+	height: 2.3rem;
+	border: 0.1rem solid orange;
 	border-style: solid none solid none;
 	margin: 0;
 	padding: 0;
@@ -157,24 +157,28 @@ ul ul {
 	margin: 0;
 	padding: 0;
 	margin-top: 40px;
-	padding-left: 10px;
-	padding-top: 20px;
+	padding-left: 0.5rem;
+	padding-top: 0.8rem;
 	border: 1px solid gray;
 	border-style: solid none none none;
 }
 
 .comment {
-	margin: 15px 0;
+	margin: 0;
+	margin-top: 1rem;
 	border: 1px solid gray;
 	border-radius: 5px;
-	padding: 20px;
+	padding: 1rem;
+	padding-bottom: 0.4rem;
+	padding-left: 0.4rem;
+	padding-top: 0.1rem;
 	box-shadow: -1px 1px 4px lightgray;
 	background: whitesmoke;
 }
 
 .post-footer img {
-	width: 30px;
-	height: 30px;
+	width: 2rem;
+	height: 2rem;
 	background: red;
 	border-radius: 50%;
 	display: inline-block;
@@ -192,12 +196,17 @@ ul ul {
 	background: white;
 }
 
+.post-footer img.blue {
+	background: lightblue;
+}
+
 .post-footer .comment-text {
 	display: inline-block;
 	background: white;
-	padding: 10px;
+	padding: 0.5rem;
 	border-radius: 10px;
 	box-shadow: -1px 1px 2px gray;
+	text-align: left;
 }
 
 .post-footer .subcomment {
@@ -227,4 +236,24 @@ ul ul {
 	color: #4C6C9B;
 	margin: -25px 0 30px 0;
 	padding: 0 0 0 60px;
+}
+
+span.tooltip {
+	background: rgba(255, 255, 255, 0.9);
+	padding: 0.5rem 1rem;
+	display: none;
+	position: absolute;
+	border: 1px solid black;
+	border-radius: 0.5rem;
+	color: black;
+	cursor: default;
+	box-shadow: 2px 2px 2px gray;
+	font-family: 'Courier';
+	font-weight: 500;
+	font-size: 95%;
+}
+
+
+a.tooltip:hover span.tooltip {
+	display: block;
 }

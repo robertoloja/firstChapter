@@ -5,6 +5,13 @@
 	<meta charset="UTF-8">
 
 	<script>
+		function fadeAndDeleteOverlay() {
+			let overlay = document.getElementsByClassName('intro-overlay')[0]
+
+			window.setTimeout(() => {overlay.style.opacity = 0}, 2000)
+			window.setTimeout(() => {overlay.hidden = true}, 4000)
+		}
+
 		function newSrc() {
 			const urls = {
 				"Stories/End.html": "ms-whatsapp.html",
@@ -21,7 +28,10 @@
 	</script>
 </head>
 
-<body>
+<body onload="fadeAndDeleteOverlay.call(this)">
+	<div class="intro-overlay">
+		<h1>0: introduction</h1>
+	</div>
 	<div class="select">
 		<select name="parts" id="part-select" onchange="newSrc.call(this)">
 			<option id="Stories/End.html" selected>An End</option>
