@@ -6,6 +6,12 @@
 	margin-right: auto;
 }
 
+@media screen and (max-width: 1000px){
+	#proscenium {
+		width: 100%;
+	}
+}
+
 p {
 	text-align: center;
 	width: 100%;
