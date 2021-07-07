@@ -54,6 +54,13 @@ a:hover {
 	background: white;
 }
 
+@media screen and (orientation:  portrait) {
+	.post-body {
+		max-width: 100%;
+		padding: 1rem;
+	}
+}
+
 /*
 .parags p:first-child:first-letter{
 	font-family:  serif;
@@ -89,6 +96,12 @@ a:hover {
 	padding-left: 10px;
 	margin-left: 10px;
 	height: 200px;
+}
+
+@media screen and (orientation:  portrait) {
+	.archive {
+		display: none;
+	}
 }
 
 .blog-bar {
@@ -137,6 +150,12 @@ a:hover {
 .body {
 	display: inline-block;
 	padding: 30px 5%;
+}
+
+@media screen and (orientation:  portrait) {
+	.body {
+		padding: 0.2rem;
+	}
 }
 
 ul {
