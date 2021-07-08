@@ -121,6 +121,20 @@ a:hover {
 	box-shadow: -1px 1px 2px black;
 }
 
+@media screen and (orientation:  portrait) {
+	.blog-bar p.ad {
+		width: 50%;
+		font-size: 0.7rem;
+		word-wrap: break-word;
+		margin-left: 3rem;
+		text-align: center;
+	}
+
+	.blog-bar {
+
+	}
+}
+
 .blog-bar h1 {
 	margin: -3px 0 0 5px;
 	padding: 0.1rem;
@@ -147,19 +161,6 @@ a:hover {
 	color: orange;
 	text-shadow: 0px 0px 2px black;
 	font-weight: 300;
-}
-
-@media screen and (orientation:  portrait) {
-	.blag-bar .ad {
-		font-size: 10%;
-	}
-}
-
-@media screen and (orientation:  portrait) {
-	.blog-bar .ad {
-		margin: 0;
-
-	} 
 }
 
 .body {
@@ -276,7 +277,8 @@ span.tooltip {
 	background: rgba(255, 255, 255, 0.9);
 	padding: 0.5rem 1rem;
 	display: none;
-	position: absolute;
+	position: fixed;
+	bottom: 1rem;
 	border: 1px solid black;
 	border-radius: 0.5rem;
 	color: black;
@@ -287,6 +289,23 @@ span.tooltip {
 	font-size: 95%;
 }
 
+span.tooltip:before /* triangle decoration */
+{
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid #111;
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -0.6rem;
+    margin-left: -10px;
+}
+
+a.tooltip:hover {
+	cursor: pointer;
+}
 
 a.tooltip:hover span.tooltip {
 	display: block;

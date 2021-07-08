@@ -4,29 +4,7 @@
 	<link rel="stylesheet" href="css/index.css">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<meta charset="UTF-8">
-
-	<script>
-		function fadeAndDeleteOverlay() {
-			let overlay = document.getElementsByClassName('intro-overlay')[0]
-
-			window.setTimeout(() => {overlay.style.opacity = 0}, 2000)
-			window.setTimeout(() => {overlay.hidden = true}, 4000)
-		}
-
-		function newSrc() {
-			const urls = {
-				"Stories/End.html": "ms-whatsapp.html",
-				"email.html": "pm-whatsapp.html",
-				"twitter.html": "jd-whatsapp.html"
-			}
-
-			var arrows = document.getElementById("arrows")
-			var newSrc = this.options[this.selectedIndex].id
-
-			document.getElementById('proscenium').src = newSrc
-			arrows.href = urls[newSrc]
-		}
-	</script>
+	<script src="js/index.js"></script>
 </head>
 
 <body onload="fadeAndDeleteOverlay.call(this)">
@@ -43,8 +21,12 @@
 
 	<iframe width="800" height="600" src="Stories/End.html" id="proscenium"></iframe>
 
-	<p>
+	<div class="footer">
 		<a href="ms-whatsapp.html" id="arrows">→</a>
-	</p>
+		<span>
+			<p id='dart' hidden>1. strongly dragged on a cigarette<br>2. drove a Dodge Dart&nbsp;</p>
+			<p id='chituma' hidden>chìtùmǎ</p>
+		</span>
+	</div>
 </body>
 </html>

@@ -6,19 +6,28 @@
 	margin-right: auto;
 }
 
+#arrows {
+	display: inline-block;
+	position: absolute;
+	left: 45%;
+	font-size: 150%;
+	margin: 0;
+	padding: 0;
+	z-index: 0;
+}
+
 @media screen and (orientation:  portrait) {
 	#proscenium {
 		width: 100%;
 		margin: 0;
 		padding: 0;
-		height: 90%;
+		height: 83%;
 		overflow-x: hidden;
 	}
-}
 
-p {
-	text-align: center;
-	width: 100%;
+	#arrows {
+		font-size: 300%;
+	}
 }
 
 .select {
@@ -49,6 +58,7 @@ html, body {
 	vertical-align: 50%;
 	opacity: 100%;
 	transition: all 2s linear;
+	z-index: 1;
 }
 
 .intro-overlay h1 {
@@ -56,4 +66,34 @@ html, body {
 	position: absolute;
 	text-align: center;
 	top: 30%;
+}
+
+.footer {
+	width: 800px;
+	margin:  0 auto;
+}
+
+.footer span p {
+	text-align: left;
+	position: absolute;
+	border: 1px solid gray;
+	border-radius: 5px;
+	padding: 0.7rem;
+	margin: 0.1rem 1rem;
+	background: rgba(240, 240, 240, 0.95);
+	font-family: 'Courier';
+	font-size: 0.8rem;
+	font-weight: 600;
+	box-shadow: -1px -1px 1px gray;
+	transition: opacity 1s;
+}
+
+#dart {
+	width: 18rem;
+	margin-left: 2rem;
+}
+
+#chituma {
+	width: 3.5rem;
+	margin-left: 8rem;
 }

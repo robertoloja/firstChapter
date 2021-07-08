@@ -2,12 +2,15 @@
 	<head>
 		<link rel="stylesheet" href="End.css">
 		<meta charset="UTF-8">
-	<script>
-		function showTooltip(id) {
-			let tooltip = document.getElementById(id)
-			console.log(tooltip)
-		}
-	</script>
+		<script>
+			function showFootnote(event, id) {
+				let message = {
+					'type': event.type,
+					'id': id
+				}
+				window.top.postMessage(message, '*')
+			}
+		</script>
 	</head>
 <body>
 	<script>
@@ -45,7 +48,7 @@
 				<p>1 comment</p>
 
 				<div class="comment">
-					<img src="" class="red">
+					<img class="red">
 					<p class="comment-text">fuckin eh! welcome to the club!!1</p>
 					<p class="subcomment">
 						<a href="">WH</a>
@@ -63,7 +66,7 @@
 				<h4 class="subheading">by <a href="">MS</a></h4>
 			</div>
 			<div class="parags">
-			<p>First, I watched them cross the driveway that divided the two buildings. After a while, they came back, wheeling a... an aquarium?</p>
+			<p>First, I watched them cross the driveway that separated the two buildings. After a while, they came back, wheeling a... an aquarium?</p>
 
 			<p>"Don't push it over the bricks, the vibratin' will break it!"</p>
 
@@ -73,9 +76,11 @@
 
 			<p>"Mind the vibratin' tho!"</p>
 
-			<p>Sure enough, as the box wheeled over the interlocked brick driveway, it began to shake violently, feinting topples to either side and making the awful screech of glass that is scraping, bending, and generally crying out to shatter. Having crossed the chasm, the glass box no longer threatening to break, the bearded one announced: "I'm having a smoke." The other one protested:</p>
+			<p>Sure enough, as the box was wheeled over the interlocked brick driveway, it began to shake violently, feinting topples to either side and making the awful screech of glass that is scraping, bending, and generally crying out to shatter.</p>
 
-			<p>"She'll get cold! Let's go up then come back!"</p>
+			<p>Having crossed the chasm, the glass box no longer threatening to break, the bearded one announced: "I'm having a smoke."</p>
+
+			<p>The other one protested: "She'll get cold! Let's go up then come back!"</p>
 
 			<p>"She's not gonna die from a few minutes of winter—"</p>
 
@@ -93,35 +98,49 @@
 
 			<p>"Well, she's cold! I don't wanna smoke. We're gonna sit inside!"</p>
 
-			<p>The one holding the lizard went into the building's foyer, while the bearded one in the Leaf's jersey <a href="" class="tooltip">ripped a dart<span class="tooltip" id="dart">1. strongly dragged on a cigarette<br>2. drove a Dodge Dart&nbsp;</span></a> and muttered at the glass box, itself now leaning precariously against a wall. I finished smoking, put on my mask, and went inside.</p>
+			<p>The one holding the lizard went into the building's foyer, while the bearded one in the Leaf's jersey 
+				<a class="tooltip"
+					onclick="showFootnote(event, 0)"
+					onmouseover="showFootnote(event, 0)"
+					onmouseout="showFootnote(event, 0)">ripped a dart</a>
+			and muttered at the glass box, itself now leaning precariously against a wall. I finished smoking, put on my mask, and went inside.</p>
 
-			<p>On the ground just inside the doorway, the lizard looked asleep, basking in the body heat of, perhaps, the only mammal, legs fully crossed to make a nest, who had ever held it with tenderness. I wondered if I was watching someone get their first ever pet, then couldn't help but smile, make eye contact, and mention "cool lizard" as I passed.</p>
+			<p>On the ground just inside the doorway, the lizard looked asleep, basking in the body heat of, perhaps, the only mammal (legs fully crossed to make a nest) who had ever held it with tenderness. I wondered if I was watching someone get their first ever pet, then couldn't help but smile, make eye contact, and mention "cool lizard" as I passed.</p>
 
 			<p>"Yeah, very cool! Her name is <i>nay-reem-ia</i>", beaming at me.</p>
 
 			<p>"Nice!"</p>
 
-			<p>For the entire rest of the day, the lizard's name kept stealing my attention; I was sure it had some obscure historical origin. I wasted hours, first reading famous horse names: Bucephalus, Marengo, Palomo, <a href="" class="tooltip">赤兔馬<span class="tooltip">chìtùmǎ</span></a>... Then famous lizards, which is harder, and yields mostly dinosaurs and dragons.</p>
+			<p>For the entire rest of the day, the lizard's name kept stealing my attention; I was sure it had some obscure historical origin. I wasted hours, first reading famous horse names: Bucephalus, Marengo, Palomo, 
+				<a class="tooltip"
+					onclick="showFootnote(event, 1)"
+					onmouseover="showFootnote(event, 1)"
+					onmouseout="showFootnote(event, 1)">赤兔馬</a>... Then famous lizards, which is harder, and yields mostly dinosaurs and dragons.</p>
 
 			<p>Today I finally groked it.</p>
 
 			<p><i>Nymeria</i>.
 
-			<p>Game of fucking Thrones. I'm dumb for thinking someone would make some obscure historical reference like that (and like, it <i>is</i> slightly psychopathic to name pets after warhorses), but Nymeria <i>as a lizard's name</i> is actually a historical deep cut, within the fictional history of Game of Thrones. The pet with that name that we see in the show is a wolf, named after an ancient dragon.</p>
+			<p>Game of fucking Thrones. I'm dumb for thinking someone would make some obscure historical reference like that (and like, it <i>is</i> slightly psychopathic to name pets after warhorses), but Nymeria <i>as a lizard's name</i> is actually a historical deep cut, within the fictional history of Game of Thrones. The pet with that name that we see in the show is a wolf, named after an ancient warrior, the founder of Dorne.</p>
+
+			<p>After fleeing giant lizards... her fictional exploits comemorated by the name given to the enormous lizard that, apparently, now lives in my building.</p>
+
+			<p>I do not enjoy reptiles.</p>
 			</div>
+
 			<div class="post-footer">
 				<p>3 comments</p>
 
 				<div class="comment">
-					<img src="" class="red">
-					<p class="comment-text">nice. what kind of lizard was it?</p>
+					<img class="red">
+					<p class="comment-text">nice. what kind of lizard?</p>
 					<p class="subcomment">
 						<a href="">WH</a>
 						May 12th 2020
 					</p>
 
 					<div class="comment">
-						<img src="" class="blue">
+						<img class="blue">
 						<p class="comment-text">I don't know. It was huge.</p>
 						<p class="subcomment">
 							<a href="">MS</a>
@@ -129,15 +148,15 @@
 						</p>
 
 						<div class="comment">
-							<img src="" class="red">
+							<img class="red">
 							<p class="comment-text">monitor lizard? iguana?</p>
 							<p class="subcomment">
 								<a href="">WH</a>
 								May 12th 2020
 							</p>
 							<div class="comment">
-								<img src="" class="blue">
-								<p class="comment-text">I don't know lizards. Big fucking lizard.<br> I only know it wasn't a snake because <br>it had legs.</p>
+								<img class="blue">
+								<p class="comment-text">I don't know, big fucking lizard. I only know it wasn't a snake because it had legs.</p>
 								<p class="subcomment">
 									<a href="">MS</a>
 									May 12th 2020
@@ -151,7 +170,7 @@
 					<pre>[ deleted by author ]</pre>
 
 					<div class="comment">
-						<img src="" class="blue">
+						<img class="blue">
 						<p class="comment-text">Ok... don't read it then?</p>
 						<p class="subcomment">
 							<a href="">MS</a>
@@ -161,7 +180,7 @@
 				</div>
 
 				<div class="comment">
-					<img src="" class="white">
+					<img class="white">
 					<p class="comment-text">I think I've seen these two 😂</p>
 					<p class="subcomment">
 						<a href="">JD</a>
