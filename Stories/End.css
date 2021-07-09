@@ -55,13 +55,6 @@ a:hover {
 	line-height: 150%;
 }
 
-@media screen and (orientation:  portrait) {
-	.post-body {
-		max-width: 100%;
-		padding: 1rem;
-	}
-}
-
 /*
 .parags p:first-child:first-letter{
 	font-family:  serif;
@@ -99,18 +92,12 @@ a:hover {
 	height: 200px;
 }
 
-@media screen and (orientation:  portrait) {
-	.archive {
-		display: none;
-	}
-}
-
 .blog-bar {
-	background: #FF4500;
+	background: #FFC864;
 	display: inline-block;
 	width: 100%;
 	height: 2.3rem;
-	border: 0.1rem solid orange;
+	border: 0.1rem solid #567BBF;
 	border-style: solid none solid none;
 	margin: 0;
 	padding: 0;
@@ -121,57 +108,34 @@ a:hover {
 	box-shadow: -1px 1px 2px black;
 }
 
-@media screen and (orientation:  portrait) {
-	.blog-bar p.ad {
-		width: 50%;
-		font-size: 0.7rem;
-		word-wrap: break-word;
-		margin-left: 3rem;
-		text-align: center;
-	}
-
-	.blog-bar {
-
-	}
-}
-
 .blog-bar h1 {
 	margin: -3px 0 0 5px;
 	padding: 0.1rem;
-	text-shadow: 3px 3px #2F6Aa2,
-				-3px -3px #2F6Aa2,
-				0px 0px 4px black;
-	color: orange;
+	text-shadow: 3px 3px #0C3683,
+				-3px -3px #0C3683;
+	color: #C68000;
 	display: inline-block;
 	font-weight: 800;
 }
 
 .blog-bar p {
 	display: inline-block;
-	color: #2F6Aa2;
+	color: #0C3683;
 	font-weight: 800;
 	padding-left: 0;
-	text-shadow: 0px 0px 2px black;
 	text-decoration: underline;
 }
 
 .blog-bar .ad {
 	display: inline-block;
 	margin: -23px 0 0 80px;
-	color: orange;
-	text-shadow: 0px 0px 2px black;
+	color: #9B6500;
 	font-weight: 300;
 }
 
 .body {
 	display: inline-block;
 	padding: 30px 5%;
-}
-
-@media screen and (orientation:  portrait) {
-	.body {
-		padding: 0.2rem;
-	}
 }
 
 ul {
@@ -309,4 +273,56 @@ a.tooltip:hover {
 
 a.tooltip:hover span.tooltip {
 	display: block;
+}
+
+@media screen and (orientation:  portrait) {
+	.parags {
+		padding: 1rem;
+	}
+
+	.post-body {
+		max-width: 100%;
+		padding: 0.2rem;
+		padding-top: 2rem;
+	}
+
+	.archive {
+		display: none;
+	}
+
+	.blog-bar p.ad {
+		width: 50%;
+		font-size: 0.8rem;
+		word-wrap: break-word;
+		margin-left: 3rem;
+		text-align: center;
+		text-shadow: 0 0 0 black;
+	}
+
+	.body {
+		padding: 0.2rem;
+	}
+
+	.post-footer {
+		padding: 0;
+	}
+
+	.comment {
+		padding: 0.2rem;
+		padding-left: 0.3rem;
+		padding-right: 0;
+	}
+
+	.comment .comment-text {
+		margin: 1rem;
+		width: 60%;
+	}
+
+	.comment img {
+		margin: 1rem;
+	}
+
+	.post-footer .subcomment {
+		padding-left: 1.4rem;
+	}
 }

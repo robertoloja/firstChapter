@@ -16,20 +16,6 @@
 	z-index: 0;
 }
 
-@media screen and (orientation:  portrait) {
-	#proscenium {
-		width: 100%;
-		margin: 0;
-		padding: 0;
-		height: 83%;
-		overflow-x: hidden;
-	}
-
-	#arrows {
-		font-size: 300%;
-	}
-}
-
 .select {
 	width: 800px;
 	margin-left: auto;
@@ -38,7 +24,7 @@
 
 select {
 	text-align: center;
-	width: 200px;
+	width: 10rem;
 }
 
 html, body {
@@ -85,7 +71,7 @@ html, body {
 	font-size: 0.8rem;
 	font-weight: 600;
 	box-shadow: -1px -1px 1px gray;
-	transition: opacity 1s;
+	transition: opacity 3s;
 }
 
 #dart {
@@ -96,4 +82,24 @@ html, body {
 #chituma {
 	width: 3.5rem;
 	margin-left: 8rem;
+}
+
+
+@media screen and (orientation:  portrait) {
+	#proscenium {
+		width: 100%;
+		margin: 0;
+		padding: 0;
+		height: 82%;
+		overflow-x: hidden;
+	}
+
+	#arrows {
+		font-size: 300%;
+	}
+
+	select {
+		width: 22.5rem;
+		height: 3rem;
+	}
 }

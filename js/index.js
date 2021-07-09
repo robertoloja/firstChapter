@@ -37,12 +37,12 @@ window.onmessage = function hoverFootnote(message) {
 		
 		window.setTimeout(() => {
 			footnote.style.opacity = 0
-		}, 2000)
+		}, 5000)
 
 		window.setTimeout(() => { 
 			footnote.style.opacity = 100
 			footnote.hidden = true
-		}, 3000)
+		}, 8000)
 
 	} else {
 		if (footnote.hidden) {

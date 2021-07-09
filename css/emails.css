@@ -145,7 +145,7 @@ tbody {
 }
 
 #email1 {
-	display: block;
+	display: inline-block;
 }
 
 .email-area {
@@ -230,6 +230,10 @@ button.nostyle .info {
 }
 
 @media screen and (orientation: portrait) {
+	body {
+		overflow-y: scroll;
+	}
+
 	.ribbon-button img {
 		width: 1rem;
 		height: 1rem;
@@ -271,10 +275,16 @@ button.nostyle .info {
 	}
 
 	.emailbody {
-		width: 90%;
+		width: 100%;
 		overflow-wrap: break-word;
 		overflow-x: hidden;
-		min-height: 50%;
+		height: 50rem;
+	}
+
+	#email1 {
+		width: 87%;
+		overflow-wrap: break-word;
+		margin: 0 auto;
 	}
 
 	.inbox {
