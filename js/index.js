@@ -5,6 +5,7 @@ function fadeAndDeleteOverlay() {
 	window.setTimeout(() => {overlay.hidden = true}, 4000)
 }
 
+
 function newSrc() {
 	const urls = {
 		"Stories/End.html": "ms-whatsapp.html",
@@ -19,8 +20,15 @@ function newSrc() {
 	arrows.href = urls[newSrc]
 }
 
+
 window.onmessage = function hoverFootnote(message) {
 	const mapping = ['dart', 'chituma']
+	console.log(message)
+
+	for (let i = 0; i < mapping.length; i++) {
+		if (message.data.id == i) continue
+		document.getElementById(mapping[i]).hidden = true
+	}
 
 	let footnote = document.getElementById(mapping[message.data.id])
 
