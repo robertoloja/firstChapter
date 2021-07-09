@@ -211,4 +211,18 @@ table p {
 	.msg p {
 		padding: 1.2rem;
 	}
+	.msg p {
+		display: table;
+		margin: 0.4rem;
+		padding: 7px 10px;
+		border-radius: 0.5rem;
+	}
+
+	.msg.received :first-child {
+		border-radius: 0 0.5rem 0.5rem 0.5rem;
+	}
+
+	.msg.sent :first-child {
+		border-radius: 0.5 0 0.5rem 0.5rem;
+	}
 }

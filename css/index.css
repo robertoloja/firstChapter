@@ -25,6 +25,7 @@
 select {
 	text-align: center;
 	width: 10rem;
+	height: 2rem;
 }
 
 html, body {

@@ -1,8 +1,11 @@
 function fadeAndDeleteOverlay() {
 	let overlay = document.getElementsByClassName('intro-overlay')[0]
 
-	window.setTimeout(() => {overlay.style.opacity = 0}, 2000)
-	window.setTimeout(() => {overlay.hidden = true}, 4000)
+	let overlayDeath = new Promise((res, rej) => {
+		window.setTimeout(() => {overlay.style.opacity = 0}, 2000)
+		res()
+	})
+	overlayDeath.then(window.setTimeout(() => { overlay.hidden = true }, 4000))
 }
 
 
@@ -23,7 +26,6 @@ function newSrc() {
 
 window.onmessage = function hoverFootnote(message) {
 	const mapping = ['dart', 'chituma']
-	console.log(message)
 
 	for (let i = 0; i < mapping.length; i++) {
 		if (message.data.id == i) continue
@@ -35,14 +37,17 @@ window.onmessage = function hoverFootnote(message) {
 	if (message.data.type == "click") { 
 		footnote.hidden = false
 		
-		window.setTimeout(() => {
-			footnote.style.opacity = 0
-		}, 5000)
-
-		window.setTimeout(() => { 
+		let fadeFootnote = new Promise((res, rej) => {
+			window.setTimeout(() => {
+				footnote.style.opacity = 0
+				res()
+			}, 5000)
+		})
+		
+		fadeFootnote.then(window.setTimeout(() => { 
 			footnote.style.opacity = 100
 			footnote.hidden = true
-		}, 8000)
+		}, 8000))
 
 	} else {
 		if (footnote.hidden) {
