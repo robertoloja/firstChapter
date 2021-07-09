@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<script src="js/index.js"></script>
 	<link rel="stylesheet" href="css/index.css">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<meta charset="UTF-8">
-	<script src="js/index.js"></script>
 </head>
 
-<body onload="fadeAndDeleteOverlay.call(this)">
-	<div class="intro-overlay">
+<body onload="fadeAndDeleteOverlay.call()">
+	<div class="intro-overlay" hidden>
 		<h1>0: introduction</h1>
 	</div>
+
 	<div class="select">
 		<select name="parts" id="part-select" onchange="newSrc.call(this)">
 			<option id="Stories/End.html" selected>An End</option>
@@ -19,13 +20,29 @@
 		</select>
 	</div>
 
-	<iframe width="800" height="600" src="Stories/End.html" id="proscenium"></iframe>
+	<iframe src="Stories/End.html" id="proscenium"></iframe>
 
 	<div class="footer">
 		<a href="ms-whatsapp.html" id="arrows">→</a>
 		<span>
-			<p id='dart' hidden>1. strongly dragged on a cigarette<br>2. drove a Dodge Dart&nbsp;</p>
-			<p id='chituma' hidden>chìtùmǎ</p>
+			<div class="footnote" id='dart' hidden>
+				1. strongly dragged on a cigarette<br>
+				2. drove a Dodge Dart&nbsp;
+			</div>
+
+			<div class="footnote" id='chitu' hidden>
+				<div class="mandarin">
+					<div class="hanzi" id="赤">
+						<h1>赤</h1>
+						<p class="pinyin">chì</p>
+					</div>
+
+					<div class="hanzi" id="兔">
+						<h1>兔</h1>
+						<p class="pinyin">tù</p>
+					</div>
+				</div>
+			</div>
 		</span>
 	</div>
 </body>

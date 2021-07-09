@@ -60,7 +60,7 @@ html, body {
 	margin:  0 auto;
 }
 
-.footer span p {
+.footnote {
 	text-align: left;
 	position: absolute;
 	border: 1px solid gray;
@@ -75,16 +75,50 @@ html, body {
 	transition: opacity 3s;
 }
 
+.mandarin {
+	text-align: center;
+	padding: 0 0.5rem;
+}
+
+.mandarin .hanzi {
+	display: inline-block;
+}
+
+.hanzi h1 {
+	margin: 0;
+	padding: 0;
+	text-size: 80%;
+}
+
+.hanzi p {
+	margin: 0;
+	padding: 0;
+}
+
+.hanzi:hover {
+	cursor: pointer;
+}
+
+#赤:hover {
+	color: blue;
+}
+
+#兔:hover {
+	color: red;
+}
+
+.hanzi .pinyin {
+	text-align: center;
+}
+
 #dart {
 	width: 18rem;
 	margin-left: 2rem;
 }
 
-#chituma {
-	width: 3.5rem;
-	margin-left: 8rem;
+#chitu {
+	margin-left: 5rem;
 }
-
 
 @media screen and (orientation:  portrait) {
 	#proscenium {

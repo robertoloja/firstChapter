@@ -1,18 +1,21 @@
 function fadeAndDeleteOverlay() {
-	let overlay = document.getElementsByClassName('intro-overlay')[0]
+	let overlay;
 
 	const url = new URL(window.location.href)
 	const param = new URLSearchParams(url.search.slice(1))
 
 	if (param.get('overlay') == 'false') {
-		overlay.hidden = true
 		return
+	} else {
+		overlay = document.getElementsByClassName('intro-overlay')[0]
+		overlay.hidden = false
 	}
 
 	let overlayDeath = new Promise((res, rej) => {
 		window.setTimeout(() => {overlay.style.opacity = 0}, 2000)
 		res()
 	})
+
 	overlayDeath.then(window.setTimeout(() => { overlay.hidden = true }, 4000))
 }
 
@@ -23,9 +26,10 @@ function newSrc() {
 		"email.html": "pm-whatsapp.html",
 		"twitter.html": "jd-whatsapp.html"
 	}
+	console.log(this)
 
-	var arrows = document.getElementById("arrows")
-	var newSrc = this.options[this.selectedIndex].id
+	let arrows = document.getElementById("arrows")
+	let newSrc = this.options[this.selectedIndex].id
 
 	document.getElementById('proscenium').src = newSrc
 	arrows.href = urls[newSrc]
@@ -33,35 +37,37 @@ function newSrc() {
 
 
 window.onmessage = function hoverFootnote(message) {
-	const mapping = ['dart', 'chituma']
+	let chosenFootnote;
+	const footnotes = [...document.getElementsByClassName('footnote')]
 
-	for (let i = 0; i < mapping.length; i++) {
-		if (message.data.id == i) continue
-		document.getElementById(mapping[i]).hidden = true
+	for (footnote of footnotes) {
+		if (footnote.id == message.data.id) {
+			chosenFootnote = footnote
+			continue
+		}
+		footnote.hidden = true
 	}
 
-	let footnote = document.getElementById(mapping[message.data.id])
-
 	if (message.data.type == "click") { 
-		footnote.hidden = false
+		chosenFootnote.hidden = false
 		
 		let fadeFootnote = new Promise((res, rej) => {
 			window.setTimeout(() => {
-				footnote.style.opacity = 0
+				chosenFootnote.style.opacity = 0
 				res()
 			}, 5000)
 		})
 		
 		fadeFootnote.then(window.setTimeout(() => { 
-			footnote.style.opacity = 100
-			footnote.hidden = true
+			chosenFootnote.style.opacity = 100
+			chosenFootnote.hidden = true
 		}, 8000))
 
 	} else {
-		if (footnote.hidden) {
-			footnote.hidden = false
+		if (chosenFootnote.hidden) {
+			chosenFootnote.hidden = false
 		} else {
-			footnote.hidden = true
+			chosenFootnote.hidden = true
 		}
 	}
 }

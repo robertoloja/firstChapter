@@ -1,29 +1,31 @@
+<!DOCTYPE html>
 <html>
-	<head>
-		<link rel="stylesheet" href="End.css">
-		<meta charset="UTF-8">
-		<script>
-			function showFootnote(event, id) {
-				let message = {
-					'type': event.type,
-					'id': id
-				}
-				console.log(id)
-				window.top.postMessage(message, '*')
-			}
-		</script>
-	</head>
-<body>
+<head>
+	<link rel="stylesheet" href="End.css">
+
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<meta charset="UTF-8">
+
 	<script>
-        //setTimeout("location.reload(true);",1000);
-    </script>
+		const showFootnote = (event, id) => {
+			let message = {
+				'type': event.type,
+				'id': id
+			}
+			window.top.postMessage(message, '*')
+		}
 
-    <div class="blog-bar">
-    	<h1>B</h1><p>.org</p>
-    	<p class="ad">Join the frontline of the culture war! Make a <a href="">FREE BLOG</a> today!</p>
-    </div>
+		//setTimeout("location.reload(true);",1000);
+	</script>
+</head>
 
-    <div class="body">
+<body>
+	<div class="blog-bar">
+		<h1>B</h1><p>.org</p>
+		<p class="ad">Join the frontline of the culture war! Make a <a href="">FREE BLOG</a> today!</p>
+	</div>
+
+	<div class="body">
 	    <h1 class="blog-title">Blog</h1>
 	    <h2 class="blog-subtitle">a subtitle</h2>
 
@@ -34,17 +36,19 @@
 				<h4 class="date">May 20th, 2020</h4>
 				<h4 class="subheading">by <a href="">MS</a></h4>
 			</div>
+
 			<div class="parags">
-			<p>I couldn't get that song out of my head. After my third coffee that morning, I caught myself typing to the rhythm of the vocals, and my desk neighbour gave me her "hey can you please lower the volume?" look at least twice. When I realized, after the second verse, that the politely pleading look had stopped working, I got up to go smoke, and convince myself to quit this job.</p>
+				<p>I couldn't get that song out of my head. After my third coffee that morning, I caught myself typing to the rhythm of the vocals, and my desk neighbour gave me her "hey can you please lower the volume?" look at least twice. When I realized, after the second verse, that the politely pleading look had stopped working, I got up to go smoke, and convince myself to quit this job.</p>
 
-			<p>Outside, I rewound the song. < TODO: Write a description of the song. > Once I started audiating my own melody, in those tones, the argument was complete. I had to make this song.</p>
+				<p>Outside, I rewound the song. < TODO: Write a description of the song. > Once I started audiating my own melody, in those tones, the argument was complete. I had to make this song.</p>
 
-			<p>When I came back inside, I got my boss' attention with the usual light knock on the edge of his desk, and was greeted with the usual "yo". This was a mediumish department, so a "we have to talk privately" wasn't exactly alarming, but it meant awkwardly pinging every meeting room and, this time, deciding to go for a walk instead. Walk-talks tended to be more serious, so I grabbed onto the foreshadowing given me by office overcrowding, and began with a loaded "so". Long story short, I said, we need to start a hiring process. He took it pretty well, since the last dev had only lasted 5 months, and I'd been able to put in 18. Over the course of the conversation, I myself became aware of how my coffee, nicotine, THC, and alcohol consumption had all increased since...</p>
+				<p>When I came back inside, I got my boss' attention with the usual light knock on the edge of his desk, and was greeted with the usual "yo". This was a mediumish department, so a "we have to talk privately" wasn't exactly alarming, but it meant awkwardly pinging every meeting room and, this time, deciding to go for a walk instead. Walk-talks tended to be more serious, so I grabbed onto the foreshadowing given me by office overcrowding, and began with a loaded "so". Long story short, I said, we need to start a hiring process. He took it pretty well, since the last dev had only lasted 5 months, and I'd been able to put in 18. Over the course of the conversation, I myself became aware of how my coffee, nicotine, THC, and alcohol consumption had all increased since...</p>
 
-			<p>Well, since the rhino arrived. I finally told my boss about the rhino. He couldn't see it yet, but we had accidentally hired a rhino about 2 months earlier. We bought coffee, sat down, and I took some time to put my thoughts in order. I told him how, based on conversations with other colleagues, I suspected that one or two others could also already see the rhino, but none of the leadership team had noticed him yet. They were all, for now, very happy with him. My boss was too confused, so I finally asked him whether he'd read Ionescu and, when he said no, I spent some time explaining the problems as I saw them. I described the ways I'd tried to fix them, and the resulting frustration at the unnecesary impediments to project completion that had been introduced by the rhino. Finally, I wished him luck, and formally quit.</p>
+				<p>Well, since the rhino arrived. I finally told my boss about the rhino. He couldn't see it yet, but we had accidentally hired a rhino about 2 months earlier. We bought coffee, sat down, and I took some time to put my thoughts in order. I told him how, based on conversations with other colleagues, I suspected that one or two others could also already see the rhino, but none of the leadership team had noticed him yet. They were all, for now, very happy with him. My boss was too confused, so I finally asked him whether he'd read Ionescu and, when he said no, I spent some time explaining the problems as I saw them. I described the ways I'd tried to fix them, and the resulting frustration at the unnecesary impediments to project completion that had been introduced by the rhino. Finally, I wished him luck, and formally quit.</p>
 
-			<p>The next two weeks were pretty easy. My ex-boss asked for recommendations, and I called a few people I'd gone to school with. Out of the seven, three weren't currently into in web programming, but we had a quick chat with the rest and booked two interviews for the next day, then hired someone by Friday. Since my old team dealt with some pretty sensitive medical data, I still had to come in to the office to help the new dev learn the ropes, but anyway we hadn't seen each other in a long time, and it was great to hang out. After about four nights of dinner, drinks, and deep dives into the code, I felt that my former stake was in good hands, and handed off my auth credentials. And just like that, I became a musician.</p>
+				<p>The next two weeks were pretty easy. My ex-boss asked for recommendations, and I called a few people I'd gone to school with. Out of the seven, three weren't currently into in web programming, but we had a quick chat with the rest and booked two interviews for the next day, then hired someone by Friday. Since my old team dealt with some pretty sensitive medical data, I still had to come in to the office to help the new dev learn the ropes, but anyway we hadn't seen each other in a long time, and it was great to hang out. After about four nights of dinner, drinks, and deep dives into the code, I felt that my former stake was in good hands, and handed off my auth credentials. And just like that, I became a musician.</p>
 			</div>
+			
 			<div class="post-footer">
 				<p>1 comment</p>
 
@@ -101,9 +105,9 @@
 
 			<p>The one holding the lizard went into the building's foyer, while the bearded one in the Leaf's jersey 
 				<a class="tooltip"
-					onclick="showFootnote(event, 0)"
-					onmouseover="showFootnote(event, 0)"
-					onmouseout="showFootnote(event, 0)">ripped a dart</a>
+					onmouseover="showFootnote.call(this, event, 'dart')"
+					onmouseout="showFootnote.call(this, event, 'dart')"
+					onclick="showFootnote.call(this, event, 'dart')">ripped a dart</a>
 			and muttered at the glass box, itself now leaning precariously against a wall. I finished smoking, put on my mask, and went inside.</p>
 
 			<p>On the ground just inside the doorway, the lizard looked asleep, basking in the body heat of, perhaps, the only mammal (legs fully crossed to make a nest) who had ever held it with tenderness. I wondered if I was watching someone get their first ever pet, then couldn't help but smile, make eye contact, and mention "cool lizard" as I passed.</p>
@@ -112,11 +116,13 @@
 
 			<p>"Nice!"</p>
 
-			<p>For the entire rest of the day, the lizard's name kept stealing my attention; I was sure it had some obscure historical origin. I wasted hours, first reading famous horse names: Bucephalus, Marengo, Palomo, 
+			<p>For the entire rest of the day, the lizard's name kept stealing my attention; I was sure it had some obscure historical origin. I wasted hours, first reading famous horse names: Bucephalus, Marengo, Palomo,
+
 				<a class="tooltip"
-					onclick="showFootnote(event, 1)"
-					onmouseover="showFootnote(event, 1)"
-					onmouseout="showFootnote(event, 1)">赤兔馬</a>... Then famous lizards, which is harder, and yields mostly dinosaurs and dragons.</p>
+					onclick="showFootnote.call(this, event, 'chitu')"
+					onmouseover="showFootnote.call(this, event, 'chitu')"
+					onmouseout="showFootnote.call(this, event, 'chitu')">赤兔</a>...
+				Then famous lizards, which is harder, and yields mostly dinosaurs and dragons.</p>
 
 			<p>Today I finally groked it.</p>
 
