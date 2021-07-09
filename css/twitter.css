@@ -204,7 +204,7 @@ img.logo {
 	display: inline-block;
 	width: 20px;
 	height: 20px;
-	padding-left: 65px;
+	margin-left: 65px;
 	margin-bottom: 10px;
 	filter: invert(42%) saturate(758%) brightness(97%) contrast(103%);
 }
@@ -419,8 +419,9 @@ video {
 	}
 
 	.tweet-icons svg {
-		width: 15%;
-		padding: 0.5rem 0;
+		width: 2rem;
+		margin: 1rem 0.5rem;
+		padding: 0;
 	}
 
 	.line {

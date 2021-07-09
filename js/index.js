@@ -1,6 +1,14 @@
 function fadeAndDeleteOverlay() {
 	let overlay = document.getElementsByClassName('intro-overlay')[0]
 
+	const url = new URL(window.location.href)
+	const param = new URLSearchParams(url.search.slice(1))
+
+	if (param.get('overlay') == 'false') {
+		overlay.hidden = true
+		return
+	}
+
 	let overlayDeath = new Promise((res, rej) => {
 		window.setTimeout(() => {overlay.style.opacity = 0}, 2000)
 		res()
