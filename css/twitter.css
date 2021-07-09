@@ -421,11 +421,15 @@ video {
 
 	.tweet-icons svg {
 		width: 15%;
-		padding: 0.8rem 0;
+		padding: 0.5rem 0;
 	}
 
 	.line {
 		left: -9.85rem;
 		top: 0;
+	}
+
+	video {
+		height: 6rem;
 	}
 }
