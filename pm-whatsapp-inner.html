@@ -4,6 +4,12 @@
 <head>
 <link rel="stylesheet" href="css/whatsapp.css">
 <meta charset="UTF-8">
+<script>
+function showContacts() {
+	let contacts = document.getElementsByClassName('contacts')[0]
+	contacts.style.display = 'inline-block'
+}
+</script>
 </head>
 
 <body>
@@ -70,6 +76,11 @@
 		<div class="msgNav">
 			<table class="navInfo">
 				<tr>
+					<td>
+			            <div class="back-arrow" onclick="showContacts.call(this)">
+    			            <img src="svg/back-arrow.svg" />
+            			</div>
+					</td>
 					<td>
 						<div class="circle"></div>
 					</td>

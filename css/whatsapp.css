@@ -183,14 +183,33 @@ table p {
 	padding-bottom: 50px;
 }
 
+.back-arrow {
+	display: none;
+}
+
 @media screen and (orientation: portrait) {
 	body {
 		background: #0D1418;
 		width: 100%;
 	}
 
+	.back-arrow {
+		filter: invert(100%);
+		width: 1rem;
+		height: 1rem;
+		margin: 0;
+		padding: 0.7rem 0.9rem 0 0;
+		display: inline-block;
+	}
+
+
+	.back-arrow:hover {
+		cursor: pointer;
+	}
+	
 	.contacts {
 		display: none;
+		width: 100%;
 	}
 
 	.messages {
