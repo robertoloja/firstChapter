@@ -186,6 +186,7 @@ table p {
 @media screen and (orientation: portrait) {
 	body {
 		background: #0D1418;
+		width: 100%;
 	}
 
 	.contacts {
@@ -193,11 +194,11 @@ table p {
 	}
 
 	.messages {
-		margin: 0 auto;
-		padding: 1rem;
-		padding-top: 8rem;
-		width: 90%;
-		font-size: 250%;
+		margin: 0;
+		padding: 0;
+		padding-top: 4rem;
+		width: 100%;
+		font-size: 90%;
 	}
 
 	.msgNav {

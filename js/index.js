@@ -22,17 +22,15 @@ function fadeAndDeleteOverlay() {
 
 function newSrc() {
 	const urls = {
-		"Stories/End.html": "ms-whatsapp.html",
-		"email.html": "pm-whatsapp.html",
-		"twitter.html": "jd-whatsapp.html"
+		"Stories/End.html": "ms",
+		"email.html": "pm",
+		"twitter.html": "jd"
 	}
-	console.log(this)
+	let newSrc = this.options[this.selectedIndex].id
+	document.getElementById('proscenium').src = newSrc
 
 	let arrows = document.getElementById("arrows")
-	let newSrc = this.options[this.selectedIndex].id
-
-	document.getElementById('proscenium').src = newSrc
-	arrows.href = urls[newSrc]
+	arrows.href = `whatsapp.html?owner=${urls[newSrc]}`
 }
 
 
