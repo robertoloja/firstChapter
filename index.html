@@ -2,9 +2,17 @@
 <html>
 <head>
 	<script src="js/index.js"></script>
+
 	<link rel="stylesheet" href="css/index.css">
+	<link rel="preload" href="css/whatsapp.css" as="style">
+	<link rel="preload" href="css/twitter.css" as="style">
+	<link rel="preload" href="img/lancia.jpg" as="image" type="image/jpeg">
+
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<meta charset="UTF-8">
+	<script>
+		//setTimeout("location.reload(true);",1000);
+	</script>
 </head>
 
 <body onload="fadeAndDeleteOverlay.call()">
@@ -23,27 +31,30 @@
 	<iframe src="Stories/End.html" id="proscenium"></iframe>
 
 	<div class="footer">
-		<a href="whatsapp.html?owner=ms" id="arrows">→</a>
-		<span>
-			<div class="footnote" id='dart' hidden>
-				1. strongly dragged on a cigarette<br>
-				2. drove a Dodge Dart&nbsp;
+		<footer>
+			<div class="arrows-container">
+				<a href="whatsapp.html?owner=ms" id="arrows">→</a>
 			</div>
+		</footer>
 
-			<div class="footnote" id='chitu' hidden>
-				<div class="mandarin">
-					<div class="hanzi" id="赤">
-						<h1>赤</h1>
-						<p class="pinyin">chì</p>
-					</div>
+		<div class="footnote" id='dart' hidden>
+			1. strongly dragged on a cigarette<br>
+			2. drove a Dodge Dart&nbsp;
+		</div>
 
-					<div class="hanzi" id="兔">
-						<h1>兔</h1>
-						<p class="pinyin">tù</p>
-					</div>
+		<div class="footnote" id='chitu' hidden>
+			<div class="mandarin">
+				<div class="hanzi" id="赤">
+					<h1>赤</h1>
+					<p class="pinyin">chì</p>
+				</div>
+
+				<div class="hanzi" id="兔">
+					<h1>兔</h1>
+					<p class="pinyin">tù</p>
 				</div>
 			</div>
-		</span>
+		</div>
 	</div>
 </body>
 </html>

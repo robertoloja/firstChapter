@@ -36,6 +36,8 @@ function newSrc() {
 
 window.onmessage = function hoverFootnote(message) {
 	let chosenFootnote;
+	const fadeTimer = 5000
+
 	const footnotes = [...document.getElementsByClassName('footnote')]
 
 	for (footnote of footnotes) {
@@ -46,26 +48,28 @@ window.onmessage = function hoverFootnote(message) {
 		footnote.hidden = true
 	}
 
-	if (message.data.type == "click") { 
-		chosenFootnote.hidden = false
-		
-		let fadeFootnote = new Promise((res, rej) => {
-			window.setTimeout(() => {
-				chosenFootnote.style.opacity = 0
-				res()
-			}, 5000)
-		})
-		
-		fadeFootnote.then(window.setTimeout(() => { 
-			chosenFootnote.style.opacity = 100
-			chosenFootnote.hidden = true
-		}, 8000))
-
-	} else {
-		if (chosenFootnote.hidden) {
+	switch(message.data.type) {
+		case "click":
 			chosenFootnote.hidden = false
-		} else {
+		
+			let fadeFootnote = new Promise((res, rej) => {
+				window.setTimeout(() => {
+					chosenFootnote.style.opacity = 0
+					res()
+				}, fadeTimer)
+			})
+			
+			fadeFootnote.then(window.setTimeout(() => { 
+				chosenFootnote.style.opacity = 100
+				chosenFootnote.hidden = true
+			}, fadeTimer + 2000))
+			break
+
+		case "mouseover":
+			chosenFootnote.hidden = false
+			break
+		case "mouseout":
 			chosenFootnote.hidden = true
-		}
+			break
 	}
 }

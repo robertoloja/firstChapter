@@ -6,10 +6,20 @@
 	margin-right: auto;
 }
 
+footer {
+	width: 100%;
+	text-align: center;
+	margin: 0;
+	padding: 0;
+}
+
+.arrows-container {
+	margin: 0;
+	padding: 0;
+}
+
 #arrows {
 	display: inline-block;
-	position: absolute;
-	left: 45%;
 	font-size: 150%;
 	margin: 0;
 	padding: 0;
@@ -56,7 +66,7 @@ html, body {
 }
 
 .footer {
-	width: 800px;
+	width: 100%;
 	margin:  0 auto;
 }
 
@@ -130,7 +140,7 @@ html, body {
 	}
 
 	#arrows {
-		font-size: 300%;
+		font-size: 150%;
 	}
 
 	select {
