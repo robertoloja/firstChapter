@@ -7,11 +7,81 @@
 	<meta charset="UTF-8">
 
 	<script>
+		function minimizeWindow() {
+			let windows = document.getElementsByClassName("window")
+			let mainWindow = [...windows].filter((x) => x.id != 'other-channel')[0]
+
+			mainWindow.lastElementChild.hidden = !mainWindow.lastElementChild.hidden
+
+			mainWindow.style.width = "15rem"
+
+			mainWindow.style.position = "absolute"
+			mainWindow.style.bottom = "1rem"
+		}
+	</script>
+
+	<script>
 		//setTimeout("location.reload(true);",1000);
 	</script>
 </head>
 <body>
 <div class="window">
+	<div class="title-bar">
+		<div class="title-bar-text">#channel-name</div>
+
+		<div class="title-bar-controls">
+			<button aria-label="Minimize" id="min" onclick="minimizeWindow.call(this)"></button>
+			<button aria-label="Maximize"></button>
+			<button aria-label="Close"></button>
+		</div>
+	</div>
+
+	<div class="window-body">
+		<div class="container">
+			<div class="message-area">
+				<div class="server-announcement message">
+					<p class="message-text">
+						* Now talking in #channel-name
+					</p>
+				</div>
+
+				<div class="message server-announcement">
+					<p class="message-text">
+						* Topic is '<font color="blue">Shhh... very secret, all encryptions on, warp engines at full, etc etc</font>'
+					</p>
+				</div>
+				<div class="server-announcement message">
+					<p class="message-text">
+						* Set by WH^SomeHugeUserString. Seen on Fri. Jul 30 12:29:37
+					</p>
+				</div>
+
+				<div class="message">
+					<p class="message-text ms">
+						&lt;MS&gt; kjasndflkasdajasdfnjskldjfnksdjvbkshdbvfhkbaskdljvbaojdsbvlkajbasfdkfhbvjshfdvbsjhdbv
+					</p>
+				</div>
+			</div>
+
+			<div class="member-list">
+				<b>@WH</b><br>
+				JD<br>
+				PM<br>
+				MS<br>
+				bot
+				<br><br><br><br><br><br><br>
+			</div>
+		</div>
+
+		<div class="input">
+			<p>Here is the next message I am going to send.</p>
+		</div>
+	</div>
+</div>
+
+<!--------------------------------->
+
+<div class="window" id="other-channel">
 	<div class="title-bar">
 		<div class="title-bar-text">#channel-name</div>
 

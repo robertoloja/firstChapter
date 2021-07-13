@@ -55,6 +55,23 @@ p.message-text {
 	font-size: 120%;
 }
 
+#other-channel {
+	margin: 5px;
+	z-index: -1;
+	position: absolute;
+	top: -1px;
+	left: 20px;
+	display: inline-block;
+}
+
+@keyframes minimize {
+	100% {
+		left: 0;
+		top: 200px;
+		width: 10%;
+	}
+}
+
 .input {
 	background: white;
 	display: block;
