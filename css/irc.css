@@ -39,7 +39,7 @@ p.message-text {
 	margin-left: 2.5rem;
 	text-indent: -2.5rem;
 	word-wrap: break-word;
-	word-break: break-all;
+	word-break: break-word;
 }
 
 .member-list {
@@ -88,4 +88,8 @@ p.message-text {
 
 .click {
 	cursor: pointer;
+}
+
+.me {
+	color: #8B009F;
 }

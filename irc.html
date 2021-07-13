@@ -7,7 +7,26 @@
 	<meta charset="UTF-8">
 
 	<script>
-let open = true
+const messages = [
+	{author: "MS", text: "message text"},
+	{author: "JS", text: "some more"},
+	{author: "WH", text: "another message, longer this time"},
+	{author: "MS", text: "this one is going to be even longer, actually, just to see"},
+	{author: "MS", text: "finally another very long message, longer than the ones that came before it"}
+]
+
+function createNewMessage(message) {
+	let newDiv = document.createElement("div")
+	newDiv.classList.add("message")
+
+	let newMessage = document.createElement("p")
+	newMessage.classList.add("message-text")
+	newMessage.innerText = `<${message.author.toUpperCase()}> ${message.text}`
+	newDiv.appendChild(newMessage)
+
+	let messageArea = [...document.getElementsByClassName("message-area")][0]
+	messageArea.appendChild(newDiv)
+}
 
 function minimizeWindow() {
 	let windows = document.getElementsByClassName("window")
@@ -23,15 +42,11 @@ function minimizeWindow() {
 	otherButton.classList.add("click")
 }
 	</script>
-
-	<script>
-		//setTimeout("location.reload(true);",1000);
-	</script>
 </head>
-<body>
+<body onload="(() => {for (message of messages) createNewMessage(message)})()">
 <div class="window">
 	<div class="title-bar">
-		<div class="title-bar-text">#channel-name</div>
+		<div class="title-bar-text">#conspiracy</div>
 
 		<div class="title-bar-controls">
 			<button aria-label="Minimize" 
@@ -53,7 +68,7 @@ function minimizeWindow() {
 			<div class="message-area">
 				<div class="server-announcement message">
 					<p class="message-text">
-						* Now talking in #channel-name
+						* Now talking in #conspiracy
 					</p>
 				</div>
 
@@ -70,23 +85,23 @@ function minimizeWindow() {
 
 				<div class="message">
 					<p class="message-text ms">
-						&lt;MS&gt; kjasndflkasdajasdfnjskldjfnksdjvbkshdbvfhkbaskdljvbaojdsbvlkajbasfdkfhbvjshfdvbsjhdbv
+						&lt;MS&gt; A relatively long message that nevertheless is made up of several words so that I can test the word wrapping.
 					</p>
 				</div>
 			</div>
 
 			<div class="member-list">
 				<b>@WH</b><br>
+				<b>@bot</b><br>
 				JD<br>
 				PM<br>
 				MS<br>
-				bot
 				<br><br><br><br><br><br><br>
 			</div>
 		</div>
 
 		<div class="input">
-			<p>Here is the next message I am going to send.</p>
+			<p>i'm excited actually</p>
 		</div>
 	</div>
 </div>
@@ -95,7 +110,7 @@ function minimizeWindow() {
 
 <div class="window" id="other-channel">
 	<div class="title-bar">
-		<div class="title-bar-text">#channel-name</div>
+		<div class="title-bar-text">#secret-channel</div>
 
 		<div class="title-bar-controls">
 			<button aria-label="Minimize" id="min"></button>
@@ -109,37 +124,37 @@ function minimizeWindow() {
 			<div class="message-area">
 				<div class="server-announcement message">
 					<p class="message-text">
-						* Now talking in #channel-name
+						* Now talking in #admin
 					</p>
 				</div>
 
 				<div class="message server-announcement">
 					<p class="message-text">
-						* Topic is '<font color="blue">Shhh... very secret, all encryptions on, warp engines at full, etc etc</font>'
-					</p>
-				</div>
-				<div class="server-announcement message">
-					<p class="message-text">
-						* Set by WH^SomeHugeUserString. Seen on Fri. Jul 30 12:29:37
+						* Topic is ''
 					</p>
 				</div>
 
 				<div class="message">
-					<p class="message-text ms">
-						&lt;WH&gt; Doing secret stuff
+					<p class="message-text">
+						&lt;WH&gt; !record #conspiracy
+					</p>
+				</div>
+				<div class="message">
+					<p class="message-text me">
+						* bot recording channel #conspiracy, !stop command will end recording.
 					</p>
 				</div>
 			</div>
 
 			<div class="member-list">
 				<b>@WH</b><br>
-				bot
+				<b>@bot</b>
 				<br><br><br><br><br><br><br>
 			</div>
 		</div>
 
 		<div class="input">
-			<p>Here is the next message I am going to send.</p>
+			<p>!stop</p>
 		</div>
 	</div>
 </div>
