@@ -7,17 +7,21 @@
 	<meta charset="UTF-8">
 
 	<script>
-		function minimizeWindow() {
-			let windows = document.getElementsByClassName("window")
-			let mainWindow = [...windows].filter((x) => x.id != 'other-channel')[0]
+let open = true
 
-			mainWindow.lastElementChild.hidden = !mainWindow.lastElementChild.hidden
+function minimizeWindow() {
+	let windows = document.getElementsByClassName("window")
+	let mainWindow = [...windows].filter((x) => x.id != 'other-channel')[0]
 
-			mainWindow.style.width = "15rem"
+	mainWindow.lastElementChild.hidden = !mainWindow.lastElementChild.hidden
+	mainWindow.style.width = (mainWindow.style.width ? '' : '15rem')
+	mainWindow.style.position = (mainWindow.style.position ? '' : 'absolute')
+	mainWindow.style.bottom = "1rem"
 
-			mainWindow.style.position = "absolute"
-			mainWindow.style.bottom = "1rem"
-		}
+	let otherButton = document.getElementById((this.id == 'min' ? 'max' : 'min'))
+	this.classList.remove("click")
+	otherButton.classList.add("click")
+}
 	</script>
 
 	<script>
@@ -30,8 +34,16 @@
 		<div class="title-bar-text">#channel-name</div>
 
 		<div class="title-bar-controls">
-			<button aria-label="Minimize" id="min" onclick="minimizeWindow.call(this)"></button>
-			<button aria-label="Maximize"></button>
+			<button aria-label="Minimize" 
+					class="click"
+					id="min" 
+					onclick="minimizeWindow.call(this)"></button>
+
+			<button aria-label="Maximize" 
+					class="click"
+					id="max" 
+					onclick="minimizeWindow.call(this)"></button>
+
 			<button aria-label="Close"></button>
 		</div>
 	</div>
@@ -87,7 +99,7 @@
 
 		<div class="title-bar-controls">
 			<button aria-label="Minimize" id="min"></button>
-			<button aria-label="Maximize"></button>
+			<button aria-label="Maximize" id="max"></button>
 			<button aria-label="Close"></button>
 		</div>
 	</div>
@@ -114,16 +126,13 @@
 
 				<div class="message">
 					<p class="message-text ms">
-						&lt;MS&gt; kjasndflkasdajasdfnjskldjfnksdjvbkshdbvfhkbaskdljvbaojdsbvlkajbasfdkfhbvjshfdvbsjhdbv
+						&lt;WH&gt; Doing secret stuff
 					</p>
 				</div>
 			</div>
 
 			<div class="member-list">
 				<b>@WH</b><br>
-				JD<br>
-				PM<br>
-				MS<br>
 				bot
 				<br><br><br><br><br><br><br>
 			</div>

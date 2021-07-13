@@ -64,14 +64,6 @@ p.message-text {
 	display: inline-block;
 }
 
-@keyframes minimize {
-	100% {
-		left: 0;
-		top: 200px;
-		width: 10%;
-	}
-}
-
 .input {
 	background: white;
 	display: block;
@@ -94,6 +86,6 @@ p.message-text {
 	color: blue;
 }
 
-#min {
+.click {
 	cursor: pointer;
 }
