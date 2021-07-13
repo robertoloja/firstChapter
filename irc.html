@@ -12,21 +12,38 @@ const messages = [
 	{author: "JS", text: "some more"},
 	{author: "WH", text: "another message, longer this time"},
 	{author: "MS", text: "this one is going to be even longer, actually, just to see"},
+	{author: "server", text: "foo"},
 	{author: "MS", text: "finally another very long message, longer than the ones that came before it"}
 ]
 
-function createNewMessage(message) {
-	let newDiv = document.createElement("div")
-	newDiv.classList.add("message")
+class IrcMessage {
+	constructor(message) {
+		this.author = message.author
+		this.text = message.text
+		this.createNewMessage()
+	}
 
-	let newMessage = document.createElement("p")
-	newMessage.classList.add("message-text")
-	newMessage.innerText = `<${message.author.toUpperCase()}> ${message.text}`
-	newDiv.appendChild(newMessage)
+	createNewMessage() {
+		let newDiv = document.createElement("div")
+		newDiv.classList.add("message")
 
-	let messageArea = [...document.getElementsByClassName("message-area")][0]
-	messageArea.appendChild(newDiv)
+		let newMessage = document.createElement("p")
+		newMessage.classList.add("message-text")
+
+		if (message.author.toLowerCase() == "server") { 
+			newDiv.classList.add("server-announcement") 
+			newMessage.innerText = '* ' + message.text
+		} else {
+			newMessage.innerText = `<${message.author.toUpperCase()}> ${message.text}`
+		}
+
+		newDiv.appendChild(newMessage)
+
+		let messageArea = [...document.getElementsByClassName("message-area")][0]
+		messageArea.appendChild(newDiv)
+	}
 }
+
 
 function minimizeWindow() {
 	let windows = document.getElementsByClassName("window")
@@ -43,7 +60,7 @@ function minimizeWindow() {
 }
 	</script>
 </head>
-<body onload="(() => {for (message of messages) createNewMessage(message)})()">
+<body onload="(() => {for (message of messages) new IrcMessage(message)})()">
 <div class="window">
 	<div class="title-bar">
 		<div class="title-bar-text">#conspiracy</div>
@@ -80,12 +97,6 @@ function minimizeWindow() {
 				<div class="server-announcement message">
 					<p class="message-text">
 						* Set by WH^SomeHugeUserString. Seen on Fri. Jul 30 12:29:37
-					</p>
-				</div>
-
-				<div class="message">
-					<p class="message-text ms">
-						&lt;MS&gt; A relatively long message that nevertheless is made up of several words so that I can test the word wrapping.
 					</p>
 				</div>
 			</div>
