@@ -4,9 +4,49 @@
 <head>
 <link rel="stylesheet" href="css/whatsapp.css">
 <meta charset="UTF-8">
+
+
+
+<script src="js/Message.js">
+let message = {amAuthor: false, text: ["foo", "bar"], time: "12:00", hasBeenRead: false, author: 'ms'}
+
+
+/*
+class WhatsAppMessage {
+	constructor (message) {
+		this.amAuthor = message.amAuthor
+		this.author = message.author
+		this.text = message.text
+		this.time = message.time
+		this.hasBeenRead = message.hasBeenRead
+		this.createNewMessage()
+	}
+
+	createNewMessage() {
+		let messageArea = [...document.getElementsByClassName("msgArea")].filter((x) => x.id == this.author)[0]
+
+		let messageContainer = document.createElement('div')
+		messageContainer.classList.add('msg')
+		messageContainer.classList.add((this.amAuthor ? 'sent' : 'received'))
+
+		for (message of this.text) {
+			let p = document.createElement('p')
+			p.innerText = message
+
+			let timeAndStatus = document.createElement('sub')
+			timeAndStatus.innerText = `${this.time} ${(this.hasBeenRead ? '✓✓' : '✓')}`
+			p.appendChild(timeAndStatus)
+
+			messageContainer.appendChild(p)
+		}
+		messageArea.appendChild(messageContainer)
+	}
+}
+*/
+</script>
 </head>
 
-<body>
+<body onload="(() => {new WhatsAppMessage(message)})()">
 	<script>
         //setTimeout("location.reload(true);",1000);
     </script>
