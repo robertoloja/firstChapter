@@ -2,7 +2,7 @@ class Message {
 	constructor(message) {
 		this.author = message.author
 		this.text = message.text
-		this.createNewMessage()
+		this.messageArea = [...document.getElementsByClassName("message-area")]
 	}
 }
 
@@ -16,13 +16,11 @@ class WhatsAppMessage extends Message {
 	}
 
 	createNewMessage() {
-		let messageArea = [...document.getElementsByClassName("msgArea")].filter((x) => x.id == this.author)[0]
-
 		let messageContainer = document.createElement('div')
 		messageContainer.classList.add('msg')
 		messageContainer.classList.add((this.amAuthor ? 'sent' : 'received'))
 
-		for (message of this.text) {
+		for (let message of this.text) {
 			let p = document.createElement('p')
 			p.innerText = message
 
@@ -32,7 +30,7 @@ class WhatsAppMessage extends Message {
 
 			messageContainer.appendChild(p)
 		}
-		messageArea.appendChild(messageContainer)
+		this.messageArea.filter((x) => x.id == this.author)[0].appendChild(messageContainer)
 	}
 }
 
@@ -45,16 +43,15 @@ class IrcMessage extends Message {
 		let newMessage = document.createElement("p")
 		newMessage.classList.add("message-text")
 
-		if (message.author.toLowerCase() == "server") { 
+		if (this.author.toLowerCase() == "server") { 
 			newDiv.classList.add("server-announcement") 
-			newMessage.innerText = '* ' + message.text
+			newMessage.innerText = '* ' + this.text
 		} else {
-			newMessage.innerText = `<${message.author.toUpperCase()}> ${message.text}`
+			newMessage.innerText = `<${this.author.toUpperCase()}> ${this.text}`
 		}
 
 		newDiv.appendChild(newMessage)
 
-		let messageArea = [...document.getElementsByClassName("message-area")][0]
-		messageArea.appendChild(newDiv)
+		this.messageArea[0].appendChild(newDiv)
 	}
 }

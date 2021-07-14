@@ -5,34 +5,10 @@
 	<link rel="stylesheet" href="css/irc.css">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<meta charset="UTF-8">
-<script src="js/Message.js"></script>
-	<script>
-const messages = [
-	{author: "MS", text: "message text"},
-	{author: "JS", text: "some more"},
-	{author: "WH", text: "another message, longer this time"},
-	{author: "MS", text: "this one is going to be even longer, actually, just to see"},
-	{author: "server", text: "foo"},
-	{author: "MS", text: "finally another very long message, longer than the ones that came before it"}
-]
-
-
-function minimizeWindow() {
-	let windows = document.getElementsByClassName("window")
-	let mainWindow = [...windows].filter((x) => x.id != 'other-channel')[0]
-
-	mainWindow.lastElementChild.hidden = !mainWindow.lastElementChild.hidden
-	mainWindow.style.width = (mainWindow.style.width ? '' : '15rem')
-	mainWindow.style.position = (mainWindow.style.position ? '' : 'absolute')
-	mainWindow.style.bottom = "1rem"
-
-	let otherButton = document.getElementById((this.id == 'min' ? 'max' : 'min'))
-	this.classList.remove("click")
-	otherButton.classList.add("click")
-}
-	</script>
+	<script src="js/Message.js"></script>
+	<script src="js/irc.js"></script>
 </head>
-<body onload="(() => {for (message of messages) new IrcMessage(message)})()">
+<body onload="messages.map((x) => {(new IrcMessage(x)).createNewMessage()})">
 <div class="window">
 	<div class="title-bar">
 		<div class="title-bar-text">#conspiracy</div>

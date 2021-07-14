@@ -92,4 +92,6 @@ p.message-text {
 
 .me {
 	color: #8B009F;
+	margin-left: 1rem;
+	text-indent: -1rem;
 }
