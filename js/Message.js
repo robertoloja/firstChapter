@@ -1,8 +1,33 @@
 class Message {
-	constructor(message) {
-		this.author = message.author
-		this.text = message.text
-		this.messageArea = [...document.getElementsByClassName("message-area")]
+	tagName = this.__proto__.constructor.name
+
+	constructor(element) {
+		this.element = element
+		this.author = element.attributes.author.value
+		this.text = element.innerHTML
+		this.messageArea = element.parentElement
+		this.createNewMessage()
+	}
+}
+
+class IrcMessage extends Message {
+	createNewMessage() {
+		let styleClasses = "message"
+		let displayText = ""
+
+		if (this.author.toLowerCase() == "server") {
+			styleClasses = styleClasses + " server-announcement"
+			displayText = "* " + this.text
+		} else {
+			displayText = `&lt;${this.author}&gt; ${this.text}`
+		}
+
+		this.element.innerHTML =
+			`<div class="${styleClasses}">
+				<p class="message-text">
+				${displayText}
+				</p>
+			</div>`
 	}
 }
 
@@ -34,24 +59,23 @@ class WhatsAppMessage extends Message {
 	}
 }
 
+const registeredClasses = {
+	"IrcMessage": IrcMessage,
+	"WhatsAppMessage": WhatsAppMessage,
+}
 
-class IrcMessage extends Message {
-	createNewMessage() {
-		let newDiv = document.createElement("div")
-		newDiv.classList.add("message")
+function onLoad() {
+	/*****
+	 *	Body tag's onload function. Finds all non-standard HTML tags,
+	 *  instantiates the associated class, and attaches the instance
+	 *  to element.classInstance
+	 ****/
+	let allElements = document.body.getElementsByTagName("*")
+	const isElementUnknown = (element) => element.__proto__.constructor.name == "HTMLUnknownElement"
+	let customElements = [...allElements].filter(isElementUnknown)
 
-		let newMessage = document.createElement("p")
-		newMessage.classList.add("message-text")
-
-		if (this.author.toLowerCase() == "server") { 
-			newDiv.classList.add("server-announcement") 
-			newMessage.innerText = '* ' + this.text
-		} else {
-			newMessage.innerText = `<${this.author.toUpperCase()}> ${this.text}`
-		}
-
-		newDiv.appendChild(newMessage)
-
-		this.messageArea[0].appendChild(newDiv)
-	}
+	customElements.map((element) => {
+		let className = Object.keys(registeredClasses).filter((x) => x.toLowerCase() == element.tagName.toLowerCase())[0]
+		element.classInstance = new registeredClasses[className](element)
+	})
 }

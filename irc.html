@@ -8,7 +8,7 @@
 	<script src="js/Message.js"></script>
 	<script src="js/irc.js"></script>
 </head>
-<body onload="messages.map((x) => {(new IrcMessage(x)).createNewMessage()})">
+<body onload="onLoad()">
 <div class="window">
 	<div class="title-bar">
 		<div class="title-bar-text">#conspiracy</div>
@@ -31,22 +31,19 @@
 	<div class="window-body">
 		<div class="container">
 			<div class="message-area">
-				<div class="server-announcement message">
-					<p class="message-text">
-						* Now talking in #conspiracy
-					</p>
-				</div>
+				<IrcMessage author="server">
+						Now talking in #conspiracy
+				</IrcMessage>
 
-				<div class="message server-announcement">
-					<p class="message-text">
-						* Topic is '<font color="blue">Shhh... very secret, all encryptions on, warp engines at full, etc etc</font>'
-					</p>
-				</div>
-				<div class="server-announcement message">
-					<p class="message-text">
-						* Set by WH^SomeHugeUserString. Seen on Fri. Jul 30 12:29:37
-					</p>
-				</div>
+				<IrcMessage author="server">
+					Topic is '<font color="blue">Shhh... very secret, all encryptions on, warp engines at full, etc etc</font>'
+				</IrcMessage>
+				
+				<IrcMessage author="server">
+					Set by WH^SomeHugeUserString. Seen on Fri. Jul 30 12:29:37
+				</IrcMessage>
+
+				<IrcMessage author="JD">Some text</IrcMessage>
 			</div>
 
 			<div class="member-list">

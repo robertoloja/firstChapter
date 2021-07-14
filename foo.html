@@ -1,6 +1,55 @@
-<body>
-    <p>
-        foo
-    </p>
-    <!--#include file="./bar.html" -->
-</body> 
+<Foo author="BAR"></Foo>
+
+<script>
+class RootClass {
+	shit = 12
+	tagName = this.__proto__.constructor.name
+	constructor() {
+		this.otherFunction()
+	}
+}
+
+class Foo extends RootClass {
+	otherFunction() {
+	}
+}
+
+function customTag(tagName,fn){
+  document.createElement(tagName);
+  //find all the tags occurrences (instances) in the document
+  var tagInstances = document.getElementsByTagName(tagName);
+  console.log(tagName)
+        //for each occurrence run the associated function
+	for ( var i = 0; i < tagInstances.length; i++) {
+		fn(tagInstances[i]);
+	}
+}
+
+function make(element){
+	element.innerHTML = `
+		<p>FOO</p>
+		`
+}
+
+customTag('Foo', make)
+let fooo;
+
+function onLoad() {
+	let elements = document.body.getElementsByTagName("*")
+	let customElements = [...elements].filter((x) => x.__proto__.constructor.name == "HTMLUnknownElement")
+
+	const capitalizeFirstLetter = (text) => text.charAt(0)
+												.toUpperCase() +
+											text.toLowerCase().slice(1)
+	let className = capitalizeFirstLetter(customElements[0].tagName)
+	fooo = customElements
+	let fn = window[className]
+	//let foo = new 
+}
+
+onLoad()
+
+const registeredClasses = {"Foo": Foo}
+
+let foo = new registeredClasses["Foo"]()
+</script>
