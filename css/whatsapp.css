@@ -147,17 +147,13 @@ table p {
 	border-radius: 0.5rem;
 }
 
-.msg.received :first-child {
-	border-radius: 0 0.5rem 0.5rem 0.5rem;
-}
-
-.msg.sent :first-child {
-	border-radius: 0.5 0 0.5rem 0.5rem;
-}
-
 .received p {
 	background: #262D31;
 	color: #f0f0f0;
+}
+
+.received p:first-child {
+	border-radius: 0 0.5rem 0.5rem 0.5rem;
 }
 
 .sent p {
@@ -167,7 +163,11 @@ table p {
 	margin-right: 0;
 }
 
-.msgArea .date {
+.sent p:first-child {
+	border-radius: 0.5rem 0 0.5rem 0.5rem;
+}
+
+.message-area .date {
 	background: #262D31;
 	color: whitesmoke;
 	width: 20%;

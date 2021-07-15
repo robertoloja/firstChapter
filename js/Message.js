@@ -80,24 +80,6 @@ class WhatsAppMessage extends Message {
 		this.element.innerHTML = 
 		   `${children.map((p) => `<p>${p.innerText} <sub>${this.time} ✓</sub></p>`)
 		   			  .join('')}`
-
-		/*
-		let messageContainer = document.createElement('div')
-		messageContainer.classList.add('msg')
-		messageContainer.classList.add((this.amAuthor ? 'sent' : 'received'))
-
-		for (let message of this.text) {
-			let p = document.createElement('p')
-			p.innerText = message
-
-			let timeAndStatus = document.createElement('sub')
-			timeAndStatus.innerText = `${this.time} ${(this.hasBeenRead ? '✓✓' : '✓')}`
-			p.appendChild(timeAndStatus)
-
-			messageContainer.appendChild(p)
-		}
-		this.messageArea.filter((x) => x.id == this.author)[0].appendChild(messageContainer)
-		*/
 	}
 }
 
