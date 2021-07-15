@@ -144,7 +144,7 @@ tbody {
 	margin: 0;
 	padding: 20px;
 	font-family: monospace;
-	width: 100%;
+
 	display: none;
 }
 
@@ -279,16 +279,9 @@ button.nostyle .info {
 	}
 
 	.emailbody {
-		width: 100%;
 		overflow-wrap: break-word;
 		overflow-x: hidden;
 		height: 50rem;
-	}
-
-	#email1 {
-		width: 87%;
-		overflow-wrap: break-word;
-		margin: 0 auto;
 	}
 
 	.inbox {

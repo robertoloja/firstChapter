@@ -1,23 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<script>
-		//setTimeout("location.reload(true);",1000);
-	</script>
-
 	<link rel="stylesheet" href="css/emails.css">
 	<link rel="stylesheet" href="css/win7.css">
+	<script src="js/Message.js"></script>
 	<script src="js/email.js"></script>
-	<meta charset="UTF-8">
 
-	<script>
-const messages = [
-	{subject: "subject", author:},
-]
-	</script>
+	<meta charset="UTF-8">
 </head>
-<body>
-	<foo>foo</foo>
+<body onload="onLoad()">
 <div class="window">
 	<div class="title-bar">
 		<div class="title-bar-text">Simpl-eMail</div>
@@ -234,20 +225,19 @@ const messages = [
 			</div>
 
 		<!-- MAIN EMAIL BODY -->
-			<p class="emailbody" id="email1">
-				<b>Subject: </b> Re: Yes, we definitely need that data <br>
-				<b>From: </b> Dr. <span class="blacked-out">lol this was a name</span> Senior Director, Growth Analytics <br>
-				<b>Date: </b>May 20th, 2020, 9:03 AM<br><br>
+			<EmailMessage author="auth" 
+						  subject="bar"
+						  date="datetime"
+						  class="emailbody"
+						  style="display:block"
+						  id="email1">
+				All,
 
-				-----------------------<br><br>
+				As I understand it, the reports cannot be generated on time until this data is located and processed. Naturally, since our delivery date is only 2 weeks away, we're all feeling the pressure.
 
-				All, <br><br>
+				Can we get an update from each department about status?
 
-				As I understand it, the reports cannot be generated on time until this data is located and processed. Naturally, since our delivery date is only 2 weeks away, we're all feeling the pressure.<br><br>
-
-				Can we get an update from each department about status? <br><br>
-
-				Ops - Have we contacted MoH MCEDT to ask about special circumstances access? <br><br>
+				Ops - Have we contacted MoH MCEDT to ask about special circumstances access?
 
 				Tech - Do we have any backups?<br><br>
 
@@ -265,7 +255,7 @@ const messages = [
 				<span class="reply">foo 
 					<span class="reply">bar</span>
 				</span>					
-			</p>
+			</EmailMessage>
 
 			<p class="emailbody" id="email2" hidden>
 				Similique repudiandae dolorem perferendis quis in sed ab nesciunt. Enim quia officia quibusdam voluptas soluta. Aliquid perspiciatis quod magnam velit dolorem. Quos officiis cumque tenetur est ipsam.<br><br>

@@ -1,16 +1,44 @@
 class Message {
 	tagName = this.__proto__.constructor.name
+	author
 
 	constructor(element) {
 		this.element = element
 		this.author = element.attributes.author.value
 		this.text = element.innerHTML
 		this.messageArea = element.parentElement
-		this.createNewMessage()
+		this.text.replace(`${this.text[4]}`, "<br><br>")
 	}
 }
 
+
+class EmailMessage extends Message {
+	subject
+	date
+
+	constructor(element) {
+		super(element)
+		this.subject = element.attributes.subject.value
+		this.date = element.attributes.date.value
+		this.createNewMessage()
+	}
+
+	createNewMessage() {
+		this.element.innerHTML = `
+			<b>Subject: </b> ${this.subject} <br>
+			<b>From: </b> ${this.author} <br>
+			<b>Date: </b> ${this.date} <br><br>
+			${this.text.replace('\n', '<br><br>')}
+		`
+	}
+}
+
+
 class IrcMessage extends Message {
+	constructor(element) {
+		super(element)
+		this.createNewMessage()
+	}
 	createNewMessage() {
 		let styleClasses = "message"
 		let displayText = ""
@@ -38,6 +66,7 @@ class WhatsAppMessage extends Message {
 		this.amAuthor = message.amAuthor
 		this.time = message.time
 		this.hasBeenRead = message.hasBeenRead
+		this.createNewMessage()
 	}
 
 	createNewMessage() {
@@ -62,6 +91,7 @@ class WhatsAppMessage extends Message {
 const registeredClasses = {
 	"IrcMessage": IrcMessage,
 	"WhatsAppMessage": WhatsAppMessage,
+	"EmailMessage": EmailMessage
 }
 
 function onLoad() {
