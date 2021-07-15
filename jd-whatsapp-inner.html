@@ -6,12 +6,9 @@
 <meta charset="UTF-8">
 <script src="js/Message.js">
 </script>
-<script>
-let pageMessage = {amAuthor: false, text: ["foo", "bar"], time: "12:00", hasBeenRead: false, author: 'ms'}
-</script>
 </head>
 
-<body onload="(new WhatsAppMessage(pageMessage)).createNewMessage()">
+<body onload="onLoad()">
 	<script>
         //setTimeout("location.reload(true);",1000);
     </script>
@@ -197,24 +194,21 @@ let pageMessage = {amAuthor: false, text: ["foo", "bar"], time: "12:00", hasBeen
 				<p>sorry <sub>12:43 ✓</sub></p>	
 			</div>
 
-			<div class="msg received">
-				<p>
-					Yeah, I will <sub>12:48 ✓</sub>
-				</p>
-				<p>
-					I talked to PM. Let's join a group chat <sub>12:48 ✓</sub>
-				</p>
-				<p>
-					Hang on. I'll send you a link. <sub>12:48 ✓</sub>
-				</p>
-				<p>
-					URL <sub>12:50 ✓</sub>
-				</p>
-			</div>
+			<WhatsAppMessage author="ms" 
+							 amAuthor="false" 
+							 hasBeenRead="true" 
+							 time="12:48">
+				<p>Yeah, I will</p>
+				<p>I talked to PM. Let's join a group chat</p>
+				<p>Hang on. I'll send you a link.</p>
+			</WhatsAppMessage>
 
-			<div class="msg sent" id="last">
-				<p>thank u <sub>12:50 ✓</sub></p>
-			</div>
+			<WhatsAppMessage author="jd" 
+							 amAuthor="true" 
+							 hasBeenRead="true" 
+							 time="12:50">
+				<p>thank u</p>
+			</WhatsAppMessage>
 		</div>
 	</div>
 </body>
