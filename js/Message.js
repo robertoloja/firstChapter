@@ -67,9 +67,9 @@ class IrcMessage extends Message {
 class WhatsAppMessage extends Message {
 	constructor (element) {
 		super(element)
-		this.amAuthor = (element.attributes.amAuthor.value == 'true')
+		this.amAuthor = element.attributes.amAuthor.value == 'true'
 		this.time = element.attributes.time.value
-		this.hasBeenRead = (element.attributes.hasBeenRead.value == 'true')
+		this.hasBeenRead = element.attributes.hasBeenRead.value == 'true'
 		this.createNewMessage()
 	}
 
