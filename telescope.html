@@ -3,21 +3,32 @@
 	<style>
 div {
 	display: inline-block;
-	background: gray;
+	background: white;
 	margin: 0;
 	padding: 0;
+	font-size: 2rem;
 }
 </style>
 </head>
 
 
 <body>
-	some text <div>yes <div>no</div> <div> yes <div>expand</div></div></div>
+<div>We 
+	<div>After we moved to the new house,</div> 
+	<div>we 
+		<div>we became a couple that</div>
+	</div>
+</div> 
+<div>cried.</div>
 
 <script>
 let root = document.getElementsByTagName('div')
-let foo = [...root].map((x) => {
-	x.addEventListener('click', () => {expand.call(x)})
+let foo = [...root].filter((x) => x.childElementCount != 0)
+				   .map((x) => {
+	x.style.background = "lightgray"
+	x.addEventListener('click', () => {
+		expand.call(x)
+	})
 })
 hideChildrenRecursively(root[0])
 
