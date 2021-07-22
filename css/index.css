@@ -1,134 +1,136 @@
 #proscenium {
-	display: block;
-	width: 800px;
-	height: 600px;
-	margin-left: auto;
-	margin-right: auto;
-}
+		display: block;
+		width: 800px;
+		height: 600px;
+		margin-left: auto;
+		margin-right: auto;
+	}
 
-footer {
-	width: 100%;
-	text-align: center;
-	margin: 0;
-	padding: 0;
-}
+	.select {
+		width: 800px;
+		margin-left: auto;
+		margin-right: auto;
+	}
 
-.arrows-container {
-	margin: 0;
-	padding: 0;
-}
+	select {
+		text-align: center;
+		width: 10rem;
+		height: 2rem;
+	}
 
-#arrows {
-	display: inline-block;
-	font-size: 150%;
-	margin: 0;
-	padding: 0;
-	z-index: 0;
-}
+	footer {
+			width: 100%;
+			text-align: center;
+			margin: 0;
+			padding: 0;
+		}
 
-.select {
-	width: 800px;
-	margin-left: auto;
-	margin-right: auto;
-}
+		.arrows-container {
+			margin: 0;
+			padding: 0;
+		}
 
-select {
-	text-align: center;
-	width: 10rem;
-	height: 2rem;
-}
+		#arrows {
+			display: inline-block;
+			font-size: 150%;
+			margin: 0;
+			padding: 0;
+			z-index: 0;
+		}
+
+		.footer {
+			width: 100%;
+			margin:  0 auto;
+		}
+
+		.footnote {
+				text-align: left;
+				position: absolute;
+				border: 1px solid gray;
+				border-radius: 5px;
+				padding: 0.7rem;
+				margin: 0.1rem 1rem;
+				background: rgba(240, 240, 240, 0.95);
+				font-family: 'Courier';
+				font-size: 0.8rem;
+				font-weight: 600;
+				box-shadow: -1px -1px 1px gray;
+				transition: opacity 3s;
+			}
+
+			.mandarin {
+					text-align: center;
+					padding: 0 0.5rem;
+				}
+
+				.mandarin .hanzi {
+					display: inline-block;
+				}
+
+				.hanzi h1 {
+					margin: 0;
+					padding: 0;
+					text-size: 80%;
+				}
+
+				.hanzi p {
+					margin: 0;
+					padding: 0;
+				}
+
+				.hanzi:hover {
+					cursor: pointer;
+				}
+
+				#赤:hover {
+					color: blue;
+				}
+
+				#兔:hover {
+					color: red;
+				}
+
+				.hanzi .pinyin {
+					text-align: center;
+				}
+
+				#dart {
+					width: 18rem;
+					margin-left: 2rem;
+				}
+
+				#chitu {
+					margin-left: 5rem;
+				}
+
 
 html, body {
-	height: 100%;
-	margin: 0;
-	overflow-x: hidden;
-}
+		height: 100%;
+		margin: 0;
+		overflow-x: hidden;
+	}
 
-.intro-overlay {
-	background:  black;
-	color: whitesmoke;
-	font-family: monospace;
-	position: fixed;
-	width: 100%;
-	height: 100%;
-	text-align: center;
-	vertical-align: 50%;
-	opacity: 100%;
-	transition: all 2s linear;
-	z-index: 1;
-}
+	.intro-overlay {
+		background:  black;
+		color: whitesmoke;
+		font-family: monospace;
+		position: fixed;
+		width: 100%;
+		height: 100%;
+		text-align: center;
+		vertical-align: 50%;
+		opacity: 100%;
+		transition: all 2s linear;
+		z-index: 1;
+	}
 
-.intro-overlay h1 {
-	width: 100%;
-	position: absolute;
-	text-align: center;
-	top: 30%;
-}
+	.intro-overlay h1 {
+		width: 100%;
+		position: absolute;
+		text-align: center;
+		top: 30%;
+	}
 
-.footer {
-	width: 100%;
-	margin:  0 auto;
-}
-
-.footnote {
-	text-align: left;
-	position: absolute;
-	border: 1px solid gray;
-	border-radius: 5px;
-	padding: 0.7rem;
-	margin: 0.1rem 1rem;
-	background: rgba(240, 240, 240, 0.95);
-	font-family: 'Courier';
-	font-size: 0.8rem;
-	font-weight: 600;
-	box-shadow: -1px -1px 1px gray;
-	transition: opacity 3s;
-}
-
-.mandarin {
-	text-align: center;
-	padding: 0 0.5rem;
-}
-
-.mandarin .hanzi {
-	display: inline-block;
-}
-
-.hanzi h1 {
-	margin: 0;
-	padding: 0;
-	text-size: 80%;
-}
-
-.hanzi p {
-	margin: 0;
-	padding: 0;
-}
-
-.hanzi:hover {
-	cursor: pointer;
-}
-
-#赤:hover {
-	color: blue;
-}
-
-#兔:hover {
-	color: red;
-}
-
-.hanzi .pinyin {
-	text-align: center;
-}
-
-#dart {
-	width: 18rem;
-	margin-left: 2rem;
-}
-
-#chitu {
-	margin-left: 5rem;
-}
 
 @media screen and (orientation:  portrait) {
 	#proscenium {
