@@ -1,9 +1,11 @@
 class Message {
 	constructor(element) {
 		this.element = element
-		this.author = element.attributes.author.value
+		let author = element.attributes.author
+		this.author = (author ? author.value : '')
 		this.text = element.innerHTML
 		this.messageArea = element.parentElement
+		this.element.style.cssText = this.style()
 	}
 }
 
@@ -11,8 +13,10 @@ class Message {
 class EmailMessage extends Message {
 	constructor(element) {
 		super(element)
-		this.subject = element.attributes.subject.value
-		this.date = this.getDateTimeString(element.attributes.date.value)
+		let subject = element.attributes.subject
+		let date = element.attributes.date
+		this.subject = (subject ? subject.value : '')
+		this.date = (date ? this.getDateTimeString(element.attributes.date.value) : '')
 		this.createNewMessage()
 	}
 
@@ -33,6 +37,22 @@ class EmailMessage extends Message {
 			<b>From:</b> ${this.author} <br>
 			<b>Date:</b> ${this.date} <br><br>
 			${this.text}`
+	}
+
+	style() {
+		let style = 
+`overflow-y: scroll;
+background: white;
+border: 1px solid grey;
+margin: 0;
+padding: 20px;
+font-family: monospace;
+display: none;`
+
+		if (this.element.attributes.open) {
+			style = style.replace('none', 'inline-block')
+		}
+		return style
 	}
 }
 

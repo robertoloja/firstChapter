@@ -10,6 +10,9 @@
 </head>
 
 <body onload="onLoad()">
+	<script>
+        //setTimeout("location.reload(true);",1000);
+    </script>
 <div class="window">
 	<div class="title-bar">
 		<div class="title-bar-text">Simpl-eMail</div>
@@ -90,136 +93,93 @@
 		<div class="email-area" id="inbox">
 		<!--- LEFT EMAIL PANEL -->
 			<div class="emails">
-				<table class="email">
-					<tr>
-						<td>
-						<button id ="email1-button" class="nostyle disabled emaillink active read" onclick="openEmail.call(this, event, 'email1')">
-							<img src="svg/envelope-open.svg">
+				<button id ="email1-button" class="nostyle disabled emaillink active read" onclick="openEmail.call(this, event, 'email1')">
+					<img src="svg/envelope-open.svg">
+				
+					<div class="info">
+						<h4>
+							Re: Yes, we definitely need the data
+						</h4>
+						<h5>Dr. <span class="blacked-out" style="color: black;">lol this was a name</span> Senior Director, Growth Analytics</h5>
+						<p>All, As I understand it, the reports asda sd asda asdasdasdasd</p>
+					</div>
+				</button>
+
+				
+				<button class="nostyle disabled emaillink" onclick="openEmail.call(this, event, 'email2')">
+					<img src="svg/envelope-closed.svg">
+
+					<div class="info">
+						<h4>What's the current timeline?</h4>
+						<h5>More assholes</h5>
+						<p>Do we know what is going on with the d...</p>
+					</div>
+				</button>
+		
+			
+				<button class="nostyle disabled emaillink" onclick="openEmail.call(this, event, 'email3')">
+					<img src="svg/envelope-closed.svg">
+				
+					<div class="info">
+						<h4>Yes, we definitely need that data</h4>
+						<h5>Sender</h5>
+						<p>All, I'm worried about the amount of spe...</p>
+					</div>
+				</button>
+	
+			
+				<button class="nostyle disabled emaillink" onclick="openEmail.call(this, event, 'email4')">
+					<img src="svg/envelope-closed.svg">
+				
+					<div class="info">
+						<h4>Yes, we definitely need that data</h4>
+						<h5>Sender</h5>
+						<p>All, I'm worried about the amount of spe...</p>
+					</div>
+				</button>
+
+				
+				<button class="nostyle disabled emaillink" onclick="openEmail.call(this, event, 'email5')">
+					<img src="svg/envelope-closed.svg">
+				
+					<div class="info">
+						<h4>Let's be clear everyone</h4>
+						<h5>Some other asshole</h5>
+						<p>Ok, I really need to make this completel...</p>
+					</div>
+				</button>
 						
-							<div class="info">
-								<h4>
-									Re: Yes, we definitely need the data
-								</h4>
-								<h5>Dr. <span class="blacked-out" style="color: black;">lol this was a name</span> Senior Director, Growth Analytics</h5>
-								<p>All, As I understand it, the reports asda sd asda asdasdasdasd</p>
-							</div>
-						</button>
-						</td>
-					</tr>
-				</table>
+				<button class="nostyle disabled emaillink" onclick="openEmail.call(this, event, 'email6')">
+					<img src="svg/envelope-closed.svg">
+				
+					<div class="info">
+						<h4>Let's be clear everyone</h4>
+						<h5>Some other asshole</h5>
+						<p>Ok, I really need to make this completel...</p>
+					</div>
+				</button>
 
-				<table class="email">
-					<tr>
-						<td>
-						<button class="nostyle disabled emaillink" onclick="openEmail.call(this, event, 'email2')">
-							<img src="svg/envelope-closed.svg">
+				
+				<button class="nostyle disabled emaillink" onclick="openEmail.call(this, event, 'email7')">
+					<img src="svg/envelope-closed.svg">
+				
+					<div class="info">
+						<h4>Let's be clear everyone</h4>
+						<h5>Some other asshole</h5>
+						<p>Ok, I really need to make this completel...</p>
+					</div>
+				</button>
 
-							<div class="info">
-								<h4>What's the current timeline?</h4>
-								<h5>More assholes</h5>
-								<p>Do we know what is going on with the d...</p>
-							</div>
-						</button>
-						</td>
-					</tr>
-				</table>
-
-				<table class="email">
-					<tr>
-						<td>
-						<button class="nostyle disabled emaillink" onclick="openEmail.call(this, event, 'email3')">
-							<img src="svg/envelope-closed.svg">
-						
-							<div class="info">
-								<h4>Yes, we definitely need that data</h4>
-								<h5>Sender</h5>
-								<p>All, I'm worried about the amount of spe...</p>
-							</div>
-						</button>
-						</td>
-					</tr>
-				</table>
-
-				<table class="email">
-					<tr>
-						<td>
-							<button class="nostyle disabled emaillink" onclick="openEmail.call(this, event, 'email4')">
-							<img src="svg/envelope-closed.svg">
-						
-							<div class="info">
-								<h4>Yes, we definitely need that data</h4>
-								<h5>Sender</h5>
-								<p>All, I'm worried about the amount of spe...</p>
-							</div>
-						</button>
-						</td>
-					</tr>
-				</table>
-
-				<table class="email">
-					<tr>
-						<td>
-						<button class="nostyle disabled emaillink" onclick="openEmail.call(this, event, 'email5')">
-							<img src="svg/envelope-closed.svg">
-						
-							<div class="info">
-								<h4>Let's be clear everyone</h4>
-								<h5>Some other asshole</h5>
-								<p>Ok, I really need to make this completel...</p>
-							</div>
-						</button>
-						</td>
-					</tr>
-				</table>
-
-				<table class="email">
-					<tr>
-						<td>
-						<button class="nostyle disabled emaillink" onclick="openEmail.call(this, event, 'email6')">
-							<img src="svg/envelope-closed.svg">
-						
-							<div class="info">
-								<h4>Let's be clear everyone</h4>
-								<h5>Some other asshole</h5>
-								<p>Ok, I really need to make this completel...</p>
-							</div>
-						</button>
-						</td>
-					</tr>
-				</table>
-
-				<table class="email">
-					<tr>
-						<td>
-						<button class="nostyle disabled emaillink" onclick="openEmail.call(this, event, 'email7')">
-							<img src="svg/envelope-closed.svg">
-						
-							<div class="info">
-								<h4>Let's be clear everyone</h4>
-								<h5>Some other asshole</h5>
-								<p>Ok, I really need to make this completel...</p>
-							</div>
-						</button>
-						</td>
-					</tr>
-				</table>
-
-				<table class="email">
-					<tr>
-						<td>
-						<button class="nostyle disabled emaillink" onclick="openEmail.call(this, event, 'email8')">
-							<img src="svg/envelope-closed.svg">
-						
-							<div class="info">
-								<h4>Let's be clear everyone</h4>
-								<h5>Some other asshole</h5>
-								<p>Ok, I really need to make this completel...</p>
-							</div>
-						</button>
-						</td>
-					</tr>
-				</table>
-
+				<button class="nostyle disabled emaillink" onclick="openEmail.call(this, event, 'email8')">
+					<img src="svg/envelope-closed.svg">
+				
+					<div class="info">
+						<h4>Let's be clear everyone</h4>
+						<h5>Some other asshole</h5>
+						<p>Ok, I really need to make this completel...</p>
+					</div>
+				</button>
+			
 				<p style="width: 100%; margin: 10px auto; text-align: center; font-weight: 100; color: black;">
 					881 e-mails archived
 				</p>
@@ -229,9 +189,7 @@
 			<EmailMessage author="auth" 
 						  subject="bar"
 						  date="2020-05-10T13:03:00.000Z"
-						  class="emailbody"
-						  style="display:block"
-						  id="email1">
+						  open>
 				All,<br><br>
 
 				As I understand it, the reports cannot be generated on time until this data is located and processed. Naturally, since our delivery date is only 2 weeks away, we're all feeling the pressure.<br><br>
@@ -249,49 +207,37 @@
 				Kind regards,<br><br>
 
 				Dr. <span class="blacked-out">lol this was a name</span> AAT, MFA, PhD (ABD)<br>
-				Senior Director of Growth Analytics
+				Senior Director of Growth Analytics			
+			</EmailMessage>
+
+			<EmailMessage author="auth" 
+						  subject="bar"
+						  date="2020-05-10T13:03:00.000Z">
+				All,<br><br>
+
+				Similique repudiandae dolorem perferendis quis in sed ab nesciunt. Enim quia officia quibusdam voluptas soluta. Aliquid perspiciatis quod magnam velit dolorem. Quos officiis cumque tenetur est ipsam.<br><br>
+				Similique repudiandae dolorem perferendis quis in sed ab nesciunt. Enim quia officia quibusdam voluptas soluta. Aliquid perspiciatis quod magnam velit dolorem. Quos officiis cumque tenetur est ipsam.<br><br>
+				Similique repudiandae dolorem perferendis quis in sed ab nesciunt. Enim quia officia quibusdam voluptas soluta.<br><br>
+				Aliquid perspiciatis quod magnam velit dolorem. Quos officiis cumque tenetur est ipsam.
 
 				<br><br><br>
 
 				<span class="reply">foo 
 					<span class="reply">bar</span>
-				</span>					
+				</span>	
 			</EmailMessage>
 
-			<p class="emailbody" id="email2" hidden>
-				Similique repudiandae dolorem perferendis quis in sed ab nesciunt. Enim quia officia quibusdam voluptas soluta. Aliquid perspiciatis quod magnam velit dolorem. Quos officiis cumque tenetur est ipsam.<br><br>
-				Similique repudiandae dolorem perferendis quis in sed ab nesciunt. Enim quia officia quibusdam voluptas soluta. Aliquid perspiciatis quod magnam velit dolorem. Quos officiis cumque tenetur est ipsam.<br><br>
-				Similique repudiandae dolorem perferendis quis in sed ab nesciunt. Enim quia officia quibusdam voluptas soluta.<br><br>
-				Aliquid perspiciatis quod magnam velit dolorem. Quos officiis cumque tenetur est ipsam.<br><br>
-				Similique repudiandae dolorem perferendis quis in sed ab nesciunt. Enim quia officia quibusdam voluptas soluta. Aliquid perspiciatis quod magnam velit dolorem. Quos officiis cumque tenetur est ipsam.<br><br>
-				Similique repudiandae dolorem perferendis quis in sed ab nesciunt. Enim quia officia quibusdam voluptas soluta. Aliquid perspiciatis quod magnam velit dolorem. Quos officiis cumque tenetur est ipsam.<br><br>
-				Similique repudiandae dolorem perferendis quis in sed ab nesciunt. Enim quia officia quibusdam voluptas soluta.<br><br>
-				Aliquid perspiciatis quod magnam velit dolorem. Quos officiis cumque tenetur est ipsam.
-			</p>
+			<EmailMessage>foo</EmailMessage>
 
-			<p class="emailbody" id="email3">
-				bar
-			</p>
+			<EmailMessage>foo</EmailMessage>
 
-			<p class="emailbody" id="email4">
-				foo
-			</p>
+			<EmailMessage>foo</EmailMessage>
 
-			<p class="emailbody" id="email5">
-				blablabla
-			</p>
+			<EmailMessage>foo</EmailMessage>
 
-			<p class="emailbody" id="email6">
-				a bunch of stuff
-			</p>
+			<EmailMessage>foo</EmailMessage>
 
-			<p class="emailbody" id="email7">
-				some other stuff
-			</p>
-
-			<p class="emailbody" id="email8">
-				the eighth email
-			</p>
+			<EmailMessage>foo</EmailMessage>
 		</div>
 
 		<div class="status-bar">

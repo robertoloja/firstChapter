@@ -1,15 +1,15 @@
-function openEmail(evt, email) {
+function openEmail(evt, emailId) {
 	this.classList.add("read")
 
-	let tabcontent = document.getElementsByClassName("emailbody")
-	for (tab of tabcontent) { tab.style.display = "none" }
+	let allEmails = [...document.getElementsByTagName('EmailMessage')]
+	allEmails.map((email) => {email.style.display = 'none'})
 
-	let tablinks = document.getElementsByClassName("emaillink")
-	for (tablink of tablinks) { tablink.classList.remove("active") }
+	let emailButtons = [...document.getElementsByClassName("emaillink")]
+	emailButtons.map((button) => {button.classList.remove("active")})
 
-	document.getElementById(email).style.display = "block";
+	allEmails[emailButtons.indexOf(this)].style.display = 'inline-block'
 	this.classList.add("active")
-	evt.currentTarget.firstElementChild.src = "svg/envelope-open.svg"
+	this.firstElementChild.src = "svg/envelope-open.svg"
 }
 
 function openWindowFromRibbon(evt) {
