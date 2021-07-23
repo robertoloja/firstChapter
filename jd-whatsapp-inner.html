@@ -4,19 +4,19 @@
 <head>
 <link rel="stylesheet" href="css/whatsapp.css">
 <meta charset="UTF-8">
-<script src="js/Message.js">
-</script>
+<script src="js/Message.js"></script>
+<script src="js/whatsapp.js"></script>
 </head>
 
 <body onload="onLoad()">
-	<div class="contacts">
+	<div class="contacts hidden">
 		<div class="userNav">
 			<div class="userInfo">
 				<div class="circle"></div>
 			</div>
 		</div>
 
-		<div class="contact active">
+		<div class="contact active" onclick="showMessage.call(this)">
 			<table class="contactInfo">
 				<tr>
 					<td>
@@ -66,9 +66,14 @@
 	</div>
 
 	<div class="messages">
-		<div class="msgNav">
+		<div class="msgNav not-hidden">
 			<table class="navInfo">
 				<tr>
+					<td>
+			            <div class="back-arrow" onclick="showContacts.call(this)">
+    			            <img src="svg/back-arrow.svg" />
+            			</div>
+					</td>
 					<td>
 						<div class="circle blue"></div>
 					</td>
@@ -182,14 +187,17 @@
 				</p>
 			</div>
 
-			<div class="msg sent">
-				<p>it hit the data limit once we pulled a few dozen records and it blocked us for a whole hour <sub>12:41 ✓</sub></p>
-				<p>we did the math<sub>12:41 ✓</sub></p>
-				<p>pulling all the records we need, pausing for an hour after every few dozen, would take 3 months... <sub>12:42 ✓</sub></p>
-				<p>i really don't know what to do <sub>12:42 ✓</sub></p>
-				<p>can u help me? <sub>12:43 ✓</sub></p>
-				<p>sorry <sub>12:43 ✓</sub></p>	
-			</div>
+			<WhatsAppMessage author="jd" 
+							 amAuthor="true" 
+							 hasBeenRead="true" 
+							 time="12:50">
+				<p>it hit the data limit once we pulled a few dozen records and it blocked us for a whole hour</p>
+				<p>we did the math</p>
+				<p>pulling all the records we need, pausing for an hour after every few dozen, would take 3 months...</p>
+				<p>i really don't know what to do </p>
+				<p>can u help me?</p>
+				<p>sorry</p>	
+			</WhatsAppMessage>
 
 			<WhatsAppMessage author="ms" 
 							 amAuthor="false" 
@@ -203,7 +211,8 @@
 			<WhatsAppMessage author="jd" 
 							 amAuthor="true" 
 							 hasBeenRead="true" 
-							 time="12:50">
+							 time="12:50"
+							 id="last">
 				<p>thank u</p>
 			</WhatsAppMessage>
 		</div>
