@@ -19,7 +19,7 @@ class Email extends Message {
 		let subject = element.attributes.subject
 		let date = element.attributes.date
 		this.subject = (subject ? subject.value : '')
-		this.date = (date ? this.getDateTimeString(element.attributes.date.value) : '')
+		this.date = (date ? this.getDateTimeString(date.value) : '')
 		this.createNewMessage()
 	}
 
@@ -43,8 +43,7 @@ class Email extends Message {
 			<b>From:</b> ${this.author} <br>
 			<b>Date:</b> ${this.date} <br><br>`
 
-		this.element.insertBefore(emailHeader, 
-								  this.element.firstChild)
+		this.element.insertBefore(emailHeader, this.element.firstChild)
 	}
 }
 
@@ -53,18 +52,15 @@ class EmailReply extends Email {
 
 class EmailMessage extends Email {
 	style() {
-		let style = 
-`overflow-y: scroll;
-background: white;
-border: 1px solid grey;
-margin: 0;
-padding: 20px;
-font-family: monospace;
-display: none;`
-
-		if (this.element.attributes.open) {
-			style = style.replace('none', 'inline-block')
-		}
+		let style = `overflow-y: scroll;
+					background: white;
+					border: 1px solid grey;
+					margin: 0;
+					padding: 20px;
+					font-family: monospace;
+					display: ${this.element.attributes.open ?
+								'inline-block' : 
+								'none'};`
 		return style
 	}
 }
