@@ -26,11 +26,11 @@ body {
 
 .contact {
 	width: 100%;
+	color: white;
 }
 
 .contact.active {
 	background: #323739;
-	color: red;
 }
 
 .contact:hover{
@@ -46,10 +46,27 @@ body {
 	margin: 0;
 }
 
-.contactInfo .circle {
-	height: 50px;
-	width: 50px;
-	margin: 10px;
+.contact .circle {
+	height: 2rem;
+	width: 2rem;
+	margin: 1rem;
+	display: inline-block;
+}
+
+.contact p {
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+	position: relative;
+	bottom: 2rem;
+}
+
+.contact sub {
+	position: relative;
+	margin: 0;
+	padding: 0;
+	bottom: 1rem;
+	right: 1.7rem;
 }
 
 .circle.blue {

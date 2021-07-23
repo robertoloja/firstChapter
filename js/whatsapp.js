@@ -13,5 +13,5 @@ function showContacts() {
 
 function showMessages() {
 	showContacts()
-	console.log()
+	console.log(this)
 }
