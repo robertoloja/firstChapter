@@ -1,18 +1,21 @@
 class Message {
 	constructor(element) {
 		this.element = element
+		
 		let author = element.attributes.author
 		this.author = (author ? author.value : '')
 		this.text = element.innerHTML
 		this.messageArea = element.parentElement
 		this.element.style.cssText = this.style()
 	}
+
+	style() {}
 }
 
-
-class EmailMessage extends Message {
+class Email extends Message {
 	constructor(element) {
 		super(element)
+
 		let subject = element.attributes.subject
 		let date = element.attributes.date
 		this.subject = (subject ? subject.value : '')
@@ -32,13 +35,23 @@ class EmailMessage extends Message {
 	}
 
 	createNewMessage() {
-		this.element.innerHTML = 
+		let emailHeader = document.createElement("p")
+		emailHeader.style = 'margin: 0; padding: 0;'
+		
+		emailHeader.innerHTML = 
 		   `<b>Subject:</b> ${this.subject} <br>
 			<b>From:</b> ${this.author} <br>
-			<b>Date:</b> ${this.date} <br><br>
-			${this.text}`
-	}
+			<b>Date:</b> ${this.date} <br><br>`
 
+		this.element.insertBefore(emailHeader, 
+								  this.element.firstChild)
+	}
+}
+
+class EmailReply extends Email {
+}
+
+class EmailMessage extends Email {
 	style() {
 		let style = 
 `overflow-y: scroll;
@@ -113,12 +126,15 @@ function onLoad() {
 	const registeredClasses = {
 		"IrcMessage": IrcMessage,
 		"WhatsAppMessage": WhatsAppMessage,
-		"EmailMessage": EmailMessage
+		"EmailMessage": EmailMessage,
+		"EmailReply": EmailReply
 	}
 
 	Object.keys(registeredClasses).map((className) => {
-		[...document.body.getElementsByTagName(className)].map((element) => {
-			element.classInstance = new registeredClasses[className](element)
-		})
+		let registeredElements = [...document.getElementsByTagName(className)]
+
+		registeredElements.map((element) => {
+						  	element.classInstance = new registeredClasses[className](element)
+						  })
 	})
 }
