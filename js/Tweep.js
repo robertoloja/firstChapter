@@ -37,9 +37,6 @@ class TweepIcons {
 
 class Tweep {
   constructor(element) {
-    // TODO: - Get attributes (text, author)
-    //       - programatically style based on position 
-    //         (first, last, etc)
     this.element = element
     this.text = element.innerText
     this.author = element.attributes
@@ -50,6 +47,7 @@ class Tweep {
   }
 
   createTweep() {
+    // TODO: Clean this up
     const nextSibling = this.element.nextElementSibling
     const previousSibling = this.element.previousElementSibling
 
