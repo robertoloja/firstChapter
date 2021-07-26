@@ -2,10 +2,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="css/whatsapp.css">
-<meta charset="UTF-8">
-<script src="js/Message.js"></script>
-<script src="js/whatsapp.js"></script>
+	<link rel="stylesheet" href="css/whatsapp.css">
+	<meta charset="UTF-8">
+	<script src="js/Message.js"></script>
+	<script src="js/whatsapp.js"></script>
 </head>
 
 <body onload="onLoad()">
@@ -31,32 +31,15 @@
 
 	<div class="messages">
 		<div class="msgNav not-hidden">
-			<table class="navInfo">
-				<tr>
-					<td>
-						<div class="back-arrow" onclick="showContacts.call(this)">
-								<img src="svg/back-arrow.svg" />
-						</div>
-					</td>
-					<td>
-						<div class="circle blue"></div>
-					</td>
-					<td>
-						<table>
-						<tr>
-							<td>
-								<p id="active-message">MS</p>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<sub>online</sub>
-							</td>
-						</tr>
-					</table>
-					</td>
-				</tr>
-			</table>
+			<div class="contact">
+				<div class="back-arrow" onclick="showContacts.call(this)">
+					<img src="svg/back-arrow.svg" />
+				</div>
+
+				<div class="circle blue"></div>
+				<p id="active-message">MS</p>
+				<sub>online</sub>
+			</div>
 		</div>
 
 		<div class="message-area" id="ms">
@@ -171,6 +154,8 @@
 							 id="last">
 				<p>thank u</p>
 			</WhatsAppMessage>
+
 		</div>
 	</div>
 </body>
+</html>

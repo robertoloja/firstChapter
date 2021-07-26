@@ -70,7 +70,6 @@
 				.hanzi h1 {
 					margin: 0;
 					padding: 0;
-					text-size: 80%;
 				}
 
 				.hanzi p {
@@ -148,5 +147,10 @@ html, body {
 	select {
 		width: 22.5rem;
 		height: 3rem;
+	}
+
+	.footnote {
+		position: absolute;
+		bottom: 1.2rem;
 	}
 }
