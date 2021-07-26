@@ -430,4 +430,20 @@ video {
 	video {
 		height: 6rem;
 	}
+
+	.links {
+		padding: 0;
+		margin: 2rem auto;
+		margin-bottom: 0;
+		cursor: default;
+	}
+
+	.links p {
+		padding: 0 0.5rem;
+	}
+
+	.tweet-avatar {
+		position: relative;
+		top: 0.2rem;
+	}
 }
