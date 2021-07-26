@@ -1,7 +1,4 @@
-import IrcMessage from "Message"
-import WhatsAppMessage from "Message"
-import EmailMessage from "Message"
-import EmailReply from "Message"
+const registeredClasses = {}
 
 function onLoad() {
 	/*****
@@ -9,12 +6,6 @@ function onLoad() {
 	 *  instantiates the associated class, and attaches the instance to 
 	 *  element.classInstance
 	 ****/
-	const registeredClasses = {
-		"IrcMessage": IrcMessage,
-		"WhatsAppMessage": WhatsAppMessage,
-		"EmailMessage": EmailMessage,
-		"EmailReply": EmailReply
-	}
 
 	Object.keys(registeredClasses).map((className) => {
 		let registeredElements = [...document.getElementsByTagName(className)]

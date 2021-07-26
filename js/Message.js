@@ -15,16 +15,19 @@ class Message {
 class Email extends Message {
 	constructor(element) {
 		super(element)
-
 		let subject = element.attributes.subject
 		let date = element.attributes.date
+
 		this.subject = (subject ? subject.value : '')
 		this.date = (date ? this.getDateTimeString(date.value) : '')
 		this.createNewMessage()
 	}
 
 	getDateTimeString(date) {
-		// returns the date attribute in format "Sun May 10 2020 09:03"
+		/**
+		 * @param date String
+		 * Returns the date attribute in format "Sun May 10 2020 09:03".
+		 **/ 
 		const zeroPad = (unit) => (unit.length == 1 ? '0' + unit : unit)
 
 		const getTimeString = (date) => zeroPad(date.getHours().toString()) + ':' + 
@@ -48,6 +51,8 @@ class Email extends Message {
 }
 
 class EmailReply extends Email {
+	// This class only exists to give a descriptive 
+	// name to the relevant HTML tag
 }
 
 class EmailMessage extends Email {
@@ -111,3 +116,8 @@ class WhatsAppMessage extends Message {
 		   			  .join('')}`
 	}
 }
+
+registeredClasses["IrcMessage"] = IrcMessage
+registeredClasses["WhatsAppMessage"] = WhatsAppMessage
+registeredClasses["EmailMessage"] = EmailMessage
+registeredClasses["EmailReply"] = EmailReply
