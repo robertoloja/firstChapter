@@ -48,27 +48,38 @@ class Tweep {
 
   createTweep() {
     // TODO: Clean this up
-    const nextSibling = this.element.nextElementSibling
-    const previousSibling = this.element.previousElementSibling
+    const authorColors = {
+      'MS': 'blue',
+      'PM': 'orange',
+      'WH': 'red',
+      'JD': 'white'
+    }
+    const siblings = {
+      next: this.element.nextElementSibling,
+      previous: this.element.previousElementSibling
+    }
 
-    const hasReply = (nextSibling && nextSibling.attributes.getNamedItem('reply') != null ?
-                      true : 
-                      false)
+    const hasReply = (siblings.next && 
+                      siblings.next.attributes.getNamedItem('reply') != null ?
+                        true : false)
     const isReply = this.element.attributes.getNamedItem('reply') != null
-    const replyVerticalBar = '<div class="reply-link"></div>'
+    const replyVerticalBar = `<div class="reply-link${(this.element.attributes.getNamedItem('video') != null ? ' long': '')}"></div>`
 
     let tweepDiv = document.createElement("div")
     tweepDiv.classList.add('tweet')
+    if (isReply && hasReply) tweepDiv.classList.add('reply')
+    if (isReply && !hasReply) tweepDiv.classList.add('last')
+    if (!isReply && hasReply) tweepDiv.classList.add('first')
 
     let foo = 
           `<div class="tweet-heading">
-              <img class="tweet-avatar">
+              <img class="tweet-avatar ${authorColors[this.author]}">
               <h4>${this.author}</h4>
               <p>@${this.handle}</p>
           </div>
           ${hasReply ? replyVerticalBar : ''}
           <p class="tweet-text">
-          ${(isReply ? '<a href="">@' + previousSibling.attributes.handle.value + '</a>' : '')}
+          ${(isReply ? '<a href="">@' + siblings.previous.attributes.handle.value + '</a>' : '')}
           ${this.text}
           </p>`
 
@@ -77,8 +88,8 @@ class Tweep {
         `<video controls width="300">
          <source src="${this.element.attributes.getNamedItem('video').value}" type="video/mp4">
          </video>`)
-      console.log(foo)
     }
+
     tweepDiv.innerHTML = foo
     let tweepIcons = document.createElement('tweepicons')
     tweepIcons.classInstance = new TweepIcons(tweepIcons)

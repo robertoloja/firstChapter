@@ -46,10 +46,11 @@
 		.footnote {
 				text-align: left;
 				position: absolute;
+				bottom: 2rem;
+				left: 4rem;
 				border: 1px solid gray;
 				border-radius: 5px;
 				padding: 0.7rem;
-				margin: 0.1rem 1rem;
 				background: rgba(240, 240, 240, 0.95);
 				font-family: 'Courier';
 				font-size: 0.8rem;
