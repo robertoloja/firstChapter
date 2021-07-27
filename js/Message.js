@@ -93,7 +93,7 @@ class IrcMessage extends Message {
 		this.element.innerHTML =
 		   `<p class="message-text">
 				${displayText}
-			</p>`
+			</p><br>`
 	}
 }
 
