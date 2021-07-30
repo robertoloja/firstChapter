@@ -1,3 +1,6 @@
+<head>
+	<meta charset="UTF-8">
+</head>
 <style>
 @font-face {
     font-family: "草書";
@@ -46,19 +49,34 @@ const canvas = document.getElementById('canv');
 const ctx = canvas.getContext('2d');
 
 // set the width and height of the canvas
-const w = canvas.width = document.body.offsetWidth;
-const h = canvas.height = document.body.offsetHeight;
+let w = canvas.width = document.body.offsetWidth;
+let h = canvas.height = document.body.offsetHeight;
 
 // draw a black rectangle of width and height same as that of the canvas
 ctx.fillStyle = '#000';
 ctx.fillRect(0, 0, w, h);
 
-const cols = Math.floor(w / 20) + 1;
-const ypos = Array(cols).fill(0);
+let cols = Math.floor(w / 20) + 1;
+let ypos = Array(cols).fill(0);
 
 const hanzi = '黑客用開發人員互聯網博客論壇帖子回下載上傳郵件病毒攝像頭'
 
 function matrix () {
+  if (w != document.body.offsetWidth || 
+      h != document.body.offsetHeight) {
+    w = canvas.width = document.body.offsetWidth;
+    h = canvas.height = document.body.offsetHeight;
+    ctx.fillStyle = '#000';
+    ctx.fillRect(0, 0, w, h);
+    cols = Math.floor(w / 20) + 1;
+    if (cols > ypos.length) {
+      ypos = ypos.concat(Array(cols - ypos.length).fill(100))
+    } else {
+      let remove = cols - ypos.length
+      ypos = ypos.slice(0, ypos.length + remove)
+    }
+  }
+
   // Draw a semitransparent black rectangle on top of previous drawing
   ctx.fillStyle = '#0001';
   ctx.fillRect(0, 0, w, h);
