@@ -12,11 +12,33 @@ function fadeAndDeleteOverlay() {
 	}
 
 	let overlayDeath = new Promise((res, rej) => {
-		window.setTimeout(() => {overlay.style.opacity = 0}, 2000)
+		window.setTimeout(() => {overlay.style.opacity = 0}, 5000)
 		res()
 	})
 
-	overlayDeath.then(window.setTimeout(() => { overlay.hidden = true }, 4000))
+	overlayDeath.then(window.setTimeout(() => { overlay.hidden = true }, 7000))
+	animateChapterTitle()
+}
+
+
+function animateChapterTitle() {
+	let title = document.getElementById('chapter-title')
+	title.innerText = ''
+	let finalText = '0: introduction'
+
+	let totalDelay = 0
+	let maxDelay = 100
+	let minDelay = 10
+
+	for (let char of finalText.split('')) {
+		let delay = Math.random() * (maxDelay - minDelay) + minDelay
+		console.log(delay)
+		totalDelay += delay
+
+		window.setTimeout(() => {
+			title.innerText = title.innerText + char
+		}, totalDelay)
+	}
 }
 
 
