@@ -12,11 +12,11 @@ function fadeAndDeleteOverlay() {
 	}
 
 	let overlayDeath = new Promise((res, rej) => {
-		window.setTimeout(() => {overlay.style.opacity = 0}, 5000)
+		window.setTimeout(() => {overlay.style.opacity = 0}, 2000)
 		res()
 	})
 
-	overlayDeath.then(window.setTimeout(() => { overlay.hidden = true }, 7000))
+	overlayDeath.then(window.setTimeout(() => { overlay.hidden = true }, 4000))
 	animateChapterTitle()
 }
 

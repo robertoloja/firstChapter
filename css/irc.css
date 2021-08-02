@@ -16,6 +16,7 @@ body {
 	display: block;
 	background: white;
 	width: 80%;
+	max-height: 600px;
 	border: 2px solid gray;
 	padding: 5px;
 	margin: 0;

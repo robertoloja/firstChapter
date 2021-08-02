@@ -78,6 +78,12 @@ class IrcMessage extends Message {
 	}
 
 	createNewMessage() {
+		const characterColors = {
+			'MS': 'lightblue',
+			'JD': 'gray',
+			'PM': 'orange',
+			'WH': 'red'
+		}
 		let styleClasses = "message"
 		let displayText = ""
 
@@ -85,7 +91,7 @@ class IrcMessage extends Message {
 			styleClasses = styleClasses + " server-announcement"
 			displayText = "* " + this.text
 		} else {
-			displayText = `&lt;${this.author}&gt; ${this.text}`
+			displayText = `&lt;<font color="${characterColors[this.author]}">${this.author}</font>&gt; ${this.text}`
 		}
 
 		this.element.className = styleClasses
