@@ -9,6 +9,16 @@
 	<script src="js/onLoad.js"></script>
 	<script src="js/Message.js"></script>
 	<script src="js/irc.js"></script>
+	<script>
+		function showFootnote (event, id) {
+			let message = {
+				'type': event.type,
+				'id': id
+			}
+			window.top.postMessage(message, '*')
+			console.log(message)
+		}
+	</script>
 </head>
 <body onload="onLoad()">
 <div class="window">
@@ -55,30 +65,38 @@
 				<IrcMessage author="MS">No worries</IrcMessage>
 				<IrcMessage author="WH">lol MS u were right about PM</IrcMessage>
 				<IrcMessage author="PM">Right about what?</IrcMessage>
-				<IrcMessage author="MS">
-					I mentioned you write pretty formally online
-				</IrcMessage>
+				<IrcMessage author="MS">I mentioned you write pretty formally online</IrcMessage>
 				<IrcMessage author="WH">he said u always talk like ur at work</IrcMessage>
 				<IrcMessage author="PM">Well, communication is a muscle, and I take every opportunity to exercise it.</IrcMessage>
-				<IrcMessage author="MS">Yeah, I kind of agree with that</IrcMessage>
-				<IrcMessage author="JD">I like it :smile:</IrcMessage>
+				<IrcMessage author="MS">I kind of agree with that</IrcMessage>
+				<IrcMessage author="JD">i like the way PM writes :smile:</IrcMessage>
 				<IrcMessage author="JD">...how do i use emojis in this??</IrcMessage>
 				<IrcMessage author="WH">;)</IrcMessage>
 				<IrcMessage author="MS">You have to write it out like this >:(</IrcMessage>
 				<IrcMessage author="JD">ooooooh</IrcMessage>
 				<IrcMessage author="JD">that angry face is cute lol</IrcMessage>
 				<IrcMessage author="PM">Yes it is</IrcMessage>
-				<IrcMessage author="PM">Lol</IrcMessage>
 				<IrcMessage author="PM">But why are we using this platform? This seems ancient.</IrcMessage>
-				<IrcMessage author="MS">It kind of is. IRC is pretty old, but it's reliable</IrcMessage>
+				<IrcMessage author="MS">It kind of is. 
+				<a class="tooltip"
+					onclick="showFootnote.call(this, event, 'irc')"
+					onmouseover="showFootnote.call(this, event, 'irc')"
+					onmouseout="showFootnote.call(this, event, 'irc')">IRC</a>
+					is pretty old, but it's reliable. With software, old and boring is usually better</IrcMessage>
+				<IrcMessage author="WH">and i own this server</IrcMessage>
+				<IrcMessage author="PM">Ah, right. That's my next question. Who are you, exactly?</IrcMessage>
+				<IrcMessage author="WH">/me is WH ;)</IrcMessage>
+				<IrcMessage author="MS">WH a friend I've known for a long time, who I trust to setup a secure server</IrcMessage>
+				<IrcMessage author="PM">How secure? And can someone please explain what we're here to talk about?</IrcMessage>
+				<IrcMessage author="MS">Pretty secure. It doesn't even keep any chat logs. Once we all disconnect, if we each erase our local copies, there won't be any records</IrcMessage>
 			</div>
 
 			<div class="member-list">
-				<b>@WH</b><br>
-				<b>@bot</b><br>
-				JD<br>
-				PM<br>
-				MS<br>
+				<b><font color="red">@WH</font><br>
+				<font color="purple">@bot</font><br>
+			  <font color="lightblue">MS</font><br>
+			  <font color="gray">JD</font><br>
+				<font color="orange">PM</font></b><br>
 				<br><br><br><br><br><br><br>
 			</div>
 		</div>
@@ -122,11 +140,7 @@
 						&lt;WH&gt; !record #conspiracy
 					</p>
 				</div>
-				<div class="message">
-					<p class="message-text me">
-						* bot recording channel #conspiracy, !stop command will end recording.
-					</p>
-				</div>
+				<IrcMessage author="bot">/me recording channel #conspiracy, !stop command will end recording.</IrcMessage>
 			</div>
 
 			<div class="member-list">

@@ -90,12 +90,13 @@ class IrcMessage extends Message {
 		if (this.author.toLowerCase() == "server") {
 			styleClasses = styleClasses + " server-announcement"
 			displayText = "* " + this.text
+		} else if (this.text.slice(0,3) == '/me') {
+			displayText = `<font color="purple">*${this.author} ${this.text.slice(4, this.text.length)}</font>`
 		} else {
 			displayText = `&lt;<font color="${characterColors[this.author]}">${this.author}</font>&gt; ${this.text}`
 		}
 
 		this.element.className = styleClasses
-
 		this.element.innerHTML =
 		   `<p class="message-text">
 				${displayText}
