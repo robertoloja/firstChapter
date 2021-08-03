@@ -119,7 +119,7 @@ class WhatsAppMessage extends Message {
 
 		this.element.className = `msg${(this.amAuthor ? ' sent' : ' received')}`
 		this.element.innerHTML = 
-		   `${children.map((p) => `<p>${p.innerText} <sub>${this.time} ✓</sub></p>`)
+		   `${children.map((p) => `<p>${p.innerText} <sub>${this.time} ${this.amAuthor ? `<span class="checkmarks${this.hasBeenRead ? ' read' : ''}">✓✓</span>` : ''}</sub></p>`)
 		   			  .join('')}`
 	}
 }
