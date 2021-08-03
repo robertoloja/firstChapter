@@ -134,6 +134,7 @@ table p {
 	margin-left: 10px;
 	margin-right: 10px;
 }
+
 .circle {
 	border-radius: 50%;
 	background: white;
@@ -203,8 +204,8 @@ table p {
 	font-size: 80%;
 }
 
-#last {
-	padding-bottom: 50px;
+#last p {
+	margin-bottom: 2rem;
 }
 
 .back-arrow {
