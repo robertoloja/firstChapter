@@ -1,4 +1,3 @@
-<!--- TODO: Figure out the double-checkmark -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,13 +16,13 @@
 			</div>
 		</div>
 
-		<div class="contact active" onclick="showMessages.call(this)">
+		<div class="contact active" onclick="showMessages.call(this, 'ms')">
 			<div class="circle blue"></div>
 			<p>MS</p>
 			<sub>online</sub>
 		</div>
 
-		<div class="contact">
+		<div class="contact" onclick="showMessages.call(this, 'pm')">
 			<div class="circle"></div>
 			<p>PM</p>
 			<sub>online</sub>
@@ -31,19 +30,19 @@
 	</div>
 
 	<div class="messages">
-		<div class="msgNav not-hidden">
-			<div class="contact">
-				<div class="back-arrow" onclick="showContacts.call(this)">
-					<img src="svg/back-arrow.svg" />
-				</div>
-
-				<div class="circle blue"></div>
-				<p id="active-message">MS</p>
-				<sub>online</sub>
-			</div>
-		</div>
 
 		<div class="message-area" id="ms">
+			<div class="msgNav">
+				<div class="contact">
+					<div class="back-arrow" onclick="showContacts.call(this)">
+						<img src="svg/back-arrow.svg" />
+					</div>
+
+					<div class="circle blue"></div>
+					<p id="active-message">MS</p>
+					<sub>online</sub>
+				</div>
+			</div>
 			<div class="date">
 				Today
 			</div>
@@ -156,6 +155,31 @@
 				<p>thank u</p>
 			</WhatsAppMessage>
 
+		</div>
+
+		<div class="message-area" id="pm" hidden>
+			<div class="msgNav">
+				<div class="contact">
+					<div class="back-arrow" onclick="showContacts.call(this)">
+						<img src="svg/back-arrow.svg" />
+					</div>
+
+					<div class="circle orange"></div>
+					<p id="active-message">PM</p>
+					<sub>online</sub>
+				</div>
+			</div>
+			<div class="date">
+				Today
+			</div>
+
+			<WhatsAppMessage author="jd" 
+							 amAuthor="true" 
+							 hasBeenRead="true" 
+							 time="12:32">
+				<p>all the senior leadership is acting so cold...</p>
+				<p>i didn't think it was such a big problem until they started talking about like "compensating for missed revenue goals"...</p>
+			</WhatsAppMessage>
 		</div>
 
 		<!--footer-->

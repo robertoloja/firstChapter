@@ -1,17 +1,25 @@
 function showContacts() {
 	const contacts = document.querySelector('.contacts')
-	const msgNav = document.querySelector('.msgNav')
+	const messageAreas = [...document.getElementsByClassName('message-area')]
 
 	if ([...contacts.classList].indexOf('hidden') == -1) {
 		contacts.classList.add('hidden')
-		msgNav.classList.remove('hidden')
 	} else {
 		contacts.classList.remove('hidden')
-		msgNav.classList.add('hidden')
 	}
 }
 
-function showMessages() {
+function showMessages(author) {
 	showContacts()
-	console.log(this)
+	const clicked = document.getElementById(author)
+
+	const allMessages = [...document.getElementsByClassName('message-area')]
+	allMessages.map(x => {
+		x.hidden = true
+	})
+	clicked.hidden = false
+
+	const allContacts = [...document.getElementsByClassName('contact')]
+	allContacts.map(x => { x.classList.remove('active') })
+	this.classList.add('active')
 }
