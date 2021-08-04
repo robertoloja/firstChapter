@@ -74,6 +74,10 @@ body {
 	background: lightblue;
 }
 
+.circle.orange {
+	background: orange;
+}
+
 .userNav {
 	background: #2A2F32;
 	color: #f0f0f0;
@@ -82,19 +86,16 @@ body {
 	font-size: 85%;
 	position: fixed;
 	width: 40%;
-	margin: 0;
 	top: 0;
 	left: 0;
 	border: 1px solid #3F4448;
 	border-style: none solid none none;
-	padding-bottom: 2px;
+	height: 4rem;
 }
 
 .userInfo {
-	padding-top: 12px;
-	padding-left: 12px;
-	padding-bottom: 12px;
 	width: 100%;
+	padding: 0.7rem;
 }
 
 .messages {
@@ -227,6 +228,11 @@ table p {
 		margin: 0;
 		padding: 0.7rem 0.9rem 0 0;
 		display: inline-block;
+	}
+
+	.back-arrow img {
+		position: relative;
+		top: -0.5rem;
 	}
 
 	.userNav {
