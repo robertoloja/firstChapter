@@ -6,6 +6,21 @@
 	<script src="js/onLoad.js"></script>
 	<script src="js/Message.js"></script>
 	<script src="js/whatsapp.js"></script>
+	<style>
+		.fernando {
+			background: linear-gradient(0deg, rgba(3,151,252,1) 10%,
+																				rgba(3,151,252,1) 25%, 
+																				rgba(218,27,33,1) 26%, 
+																				rgba(218,27,33,1) 54%, 
+																				rgba(218,150,0,1) 54%, 
+																				rgba(218,150,0,1) 70%, 
+																				rgba(218,27,33,1) 70%, 
+																				rgba(218,27,33,1) 78%, 
+																				rgba(218,150,0,1) 78%, 
+																				rgba(218,150,0,1) 88%, 
+																				rgba(3,151,252,1) 88%);
+		}
+	</style>
 </head>
 
 <body onload="onLoad()">
@@ -25,6 +40,12 @@
 		<div class="contact" onclick="showMessages.call(this, 'pm')">
 			<div class="circle orange"></div>
 			<p>PM</p>
+			<sub>online</sub>
+		</div>
+
+		<div class="contact" onclick="showMessages.call(this, 'fernando')">
+			<div class="circle fernando"></div>
+			<p>Fernando</p>
 			<sub>online</sub>
 		</div>
 	</div>
@@ -190,6 +211,144 @@
 				<p>This is more stuff being said</p>
 			</WhatsAppMessage>
 		</div>
+
+		<div class="message-area" id="fernando" hidden>
+			<div class="msgNav">
+				<div class="contact">
+					<div class="back-arrow" onclick="showContacts.call(this)">
+						<img src="svg/back-arrow.svg" />
+					</div>
+
+					<div class="circle fernando"></div>
+					<p id="active-message">Fernando</p>
+					<sub>online</sub>
+				</div>
+			</div>
+			<div class="date">
+				Yesterday
+			</div>
+
+			<WhatsAppMessage author="fernando" 
+							 amAuthor="false" 
+							 hasBeenRead="true" 
+							 time="12:32">
+				<p>RAWCEEK!!!!11</p>
+			</WhatsAppMessage>
+
+			<WhatsAppMessage author="jd" 
+							 amAuthor="true" 
+							 hasBeenRead="true" 
+							 time="12:32">
+				<p>RAWCEEK!!!!!!111</p>
+			</WhatsAppMessage>
+
+			<WhatsAppMessage author="fernando" 
+							 amAuthor="false" 
+							 hasBeenRead="true" 
+							 time="12:32">
+				<p>ALO gonna own ur guy</p>
+			</WhatsAppMessage>
+
+			<WhatsAppMessage author="jd" 
+							 amAuthor="true" 
+							 hasBeenRead="true" 
+							 time="12:32">
+				<p>oh ur almost as dumb as i already thought</p>
+				<p>VER got this</p>
+				<p>that honda engine sounds sooooo sexy</p>
+			</WhatsAppMessage>
+
+			<WhatsAppMessage author="fernando" 
+							 amAuthor="false" 
+							 hasBeenRead="true" 
+							 time="12:32">
+				<p>not as sexy as renault engine</p>
+			</WhatsAppMessage>
+
+			<WhatsAppMessage author="jd" 
+							 amAuthor="true" 
+							 hasBeenRead="true" 
+							 time="12:32">
+				<p>the engine is still called renault?</p>
+				<p>i guess branding isn't that important when u only have one customer...</p>
+			</WhatsAppMessage>
+
+			<WhatsAppMessage author="fernando" 
+							 amAuthor="false" 
+							 hasBeenRead="true" 
+							 time="12:32">
+				<p>that's a lowblow</p>
+				<p>RBR doesn't know what they're missing</p>
+				<p>max would have won a wdc already if they'd invested in the right engine</p>
+			</WhatsAppMessage>
+
+			<WhatsAppMessage author="jd" 
+							 amAuthor="true" 
+							 hasBeenRead="true" 
+							 time="12:32">
+				<p>buddy, honda made engines for senna</p>
+				<p>and their f1 team became the totally dominant mercedes team</p>
+			</WhatsAppMessage>
+
+			<WhatsAppMessage author="fernando" 
+							 amAuthor="false" 
+							 hasBeenRead="true" 
+							 time="12:32">
+				<p>i'm not ur buddy, guy</p>
+			</WhatsAppMessage>
+
+			<WhatsAppMessage author="jd" 
+							 amAuthor="true" 
+							 hasBeenRead="true" 
+							 time="12:32">
+				<p>i'm not ur guy, friend</p>
+				<p>oh btw</p>
+				<p>i can't race this week</p>
+			</WhatsAppMessage>
+
+			<WhatsAppMessage author="fernando" 
+							 amAuthor="false" 
+							 hasBeenRead="true" 
+							 time="12:32">
+				<p>nooooo</p>
+				<p>why??</p>
+			</WhatsAppMessage>
+
+			<WhatsAppMessage author="jd" 
+							 amAuthor="true" 
+							 hasBeenRead="true" 
+							 time="12:32">
+				<p>ugh</p>
+				<p>work just sucks</p>
+				<p>sorry</p>
+			</WhatsAppMessage>
+
+			<WhatsAppMessage author="fernando" 
+							 amAuthor="false" 
+							 hasBeenRead="true" 
+							 time="12:32">
+				<p>shit</p>
+				<p>who tf is gonna give me a tow so i can get pole??</p>
+			</WhatsAppMessage>
+
+			<WhatsAppMessage author="jd" 
+							 amAuthor="true" 
+							 hasBeenRead="true" 
+							 time="12:32">
+				<p>yeah, there's not gonna be anyone to defend for u either</p>
+				<p>and then pass u on the last lap</p>
+			</WhatsAppMessage>
+
+			<WhatsAppMessage author="fernando" 
+							 amAuthor="false" 
+							 hasBeenRead="true" 
+							 time="12:32">
+				<p>man, look, never again, ok?</p>
+				<p>I'm telling u, i lifted through 130R so u could pass on the outside and feel like a badass</p>
+				<p>it was charity</p>
+			</WhatsAppMessage>
+		</div>
+
 
 		<!--footer-->
 		<style>

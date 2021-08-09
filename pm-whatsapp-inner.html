@@ -12,7 +12,7 @@
 	<div class="contacts hidden">
 		<div class="userNav">
 			<div class="userInfo">
-				<div class="circle"></div>
+				<div class="circle orange"></div>
 			</div>
 		</div>
 
@@ -22,9 +22,15 @@
 			<sub>online</sub>
 		</div>
 
-		<div class="contact" onclick="showMessages.call(this, 'pm')">
-			<div class="circle orange"></div>
-			<p>PM</p>
+		<div class="contact" onclick="showMessages.call(this, 'jd')">
+			<div class="circle"></div>
+			<p>JD</p>
+			<sub>online</sub>
+		</div>
+
+		<div class="contact" onclick="showMessages.call(this, 'mom')">
+			<div class="circle"></div>
+			<p>母親</p>
 			<sub>online</sub>
 		</div>
 	</div>
@@ -47,6 +53,31 @@
 				Today
 			</div>
 
+			<WhatsAppMessage author="ms" 
+							amAuthor="false" 
+							hasBeenRead="true" 
+							time="12:35">
+				<p>They can live with it, honestly. I doubt it's as big a deal as they're making it seem.</p>
+				<p>How are you doing though?</p>
+			</WhatsAppMessage>
+		</div>
+
+		<div class="message-area" id="jd" hidden>
+			<div class="msgNav">
+				<div class="contact">
+					<div class="back-arrow" onclick="showContacts.call(this)">
+						<img src="svg/back-arrow.svg" />
+					</div>
+
+					<div class="circle"></div>
+					<p id="active-message">JD</p>
+					<sub>online</sub>
+				</div>
+			</div>
+			<div class="date">
+				Today
+			</div>
+
 			<WhatsAppMessage author="jd" 
 							 amAuthor="true" 
 							 hasBeenRead="true" 
@@ -62,135 +93,7 @@
 				<p>They can live with it, honestly. I doubt it's as big a deal as they're making it seem.</p>
 				<p>How are you doing though?</p>
 			</WhatsAppMessage>
-
-			<WhatsAppMessage author="jd" 
-							 amAuthor="true" 
-							 hasBeenRead="true" 
-							 time="12:32">
-				<p>i'm just totally overwhelmed</p>
-				<p>thx for asking 🙂</p>
-				<p>i don't really know what's going on with everyone else...</p>
-				<p>the progress update meetings are so tense.....</p>
-			</WhatsAppMessage>
-
-			<WhatsAppMessage author="ms" 
-							amAuthor="false" 
-							hasBeenRead="true" 
-							time="12:35">
-				<p>PM is holding it together but pretty stressed and feeling kind of in the dark.</p>
-			</WhatsAppMessage>
-
-			<WhatsAppMessage author="jd" 
-							 amAuthor="true" 
-							 hasBeenRead="true" 
-							 time="12:32">
-				<p>pissed?</p>
-			</WhatsAppMessage>
-
-			<WhatsAppMessage author="ms" 
-							amAuthor="false" 
-							hasBeenRead="true" 
-							time="12:35">
-				<p>Yeah, sort of. Really really worried.</p>
-				<p>What happened, exactly?</p>
-			</WhatsAppMessage>
-
-			<WhatsAppMessage author="jd" 
-							 amAuthor="true" 
-							 hasBeenRead="true" 
-							 time="12:32">
-				<p>i only found the right commit this morning</p>
-				<p>i mean yesterday morning</p>
-				<p>the bug I wrote was in tje file parser</p>
-				<p>when it processed the group files, instead of appending to the individual data, it overwrote it...</p>
-			</WhatsAppMessage>
-
-			<WhatsAppMessage author="ms" 
-							amAuthor="false" 
-							hasBeenRead="true" 
-							time="12:35">
-				<p>Oh fuck... okay, so you're missing like several months of data?</p>
-			</WhatsAppMessage>
-
-			<WhatsAppMessage author="jd" 
-							 amAuthor="true" 
-							 hasBeenRead="true" 
-							 time="12:37">
-				<p>yeah...</p>
-			</WhatsAppMessage>
-
-			<WhatsAppMessage author="ms" 
-							amAuthor="false" 
-							hasBeenRead="true" 
-							time="12:39">
-				<p>Why can't you just download it from the API?</p>
-			</WhatsAppMessage>
-
-			<WhatsAppMessage author="jd" 
-							 amAuthor="true" 
-							 hasBeenRead="true" 
-							 time="12:50">
-				<p>it hit the data limit once we pulled a few dozen records and it blocked us for a whole hour</p>
-				<p>we did the math</p>
-				<p>pulling all the records we need, pausing for an hour after every few dozen, would take 3 months...</p>
-				<p>i really don't know what to do </p>
-				<p>can u help me?</p>
-				<p>sorry</p>	
-			</WhatsAppMessage>
-
-			<WhatsAppMessage author="ms" 
-							 amAuthor="false" 
-							 hasBeenRead="true" 
-							 time="12:48">
-				<p>Yeah, I will</p>
-				<p>I talked to PM. Let's join a group chat</p>
-				<p>Hang on. I'll send you a link.</p>
-			</WhatsAppMessage>
-
-			<WhatsAppMessage author="jd" 
-							 amAuthor="true" 
-							 hasBeenRead="true" 
-							 time="12:50"
-							 id="last">
-				<p>thank u</p>
-			</WhatsAppMessage>
-
 		</div>
-
-		<div class="message-area" id="pm" hidden>
-			<div class="msgNav">
-				<div class="contact">
-					<div class="back-arrow" onclick="showContacts.call(this)">
-						<img src="svg/back-arrow.svg" />
-					</div>
-
-					<div class="circle orange"></div>
-					<p id="active-message">PM</p>
-					<sub>online</sub>
-				</div>
-			</div>
-			<div class="date">
-				Yesterday
-			</div>
-
-			<WhatsAppMessage author="pm" 
-							 amAuthor="false" 
-							 hasBeenRead="true" 
-							 time="12:32">
-				<p>No no, really, no problem.</p>
-				<p>I'm sure we'll figure it out.</p>
-				<p>Here's placeholder text just for kicks</p>
-			</WhatsAppMessage>
-
-			<WhatsAppMessage author="jd" 
-							 amAuthor="true" 
-							 hasBeenRead="true" 
-							 time="12:32">
-				<p>I'm saying some stuff</p>
-				<p>This is more stuff being said</p>
-			</WhatsAppMessage>
-		</div>
-
 		<!--footer-->
 		<style>
 			.input-box {

@@ -78,6 +78,10 @@ body {
 	background: orange;
 }
 
+.circle.red {
+	background: red;
+}
+
 .userNav {
 	background: #2A2F32;
 	color: #f0f0f0;

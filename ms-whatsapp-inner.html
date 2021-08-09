@@ -12,18 +12,18 @@
 	<div class="contacts hidden">
 		<div class="userNav">
 			<div class="userInfo">
-				<div class="circle"></div>
+				<div class="circle blue"></div>
 			</div>
 		</div>
 
 		<div class="contact active" onclick="showMessages.call(this, 'jd')">
-			<div class="circle blue"></div>
+			<div class="circle"></div>
 			<p>JD</p>
 			<sub>online</sub>
 		</div>
 
 		<div class="contact" onclick="showMessages.call(this, 'wh')">
-			<div class="circle orange"></div>
+			<div class="circle red"></div>
 			<p>WH</p>
 			<sub>online</sub>
 		</div>
@@ -38,7 +38,7 @@
 						<img src="svg/back-arrow.svg" />
 					</div>
 
-					<div class="circle blue"></div>
+					<div class="circle"></div>
 					<p id="active-message">JD</p>
 					<sub>online</sub>
 				</div>
@@ -190,6 +190,26 @@
 							 time="12:32">
 				<p>I'm saying some stuff</p>
 				<p>This is more stuff being said</p>
+			</WhatsAppMessage>
+		</div>
+
+		<div class="message-area" id="wh" hidden>
+			<div class="msgNav">
+				<div class="contact">
+					<div class="back-arrow" onclick="showContacts.call(this)">
+						<img src="svg/back-arrow.svg" />
+					</div>
+
+					<div class="circle"></div>
+					<p id="active-message">WH</p>
+					<sub>online</sub>
+				</div>
+			</div>
+			<WhatsAppMessage author="wh"
+								amAuthor="false"
+								hasBeenRead="true"
+								time="FOOO">
+				<p>fooooo</p>
 			</WhatsAppMessage>
 		</div>
 
