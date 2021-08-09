@@ -15,7 +15,7 @@ body {
 
 .contacts {
 	position: fixed;
-	width: 40%;
+	min-width: 40%;
 	height: 100%;
 	border: 1px solid #282F32;
 	border-style: none solid none none;
@@ -300,8 +300,10 @@ table p {
 }
 
 .checkmarks {
-	letter-spacing: -2px;
+	letter-spacing: -4px;
 	font-weight: 800;
+	font-size: 0.6rem;
+	margin-right: 0.3rem;
 }
 
 .read {

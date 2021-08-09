@@ -108,18 +108,27 @@ class IrcMessage extends Message {
 class WhatsAppMessage extends Message {
 	constructor (element) {
 		super(element)
-		this.amAuthor = element.attributes.amAuthor.value == 'true'
-		this.time = element.attributes.time.value
-		this.hasBeenRead = element.attributes.hasBeenRead.value == 'true'
+		this.amAuthor = (element.attributes.amAuthor? element.attributes.amAuthor.value == 'true' : true)
+		this.time = (element.attributes.time ? element.attributes.time.value : '')
+		this.hasBeenRead = (element.attributes.hasBeenRead ? element.attributes.hasBeenRead.value == 'true' : '')
+		this.deleted = (element.attributes.deleted ? element.attributes.deleted.value == 'true' : '')
+		console.log(element.attributes.deleted)
 		this.createNewMessage()
 	}
 
 	createNewMessage() {
 		let children = [...this.element.children]
-
 		this.element.className = `msg${(this.amAuthor ? ' sent' : ' received')}`
+
+		// TODO: Get rid of this conditional and definitely don't let it breed
+		if (this.deleted) {
+			this.element.classList.add('deleted')
+			this.element.innerHTML = '<p>🛇 You deleted this message</p>'
+			return
+		}
+
 		this.element.innerHTML = 
-		   `${children.map((p) => `<p>${p.innerText} <sub>${this.time} ${this.amAuthor ? `<span class="checkmarks${this.hasBeenRead ? ' read' : ''}">✓✓</span>` : ''}</sub></p>`)
+		   `${children.map((p) => `<p>${p.innerText} <sub>${this.time} ${this.amAuthor ? `<span class="checkmarks${this.hasBeenRead ? ' read' : ''}">✓✓&nbsp</span>` : ''}</sub></p>`)
 		   			  .join('')}`
 	}
 }
