@@ -5,6 +5,8 @@ function fadeAndDeleteOverlay() {
 	const param = new URLSearchParams(url.search.slice(1))
 
 	if (param.get('overlay') == 'false') {
+		overlay = document.getElementsByClassName('intro-overlay')[0]
+		overlay.hidden = true
 		return
 	} else {
 		overlay = document.getElementsByClassName('intro-overlay')[0]
