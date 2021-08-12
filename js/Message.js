@@ -128,7 +128,7 @@ class WhatsAppMessage extends Message {
 		}
 
 		this.element.innerHTML = 
-		   `${children.map((p) => `<p>${p.innerText} <sub>${this.time} ${this.amAuthor ? `<span class="checkmarks${this.hasBeenRead ? ' read' : ''}">✓✓&nbsp</span>` : ''}</sub></p>`)
+		   `${children.map((p) => `<p>${p.innerHTML} <sub>${this.time} ${this.amAuthor ? `<span class="checkmarks${this.hasBeenRead ? ' read' : ''}">✓✓&nbsp</span>` : ''}</sub></p>`)
 		   			  .join('')}`
 	}
 }
