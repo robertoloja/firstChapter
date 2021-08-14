@@ -34,7 +34,6 @@ function animateChapterTitle() {
 
 	for (let char of finalText.split('')) {
 		let delay = Math.random() * (maxDelay - minDelay) + minDelay
-		console.log(delay)
 		totalDelay += delay
 
 		window.setTimeout(() => {

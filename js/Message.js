@@ -13,6 +13,8 @@ class Message {
 }
 
 class Email extends Message {
+	static numberOfEmails = 0
+
 	constructor(element) {
 		super(element)
 		let subject = element.attributes.subject
@@ -20,6 +22,7 @@ class Email extends Message {
 
 		this.subject = (subject ? subject.value : '')
 		this.date = (date ? this.getDateTimeString(date.value) : '')
+		Email.numberOfEmails += 1
 		this.createNewMessage()
 	}
 
@@ -42,12 +45,13 @@ class Email extends Message {
 		emailHeader.style = 'margin: 0; padding: 0;'
 		
 		emailHeader.innerHTML = 
-		   `<b>Subject:</b> ${this.subject} <br>
+		  `<b>Subject:</b> ${this.subject} <br>
 			<b>From:</b> ${this.author} <br>
 			<b>Date:</b> ${this.date} <br><br>`
 
 		this.element.insertBefore(emailHeader, this.element.firstChild)
 	}
+
 }
 
 class EmailReply extends Email {
@@ -56,6 +60,11 @@ class EmailReply extends Email {
 }
 
 class EmailMessage extends Email {
+	constructor(element) {
+		super(element)
+		this.createEmailSummary()
+	}
+
 	style() {
 		let style = `overflow-y: scroll;
 					background: white;
@@ -63,10 +72,46 @@ class EmailMessage extends Email {
 					margin: 0;
 					padding: 20px;
 					font-family: monospace;
-					display: ${this.element.attributes.open ?
+					display: ${this.element.attributes.open != undefined ?
 								'inline-block' : 
 								'none'};`
 		return style
+	}
+
+	createEmailSummary() {
+		let emailSummaries = document.querySelector('#inbox').children[0]
+		let button = document.createElement('button')
+		button.id = `email${Email.numberOfEmails}-button`
+
+		let cssClasses = ['nostyle', 'emaillink']
+
+		if (Email.numberOfEmails == 1) {
+			cssClasses.push('active')
+			cssClasses.push('read')
+		}
+
+		cssClasses.map(x => {
+			button.classList.add(x)
+		})
+
+		button.onclick = () => {openEmail.call(button, event, `email${Email.numberOfEmails}`)}
+
+		button.innerHTML = `<img src="svg/envelope-${Email.numberOfEmails == 1 ? 'open' : 'closed'}.svg">
+													<div class="info">
+														<h4>
+															${this.subject}
+														</h4>
+														<h5>${this.author}</h5>
+														${this.stripHTML(this.text).substring(0, 50)}
+													</div>
+												</button>`
+
+		emailSummaries.insertBefore(button, emailSummaries.lastElementChild)
+	}
+
+	stripHTML(text) {
+		let result = text.split(/\<.+\>/).join(' ')
+		return result
 	}
 }
 
@@ -112,7 +157,6 @@ class WhatsAppMessage extends Message {
 		this.time = (element.attributes.time ? element.attributes.time.value : '')
 		this.hasBeenRead = (element.attributes.hasBeenRead ? element.attributes.hasBeenRead.value == 'true' : '')
 		this.deleted = (element.attributes.deleted ? element.attributes.deleted.value == 'true' : '')
-		console.log(element.attributes.deleted)
 		this.createNewMessage()
 	}
 
