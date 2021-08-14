@@ -26,11 +26,11 @@ function fadeAndDeleteOverlay() {
 function animateChapterTitle() {
 	let title = document.getElementById('chapter-title')
 	title.innerText = ''
-	let finalText = '0: introduction'
+	let finalText = '0: intro'
 
 	let totalDelay = 0
-	let maxDelay = 100
-	let minDelay = 10
+	let maxDelay = 200
+	let minDelay = 50
 
 	for (let char of finalText.split('')) {
 		let delay = Math.random() * (maxDelay - minDelay) + minDelay
