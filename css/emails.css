@@ -148,7 +148,7 @@ menu {
 		border: 1px solid grey;
 		border-collapse: collapse;
 		background: white;
-		min-width: 20rem;
+		min-width: 40%;
 		padding: 0;
 		margin: 0;
 		overflow-y: scroll;
@@ -210,18 +210,19 @@ menu {
 		overflow-y: scroll;
 	}
 
+	.emails {
+		width: 100%;
+	}
 	.ribbon-button img {
 		width: 1.5rem;
 		height: 1.5rem;
 		margin: 0;
 		padding: 0.2rem;
-		display: inline-block;
 		float: left;
 	}
 
 	.ribbon-button p {
 		font-size: 90%;
-		display: inline-block;
 		float: right;
 		padding: 0.2rem;
 	}
@@ -254,9 +255,5 @@ menu {
 		overflow-wrap: break-word;
 		overflow-x: hidden;
 		height: 50rem;
-	}
-
-	.inbox {
-		width: 100%;
 	}
 }
