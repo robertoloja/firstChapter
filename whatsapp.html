@@ -17,17 +17,27 @@ window.onmessage = function goToNext(message) {
 	console.log(message)
 	window.location = 'irc-frame.html'
 }
+
+function changeBackArrow () {
+	let backArrow = document.querySelector('.back-arrow')
+
+	const url = new URL(window.location.href)
+	const param = new URLSearchParams(url.search.slice(1))
+	console.log(param)
+	backArrow.href = backArrow.href + '&owner=' + (param.get('owner') != 'undefined' ? param.get('owner') : 'ms')
+	console.log(backArrow.href)
+}
 	</script>
 </head>
 
-<body>
+<body onload="changeBackArrow()">
 	<iframe src="ms-whatsapp-inner.html" 
 			id="proscenium" 
 			style="margin-top: 2rem;" 
 			onload="loadCorrectFrame.call(this)"></iframe>
 <footer>
 	<div class="arrows-container">
-		<a href="index.html?overlay=false" id="arrows">←</a>
+		<a href="index.html?overlay=false" id="arrows" class="back-arrow">←</a>
 		<a href="irc-frame.html" id="arrows">→</a>
 	</div>
 </footer>

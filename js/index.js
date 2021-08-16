@@ -7,6 +7,8 @@ function fadeAndDeleteOverlay() {
 	if (param.get('overlay') == 'false') {
 		overlay = document.getElementsByClassName('intro-overlay')[0]
 		overlay.hidden = true
+		let select = document.querySelector('#part-select')
+		newSrc.call(select, param.get('owner'))
 		return
 	} else {
 		overlay = document.getElementsByClassName('intro-overlay')[0]
@@ -42,13 +44,18 @@ function animateChapterTitle() {
 	}
 }
 
-
-function newSrc() {
+function newSrc(destination) {
 	const urls = {
-		"Stories/End.html": "ms",
+		"blog.html": "ms",
 		"email.html": "pm",
 		"twitter.html": "jd"
 	}
+
+	if (destination != undefined) {
+		let characters = ['ms', 'pm', 'jd']
+		this.selectedIndex = characters.indexOf(destination)
+	}
+
 	let newSrc = this.options[this.selectedIndex].id
 	document.getElementById('proscenium').src = newSrc
 
