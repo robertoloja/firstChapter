@@ -12,6 +12,11 @@ function loadCorrectFrame() {
 	let proscenium = document.getElementById('proscenium')
 	proscenium.src = `${owner}-whatsapp-inner.html#last`
 }
+
+window.onmessage = function goToNext(message) {
+	console.log(message)
+	window.location = 'irc-frame.html'
+}
 	</script>
 </head>
 
