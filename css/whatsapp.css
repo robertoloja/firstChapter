@@ -63,11 +63,12 @@ body {
 }
 
 .contact sub {
+	display: block;
 	position: relative;
 	margin: 0;
 	padding: 0;
-	bottom: 1rem;
-	right: 1.7rem;
+	left: 4.2rem;
+	bottom: 2rem;
 }
 
 .circle.blue {
