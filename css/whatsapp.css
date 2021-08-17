@@ -226,6 +226,11 @@ table p {
 		width: 100%;
 	}
 
+	.msgNav sub {
+		color: #c0c0c0;
+		left: 6.3rem;
+	}
+
 	.back-arrow {
 		filter: invert(100%);
 		width: 1rem;
