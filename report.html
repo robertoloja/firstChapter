@@ -1,0 +1,95 @@
+<head>
+	<meta charset="UTF-8">
+	<style>
+body {
+	background: black;
+}
+
+body::before {
+	content: " ";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+  z-index: 2;
+  background-size: 100% 2px, 3px 100%;
+  pointer-events: none;
+}
+
+div {
+	display: inline-block;
+	color: lightgreen;
+	margin: 0;
+	padding: 0;
+	font-size: 1rem;
+	font-family:'Courier New', Courier, monospace;
+	word-break: break-word;
+}
+
+.report {
+	margin: 1rem;
+	padding: 1rem;
+	border: 4px solid lightgreen;
+}
+
+h2 {
+	position: relative;
+	background: black;
+	padding: 1rem;
+	margin: 0;
+	top: -3rem;
+	font-size: 1.3rem;
+}
+
+h3 {
+	display: inline;
+}
+
+.form-field {
+	display: inline-block;
+	padding: 0 2rem;
+	border: 1px solid lightgreen;
+	border-style: none none solid none;
+}
+
+.form-part {
+	display: inline-block;
+}
+
+.header {
+	position: relative;
+	top: -3rem;
+	margin: 0;
+	padding: 0;
+}
+
+.main {
+	padding: 0;
+	margin: 0;
+	position: relative;
+	top: -2rem;
+}
+</style>
+</head>
+
+<body>
+	<!-- This is TJ's editing of a incident report form -->
+	<div class="report">
+		<h2>Ministry Systems Incident Report System</h2>
+		<div class='header'>
+			<div class='form-part'><h3>REPORTED BY: </h3><p class='form-field'>TJ</p></div>
+			<div class='form-part'><h3>DATE OF REPORT: </h3><p class='form-field'> some date </p></div>
+			<div class='form-part'><h3>TITLE / ROLE: </h3><p class='form-field'>Security Consultant</p></div>
+			<div class='form-part'><h3>SUPERVISOR: </h3><p class='form-field'>foo</p></div>
+		</div>
+		<p class="main">
+			We were breached. 
+			<span class='rewrite'>The fuckers fucked up tho.</span>
+			We caught one of them on camera, and I almost chased them down, so my dashcam caught their license plate. They
+			also downloaded a huge chunk of patient data.
+		</p>
+	</div>
+</body>

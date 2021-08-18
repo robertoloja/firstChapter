@@ -1,57 +1,114 @@
 <head>
 	<meta charset="UTF-8">
 	<style>
+body {
+	background: black;
+}
+
+body::before {
+	content: " ";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+  z-index: 2;
+  background-size: 100% 2px, 3px 100%;
+  pointer-events: none;
+}
+
 div {
 	display: inline-block;
-	background: white;
+	color: lightgreen;
 	margin: 0;
 	padding: 0;
-	font-size: 2rem;
+	font-size: 1rem;
+	font-family:'Courier New', Courier, monospace;
 	word-break: break-word;
 }
 </style>
 </head>
 
-<body>
-<div>This part
-	<div>This part (it's called "telescoping text")</div> 
-</div> 
-<div>isn't done yet.</div>
-
 <script>
-let root = document.getElementsByTagName('div')
-let foo = [...root].filter((x) => x.childElementCount != 0)
-				   .map((x) => {
-	x.style.background = "lightgray"
-	x.style.cursor = "pointer"
-	x.addEventListener('click', () => {
-		expand.call(x)
-	})
-})
-hideChildrenRecursively(root[0])
+	const linkColor = 'darkgray'
+	function foo() {
+		let telescopeDiv = document.querySelector('.telescope')
+		let children = telescopeDiv.children
 
-function hideChildrenRecursively(element) {
-	if (element.childElementCount != 0) {
-		[...element.children].map((x) => {
-			x.style.display = 'none'
-			hideChildrenRecursively(x)
+		// divs with children must have their children recursively hidden
+		let anchorDivs = [...children].filter(e => e.children.length != 0)
+
+		const hideRecursively = e => {
+			e.map(x => {
+				x.style.display = 'none'
+			})
+
+			if (e.children) {
+				let children = [...e.children]
+				children.map(x => {
+					hideRecursively(x)
+					x.onclick = c => {
+					}
+				})
+			}
+		}
+
+		anchorDivs.map(x => {
+			hideRecursively([...x.children])
+			x.style.background = linkColor
+			x.style.cursor = 'pointer'
 		})
 	}
-}
 
-function expand() {
-	this.childNodes[0].nodeValue = ''
-	this.style.background = 'white'
-	this.style.cursor = "default"
-	
-	let goo = [...this.children].map((x) => {
-		x.style.display = 'inline-block'
+	function onClickFunction () {
+		this.style.background = 'white'
+		this.style.cursor = 'auto'
 
-		if (x.childElementCount == 0) {
-			x.style.background = 'white'
-			x.style.cursor = "default"
+		let children = [...this.children]
+
+		if (children.length != 0){
+			this.onclick = null
+			this.firstChild.nodeValue = ''
+			children.map(c => {
+				c.style.display = 'inline-block'
+
+				let grandchildren = [...c.children]
+				if (grandchildren.length == 0) {
+					c.style.background = 'white'
+					c.cursor = 'auto'
+				} else {
+					grandchildren.map(gc => {
+						gc.style.display = 'none'
+					})
+					c.style.background = linkColor
+					c.style.cursor = 'pointer'
+				}
+			})
 		}
-	})
-}
+	}
+</script>
+
+<body>
+	<!-- This is TJ's editing of a incident report form -->
+	<div class="report">
+		<h2>Ministry Systems Incident Report System</h2>
+		<h3>REPORTED BY: </h3><p class='form-field'>TJ</p>
+		<h3>DATE OF REPORT: </h3><p class='form-field'> some date </p>
+		<h3>TITLE / ROLE: </h3><p class='form-field'>Security Consultant</p>
+		<h3>SUPERVISOR: </h3><p class='form-field'></p>
+	</div>
+	<div class="telescope">
+		We were breached.
+		<div onclick='onClickFunction.call(this)'>They fucked up tho.
+			<div onclick='onClickFunction.call(this)'>
+				The criminals responsible were somewhat careless.
+			</div>
+		</div>
+
+	</div>
+<script>
+	foo()
 </script>
 </body>
