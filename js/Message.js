@@ -127,7 +127,8 @@ class IrcMessage extends Message {
 			'MS': 'blue',
 			'JD': 'gray',
 			'PM': 'orange',
-			'WH': 'red'
+			'WH': 'red',
+			'fungor': 'green',
 		}
 		let styleClasses = "message"
 		let displayText = ""

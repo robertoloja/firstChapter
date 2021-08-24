@@ -60,7 +60,7 @@
 				<IrcMessage author="JD">how u make that inverted b?</IrcMessage>
 				<IrcMessage author="JD">wait..  nvm...</IrcMessage>
 				<IrcMessage author="PM">Hi. Please pardon my lateness, I was occupied.</IrcMessage>
-				<IrcMessage author="JD">heyy</IrcMessage>
+				<IrcMessage author="JD">heyyy</IrcMessage>
 				<IrcMessage author="MS">Yo</IrcMessage>
 				<IrcMessage author="MS">No worries</IrcMessage>
 				<IrcMessage author="WH">lol u were right about pm</IrcMessage>
@@ -284,7 +284,7 @@
 
 <div class="window" id="other-channel">
 	<div class="title-bar">
-		<div class="title-bar-text">#admin</div>
+		<div class="title-bar-text">fungor</div>
 
 		<div class="title-bar-controls">
 			<button aria-label="Minimize" id="min"></button>
@@ -296,35 +296,25 @@
 	<div class="window-body">
 		<div class="container">
 			<div class="message-area">
-				<div class="server-announcement message">
-					<p class="message-text">
-						* Now talking in #admin
-					</p>
-				</div>
-
-				<div class="message server-announcement">
-					<p class="message-text">
-						* Topic is ''
-					</p>
-				</div>
-
-				<div class="message">
-					<p class="message-text">
-						&lt;WH&gt; !admin record #conspiracy
-					</p>
-				</div>
-				<IrcMessage author="fungor">/me recording channel #conspiracy, !admin stop command will end recording.</IrcMessage>
+				<IrcMessage author="WH">!auth</IrcMessage>
+				<IrcMessage author="fungor">auth ok</IrcMessage>
+				<IrcMessage author="WH">!admin ipsallowed whitelist add (listCurrentMembers '#conspiracy')</IrcMessage>
+				<IrcMessage author="fungor">ok, added 2 ips to whitelist</IrcMessage>
+				<IrcMessage author="WH">!admin ipsallowed mode whitelist</IrcMessage>
+				<IrcMessage author="fungor">ok, switched ips allowed mode from blacklist to whitelist</IrcMessage>
+				<IrcMessage author="WH">!admin record conspiracy</IrcMessage>
+				<IrcMessage author="fungor">recording channel #conspiracy, !admin stop command will end recording.</IrcMessage>
 			</div>
 
 			<div class="member-list">
-				<b>@WH</b><br>
-				<b>@fungor</b>
+				<b>WH</b><br>
+				<b>fungor</b>
 				<br><br><br><br><br><br><br>
 			</div>
 		</div>
 
 		<div class="input">
-			<p>!admin stop</p>
+			<p>!admin stop<span class="cursor">|</span></p>
 		</div>
 	</div>
 </div>
