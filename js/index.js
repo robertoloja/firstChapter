@@ -29,6 +29,7 @@ function animateChapterTitle() {
 	let title = document.getElementById('chapter-title')
 	title.innerText = ''
 	let finalText = '0: intro'
+	document.title = ''
 
 	let totalDelay = 0
 	let maxDelay = 200
@@ -40,6 +41,7 @@ function animateChapterTitle() {
 
 		window.setTimeout(() => {
 			title.innerText = title.innerText + char
+			document.title = document.title + char
 		}, totalDelay)
 	}
 }
