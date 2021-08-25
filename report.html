@@ -88,11 +88,59 @@ h3 {
 	font-size: 0.9rem;
 	text-align: justify;
 	word-break: break-all;
+	text-underline-offset: 5px; 
+	line-height: 1.5rem;
+}
+
+.rewrite {
+	background: rgba(100, 100, 100, 0.5);
+	cursor: pointer;
 }
 
 @media screen and (orientation:  portrait) {
+	/* TODO */
+	.form-field {
+		padding: 0;
+	}
 }
 </style>
+
+<script>
+	function retype() {
+		let originalText = this.innerText
+		const newText = this.attributes.edit.value
+
+		let maxDelay = 20
+		let minDelay = 20
+		let totalDelay = 0
+
+		for (i = this.innerText.length - 1; i > 0; i--) {
+			let delay = Math.random() * (maxDelay - minDelay) + minDelay
+			totalDelay += delay
+
+			window.setTimeout((x) => {
+				this.innerText = originalText.slice(0, x)
+			}, totalDelay, i)
+		}
+
+		window.setTimeout(() => {
+			this.innerText = ''
+		}, totalDelay)
+
+		maxDelay = 100
+		minDelay = 50
+
+		for (i = 0; i < newText.length; i++) {
+			let delay = Math.random() * (maxDelay - minDelay) + minDelay
+			totalDelay += delay
+
+			window.setTimeout((x) => {
+				this.innerText = newText.slice(0, x)
+			}, totalDelay, i)
+		}
+		this.classList.remove('rewrite')
+	}
+</script>
 </head>
 
 <body>
@@ -100,16 +148,32 @@ h3 {
 		<h2>Ministry Systems Incident Report System</h2>
 		<div class='header'>
 			<div class='form-part'><h3>REPORTED BY: </h3><p class='form-field'>TJ</p></div>
-			<div class='form-part'><h3>DATE OF REPORT: </h3><p class='form-field'> some date </p></div>
-			<div class='form-part'><h3>TITLE / ROLE: </h3><p class='form-field'>Security Consultant</p></div>
-			<div class='form-part'><h3>SUPERVISOR: </h3><p class='form-field'>foo</p></div>
+			<div class='form-part'><h3>DATE: </h3><p class='form-field'> some date </p></div>
+			<div class='form-part'><h3>TITLE/ROLE: </h3><p class='form-field'>Consultant</p></div>
+			<div class='form-part'><h3>SUPERVISOR: </h3><p class='form-field'>Minister</p></div>
 		</div>
 		<p class="main">
 			We were breached. 
-			<span class='rewrite' onclick=>The fuckers fucked up tho.</span>
-			We caught one of them on camera, and I almost chased them down, so my dashcam caught their license plate. They
-			also downloaded a huge chunk of patient data.<br>
-			There will need to be found and questioned.
+			<span class='rewrite' 
+						edit='The breach operation was less than perfect. '
+						onclick='retype.call(this)'>The fuckers fucked up tho.</span>
+			We caught one of them on camera, though of course they were wearing a mask, so identification will be
+			<span class='rewrite'
+						edit='difficult '
+						onclick='retype.call(this)'>a bitch</span>. 
+			<span class='rewrite'
+						edit="After the perps gave chase, we were able to capture footage of their car's license plate, indicating fraud. "
+						onclick='retype.call(this)'>
+				I nearly ran the assholes down, so my dashcam caught their license plate.</span>
+			
+			<span class='rewrite'
+						edit='Preliminary investigation reveals no records of the captured plate. '
+						onclick='retype.call(this)'>
+				They were fucking fake...</span>
+			
+			<span class='rewrite'
+						edit='Our capable systems administrators are investigating the cyber dimension of this issue. '
+						onclick='retype.call(this)'>They were after some computer shit. The geeks are looking into it.</span>
 		</p>
 	</div>
 </body>
