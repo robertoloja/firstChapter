@@ -1,6 +1,13 @@
 <head>
 	<meta charset="UTF-8">
 	<style>
+@font-face {
+    font-family: "C64";
+    src: url("fonts/C64_Pro_Mono-STYLE.otf") format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
 	background: black;
 }
@@ -13,7 +20,11 @@ body::before {
   left: 0;
   bottom: 0;
   right: 0;
-  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, 
+															rgba(0, 0, 0, 0.6) 50%), 
+		linear-gradient(90deg, rgba(255, 0, 0, 0.08), 
+													 rgba(0, 255, 0, 0.02), 
+													 rgba(0, 0, 255, 0.08));
   z-index: 2;
   background-size: 100% 2px, 3px 100%;
   pointer-events: none;
@@ -25,14 +36,14 @@ div {
 	margin: 0;
 	padding: 0;
 	font-size: 1rem;
-	font-family:'Courier New', Courier, monospace;
+	font-family: "C64";
 	word-break: break-word;
 }
 
 .report {
 	margin: 1rem;
 	padding: 1rem;
-	border: 4px solid lightgreen;
+	border: 2px solid lightgreen;
 }
 
 h2 {
@@ -41,7 +52,7 @@ h2 {
 	padding: 1rem;
 	margin: 0;
 	top: -3rem;
-	font-size: 1.3rem;
+	font-size: 1.1rem;
 }
 
 h3 {
@@ -91,7 +102,7 @@ h3 {
 		</div>
 		<p class="main">
 			We were breached. 
-			<span class='rewrite'>The fuckers fucked up tho.</span>
+			<span class='rewrite' onclick=>The fuckers fucked up tho.</span>
 			We caught one of them on camera, and I almost chased them down, so my dashcam caught their license plate. They
 			also downloaded a huge chunk of patient data.<br>
 			There will need to be found and questioned.

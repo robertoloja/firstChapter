@@ -1,6 +1,6 @@
 @font-face {
     font-family: "NimbusSans";
-    src: url("Nimbus-Sans.ttf") format('truetype');
+    src: url("../fonts/Nimbus-Sans.ttf") format('truetype');
     font-weight: normal;
     font-style: normal;
 }
@@ -10,7 +10,7 @@ body {
 	margin-left: auto;
 	margin-right: 0;
 	margin-top: 0;
-	font-family: sans-serif;
+	font-family: "NimbusSans";
 }
 
 .contacts {
