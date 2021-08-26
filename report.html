@@ -97,6 +97,22 @@ h3 {
 	cursor: pointer;
 }
 
+a {
+	text-decoration: none;
+}
+
+button {
+	display: none;
+	background: black;
+	color: lightgreen;
+	border: 2px solid lightgreen;
+	margin: 1rem auto;
+	padding: 0.5rem 1rem;
+	text-decoration: none;
+	font-family: 'C64';
+	cursor: pointer;
+}
+
 @media screen and (orientation:  portrait) {
 	/* TODO */
 	.form-field {
@@ -106,17 +122,18 @@ h3 {
 </style>
 
 <script>
-	function retype() {
+	let retype = function () {
+		// prevent self from being triggered by another element's onclick
+		const saveSelf = retype
+		retype = () => null
+
 		let originalText = this.innerText
 		const newText = this.attributes.edit.value
 
-		let maxDelay = 20
-		let minDelay = 20
 		let totalDelay = 0
 
 		for (i = this.innerText.length - 1; i > 0; i--) {
-			let delay = Math.random() * (maxDelay - minDelay) + minDelay
-			totalDelay += delay
+			totalDelay += Math.random() * 20
 
 			window.setTimeout((x) => {
 				this.innerText = originalText.slice(0, x)
@@ -127,8 +144,8 @@ h3 {
 			this.innerText = ''
 		}, totalDelay)
 
-		maxDelay = 80
-		minDelay = 20
+	  const maxDelay = 110
+	  const minDelay = 20
 
 		for (i = 0; i < newText.length; i++) {
 			let delay = Math.random() * (maxDelay - minDelay) + minDelay
@@ -138,14 +155,27 @@ h3 {
 				this.innerText = newText.slice(0, x)
 			}, totalDelay, i)
 		}
+
 		this.classList.remove('rewrite')
+
+		window.setTimeout(() => {
+			// reassign self again, so element onclicks work again
+			retype = saveSelf
+
+			maybeShowSubmitButton()
+		}, totalDelay)
 	}
 </script>
 </head>
 
+<script>
+	function showButton() {
+		document.querySelector('#submit').style.display = 'block'
+	}
+</script>
 <body>
 	<div class="report">
-		<h2>Ministry Systems Incident Report System</h2>
+		<h2 onclick='showButton()'>Ministry Systems Incident Report System</h2>
 		<div class='header'>
 			<div class='form-part'><h3>REPORTED BY: </h3><p class='form-field'>TJ</p></div>
 			<div class='form-part'><h3>DATE: </h3><p class='form-field'> some date </p></div>
@@ -164,7 +194,7 @@ h3 {
 			<span class='rewrite'
 						edit="After the perps gave chase, we were able to capture footage of their car's license plate "
 						onclick='retype.call(this)'>
-				I nearly ran the assholes down, and fucking would have if they didn't burn rubber through the CNE, but so at least my dashcam caught their license plate</span>.
+				I nearly ran the assholes down, and fucking would have if they didn't burn rubber through the CNE then disappeared, but so at least my dashcam caught their license plate</span>.
 			
 			<span class='rewrite'
 						edit='Preliminary investigation reveals no records of the captured plate, indicating fraud '
@@ -175,6 +205,25 @@ h3 {
 						edit='Our capable systems administrators are investigating the cyber dimension of this breach '
 						onclick='retype.call(this)'>They were after some computer shit. The geeks are looking into it</span>.
 			I have taken charge of the overall investigation, and will continue reporting regularly.
+
 		</p>
+		<script>
+			function buttonClick () {
+				window.top.postMessage("message", "*")
+				console.log("posted")
+			}
+		</script>
+		<button id='submit'
+						onclick='buttonClick()'>
+			SUBMIT
+		</button>
+
+		<script>
+			function maybeShowSubmitButton() {
+				if (document.querySelector('.rewrite') == null) {
+					document.querySelector('#submit').style.display = 'block'
+				}
+			}
+		</script>
 	</div>
 </body>

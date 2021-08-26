@@ -11,6 +11,12 @@
 			id="proscenium" 
 			style="margin-top: 2rem;"></iframe>
 <footer>
+<script>
+  window.onmessage = function foo (message) {
+    window.location = 'about.html'
+    console.log('receives')
+  }
+</script>
 <style>
   table {
     padding: 0;
@@ -27,7 +33,6 @@
   }
 </style>
     <a href="irc-frame.html" id="arrows">←</a>
-    <a href="about.html" id="arrows">→</a>
 </footer>
 </body>
 </html>
