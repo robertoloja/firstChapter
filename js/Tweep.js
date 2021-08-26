@@ -43,6 +43,7 @@ class Tweep {
                         .author.value.toUpperCase()
     this.handle = element.attributes
                         .handle.value.toLowerCase()
+    this.date = element.attributes.date.value
     this.createTweep()
   }
 
@@ -75,7 +76,7 @@ class Tweep {
           `<div class="tweet-heading">
               <img class="tweet-avatar ${authorColors[this.author]}">
               <h4>${this.author}</h4>
-              <p>@${this.handle}</p>
+              <p>@${this.handle} · ${this.date}</p>
           </div>
           ${hasReply ? replyVerticalBar : ''}
           <p class="tweet-text">
