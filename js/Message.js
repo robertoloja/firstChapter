@@ -125,7 +125,7 @@ class IrcMessage extends Message {
 	createNewMessage() {
 		const characterColors = {
 			'MS': 'blue',
-			'JD': 'gray',
+			'JD': '#CC99FF',
 			'PM': 'orange',
 			'WH': 'red',
 			'fungor': 'green',

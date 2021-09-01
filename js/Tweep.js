@@ -53,7 +53,7 @@ class Tweep {
       'MS': 'blue',
       'PM': 'orange',
       'WH': 'red',
-      'JD': 'white'
+      'JD': 'purple'
     }
     const siblings = {
       next: this.element.nextElementSibling,

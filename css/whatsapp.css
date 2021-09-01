@@ -84,6 +84,10 @@ body {
 	background: red;
 }
 
+.circle.purple {
+	background: #CC99FF;
+}
+
 .userNav {
 	background: #2A2F32;
 	color: #f0f0f0;

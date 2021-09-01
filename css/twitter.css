@@ -338,7 +338,7 @@ img.logo {
 		width: 9rem;
 		height: 9rem;
 		border-radius: 50%;
-		background: white;
+		background: #CC99FF;
 		margin-top: -4.5rem;
 		margin-left: 1rem;
 		border: 4px solid black;
@@ -353,7 +353,7 @@ img.logo {
 			border: 2px solid black;
 			margin: 0;
 			padding: 0;
-			background: white;
+			background: #CC99FF;
 			border-radius: 50%;
 			margin-bottom: -2rem;
 			margin-right: 0.6rem;
@@ -367,6 +367,10 @@ img.logo {
 
 		.red {
 			background: red;
+		}
+
+		.purple {
+			background: #CC99FF;
 		}
 
 .edit-profile {
