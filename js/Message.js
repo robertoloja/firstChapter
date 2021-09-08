@@ -94,10 +94,14 @@ class EmailMessage extends Email {
 			button.classList.add(x)
 		})
 
-		button.onclick = () => {openEmail.call(button, event, `email${Email.numberOfEmails}`)}
+		if (this.element.attributes.noclick == null) {
+			button.onclick = () => {openEmail.call(button, event, `email${Email.numberOfEmails}`)}
+		} else {
+			this.element.style.cursor = 'default'
+		}
 
 		button.innerHTML = `<img src="svg/envelope-${Email.numberOfEmails == 1 ? 'open' : 'closed'}.svg">
-													<div class="info">
+													<div class="info" ${(this.element.attributes.noclick != null ? 'style="cursor: default;"' : '')}>
 														<h4>
 															${this.subject}
 														</h4>

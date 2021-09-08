@@ -182,8 +182,9 @@ menu {
 
 	.reply {
 			display: block;
-			margin: 15px;
-			padding: 10px;
+			margin: 0.2rem;
+			margin-top: 0.4rem;
+			padding: 0.4rem;
 			padding-bottom: 1px;
 			border: 1px solid gray;
 			border-style: none none none solid;
