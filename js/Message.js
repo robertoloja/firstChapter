@@ -106,6 +106,7 @@ class EmailMessage extends Email {
 															${this.subject}
 														</h4>
 														<h5>${this.author}</h5>
+														<h5 style="margin: 0; padding: 0;">${this.date}</h5>
 														${this.stripHTML(this.text).substring(0, 50)}
 													</div>
 												</button>`
