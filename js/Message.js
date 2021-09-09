@@ -107,7 +107,7 @@ class EmailMessage extends Email {
 														</h4>
 														<h5>${this.author}</h5>
 														<h5 style="margin: 0; padding: 0;">${this.date}</h5>
-														${this.stripHTML(this.text).substring(0, 50)}
+														<p>${this.stripHTML(this.text).substring(0, 50)}</p>
 													</div>
 												</button>`
 

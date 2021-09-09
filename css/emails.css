@@ -128,6 +128,11 @@ menu {
 		white-space: nowrap;
 	}
 
+	.emaillink p {
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+
 #tab-file {
 	margin: 0;
 	padding: 0;
