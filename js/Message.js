@@ -1,16 +1,15 @@
 class Message {
 	constructor(element) {
 		this.element = element
-		
 		let author = element.attributes.author
 		this.author = (author ? author.value : '')
 		this.text = element.innerHTML
 		this.messageArea = element.parentElement
 		this.element.style.cssText = this.style()
 	}
-
-	style() {}
+	style() {/* meant to be overwritten */}
 }
+
 
 class Email extends Message {
 	static numberOfEmails = 0
@@ -19,7 +18,6 @@ class Email extends Message {
 		super(element)
 		let subject = element.attributes.subject
 		let date = element.attributes.date
-
 		this.subject = (subject ? subject.value : '')
 		this.date = (date ? this.getDateTimeString(date.value) : '')
 		Email.numberOfEmails += 1
@@ -31,10 +29,10 @@ class Email extends Message {
 		 * @param date String
 		 * Returns the date attribute in format "Sun May 10 2020 09:03".
 		 **/ 
-		const zeroPad = (unit) => (unit.length == 1 ? '0' + unit : unit)
+		const zeroPad = unit => (unit.length == 1 ? '0' + unit : unit)
 
-		const getTimeString = (date) => zeroPad(date.getHours().toString()) + ':' + 
-										zeroPad(date.getMinutes().toString())
+		const getTimeString = date => zeroPad(date.getHours().toString()) + ':' + 
+																	zeroPad(date.getMinutes().toString())
 
 		let dateObj = new Date(Date.parse(date))
 		return dateObj.toDateString() + ' ' + getTimeString(dateObj)
@@ -54,10 +52,9 @@ class Email extends Message {
 
 }
 
-class EmailReply extends Email {
-	// This class only exists to give a descriptive 
-	// name to the relevant HTML tag
-}
+
+class EmailReply extends Email {/* This class only exists to give a descriptive name to the relevant HTML tag*/}
+
 
 class EmailMessage extends Email {
 	constructor(element) {
@@ -90,9 +87,7 @@ class EmailMessage extends Email {
 			cssClasses.push('read')
 		}
 
-		cssClasses.map(x => {
-			button.classList.add(x)
-		})
+		cssClasses.map(x => {	button.classList.add(x)	})
 
 		if (this.element.attributes.noclick == null) {
 			button.onclick = () => {openEmail.call(button, event, `email${Email.numberOfEmails}`)}
@@ -178,7 +173,11 @@ class WhatsAppMessage extends Message {
 		}
 
 		this.element.innerHTML = 
-		   `${children.map((p) => `<p>${p.innerHTML} <sub>${this.time} ${this.amAuthor ? `<span class="checkmarks${this.hasBeenRead ? ' read' : ''}">✓✓&nbsp</span>` : ''}</sub></p>`)
+		   `${children.map(
+				 p => `<p>${p.innerHTML}
+				 			<sub>${this.time} ${this.amAuthor ? 
+								`<span class="checkmarks${this.hasBeenRead ? ' read' 
+								: ''}">✓✓&nbsp</span>` : ''}</sub></p>`)
 		   			  .join('')}`
 	}
 }
